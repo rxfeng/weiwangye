@@ -1,0 +1,101 @@
+html,body{
+	height:100%;
+	background: #eee;
+}
+.aui-chat .aui-chat-content{
+	/*max-width: 100%;*/
+	max-width: 86%;
+}
+.aui-chat .aui-chat-left .aui-chat-name{
+	top:10px
+}
+.aui-chat .aui-chat-left .aui-chat-inner{
+	max-width: 100%;
+	overflow: initial;
+}
+.aui-chat .aui-chat-right .aui-chat-inner{
+	max-width: 88%;
+}
+
+.jrtt-footer-search .jrtt-search-send{
+	background: #b3e5fc;
+	padding: 4px 10px;
+	border-radius: 2px;	
+	margin-right: 5px;
+	margin-left: -5px;
+}
+.jrtt-content .jrtt-business-title{
+	color:#373737;
+	font-size: 14px;
+}
+.jrtt-content .jrtt-business-subTitle{
+	color:#7f7f7f;
+	font-size:12px;
+}
+.aui-chat .aui-chat-content{
+	padding: 0;
+}
+.jrtt-content .jrtt-activity-title{
+	position: relative;
+}
+.jrtt-content .jrtt-activity-subTitle{
+	color:#7f7f7f;
+	font-size: 12px;
+}
+.jrtt-content .jrtt-activity-time{
+	color:#7f7f7f;
+	font-size: 10px;
+}
+
+.aui-chat .aui-chat-left .aui-chat-arrow{
+	background-image: linear-gradient(45deg, #ffffff, #ffffff 50%, transparent 50%);
+}
+.aui-chat .aui-chat-right .aui-chat-content{
+	background: rgba(255,255,255,0);
+}
+.aui-chat .aui-chat-right .aui-chat-content p{
+	background-color: #b3e5fc;
+	padding: 10px;
+    margin-left: 10px;
+    border-radius: 3px;
+}
+.aui-chat .aui-chat-right .aui-chat-arrow{
+	background-image: linear-gradient(45deg, #b3e5fc, #b3e5fc 50%, transparent 50%);
+}
+
+.aui-card-list-content-padded{
+	padding-bottom: 0;
+}
+.aui-chat .aui-chat-left .aui-chat-content{
+	padding-bottom: 10px;
+	background-color:#fff;
+	max-width:100%;
+	left: 0;
+	min-width: 100%;
+}
+
+.aui-chat .aui-chat-left .aui-chat-media,.aui-chat .aui-chat-right .aui-chat-media{
+	width: 40px;
+}
+.jrtt-package-item .jrtt-package-items:last-child{
+	border: 0;
+}
+.aui-card-list-content-padded {
+	position: relative;
+}
+.aui-card-list-content-padded .jrtt-chat-top-title{
+	color:#373737;
+	font-size:14px;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	background: rgba(0,0,0,0.5);
+	color:#fff;
+	padding:5px 10px;
+}
+.jrtt-package-title{
+	font-size: 14px;
+}
+.jrtt-package-item .jrtt-package-items .jrtt-package-items-img{
+	width: 80px;
+}

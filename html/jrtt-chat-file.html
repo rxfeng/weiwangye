@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>聊天</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+	<script src="../js/aui-toast.js"></script>
+    <link rel="stylesheet" href="../css/aui.2.0.css"/>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/jrtt-chat.css" /> <!--聊天样式-->
+	<style>
+    	.aui-chat-left .aui-chat-inner .chatTap{
+    		background: rgba(0,0,0,0.1);
+    		position: relative;
+    		z-index: 1;
+    	}
+    </style>
+</head>
+<body>
+	<script>
+		var toast = new auiToast({});	//提示窗体
+		toast.loading({
+			title : "页面加载中",
+			duration : 100000
+		});
+	</script>
+	<header class="aui-bar aui-bar-nav jrtt-header" id="aui-header">
+	    <a class="aui-pull-left aui-btn" data-item="forword" data-url="" data-fn="pop">
+	        <span class="aui-iconfont aui-icon-left"></span>
+	    </a>
+	    <div class="aui-title jrtt-header-title jrtt-header-subTitle">聊天</div>
+	    <!--<a class="aui-pull-right aui-btn">
+	        <span class="aui-iconfont aui-icon-my"></span>
+	    </a>-->
+	</header>
+	<div style="overflow: hidden;margin-bottom: 60px;margin-top: 50px;">
+		<section class="aui-chat">
+	    <div class="aui-chat-header">2016年7月13日</div>
+	 
+	    <div class="aui-chat-item aui-chat-left" data-item="forword" data-url="jrtt-details-file.html" data-fn="1">
+	        <div class="aui-chat-media">
+	            <img src="../img/logo@3x.png" />
+	        </div>
+	        
+	        <div class="aui-chat-inner">
+	        	<div class="aui-chat-name">成都电信 <span class="aui-label aui-label-warning">1.1</span></div>
+	            <div class="aui-chat-content">
+	                <div class="aui-card-list-content-padded jrtt-content jrtt-details-tap">
+					    <div class="aui-card-list-title jrtt-activity-title">
+					    	<p class="jrtt-chat-top-title">贵阳翼支付会员营销活动</p>
+					    	<img src="../img/3.jpg"/>
+					    </div>
+					    
+					    <div class="jrtt-line"></div>
+					</div>
+					<div class="jrtt-package-item" style="display: block">
+						<div class="aui-row jrtt-package-items">
+							<div class="aui-col-xs-8 jrtt-package-title aui-ellipsis-2">飞Young 4G聊天版/19元 5G聊天版/35元</div>
+							<img src="../img/right1.jpg" alt="" class="aui-col-xs-4 jrtt-package-items-img"/>
+						</div>
+						<div class="aui-row jrtt-package-items">
+							<div class="aui-col-xs-8 jrtt-package-title aui-ellipsis-2">飞Young 4G聊天版/19元</div>
+							<img src="../img/right2.jpg" alt="" class="aui-col-xs-4 jrtt-package-items-img"/>
+						</div>
+						<div class="aui-row jrtt-package-items">
+							<div class="aui-col-xs-8 jrtt-package-title aui-ellipsis-2">飞Young 4G聊天版/19元</div>
+							<img src="../img/right3.jpg" alt="" class="aui-col-xs-4 jrtt-package-items-img"/>
+						</div>
+						<div class="aui-row jrtt-package-items">
+							<div class="aui-col-xs-8 jrtt-package-title aui-ellipsis-2">飞Young 4G聊天版/19元</div>
+							<img src="../img/right4.jpg" alt="" class="aui-col-xs-4 jrtt-package-items-img"/>
+						</div>
+					</div>
+	            </div>
+	        </div>
+	    </div>
+	    
+	    <div class="aui-chat-item aui-chat-left" data-item="forword" data-url="jrtt-newdetails-file.html" data-fn="1">
+	        <div class="aui-chat-media">
+	            <img src="../img/logo@3x.png" />
+	        </div>
+	        <div class="aui-chat-inner">
+	            <div class="aui-chat-name">成都电信 <span class="aui-label aui-label-warning">1.1</span></div>
+	            <div class="aui-chat-content">
+	                <div class="jrtt-content aui-card-list-content-padded">
+						<div class="aui-card-list-title jrtt-activity-title">贵阳翼支付会员营销活动</div>
+						<div class="aui-card-list-title aui-ellipsis-1 jrtt-activity-subTitle">办翼支付会员送代金劵，超市购物打八折，封顶最高减30元，更多好礼</div>
+						<div class="aui-row aui-row-padded">
+							<div class="aui-col-xs-4">
+								<img src="../img/right1.jpg" />
+							</div>
+							<div class="aui-col-xs-4">
+								<img src="../img/right2.jpg" />
+							</div>
+							<div class="aui-col-xs-4">
+								<img src="../img/right3.jpg" />
+							</div>
+						</div>
+						<div class="jrtt-photo">
+							<ul>
+								<li class="jrtt-activity-time">2017-01-04起，2017-01-31止</li>
+							</ul>
+						</div>
+						<div class="jrtt-line"></div>
+					</div>
+					<div class="aui-card-list-content-padded jrtt-content jrtt-details-tap">
+					    <div class="aui-card-list-title jrtt-activity-title" style="margin-bottom: 5px;">贵阳翼支付会员营销活动</div>
+					    <img src="../img/3.jpg"/>
+					    <div class="jrtt-line"></div>
+					</div>
+					<div class="jrtt-content aui-card-list-content-padded">
+						<div class="aui-row aui-row-padded">
+							<div class="aui-col-xs-8">
+								<div class="jrtt-business-title">
+									三桥营业厅天翼手机卖场
+								</div>
+								<div class="jrtt-photo">
+									<ul>
+										<li class="jrtt-business-subTitle">三桥北路338号</li>
+									</ul>
+								</div>
+							</div>
+							<div class="aui-col-xs-4">
+								<img src="../img/right4.jpg" />
+							</div>
+						</div>
+					</div>	
+	            </div>
+	        </div>
+	    </div>
+	    
+		<div class="aui-chat-item aui-chat-right">
+	        <div class="aui-chat-media">
+	            <img src="../img/timg.jpg" />
+	        </div>
+	        <div class="aui-chat-inner">
+	            <div class="aui-chat-name">流浪男</div>
+	            <div class="aui-chat-content">
+	                <div class="aui-chat-arrow"></div>
+	                <p>手机套餐</p>
+	            </div>
+	            <div class="aui-chat-status">
+	                <i class="aui-iconfont aui-icon-info aui-text-danger"></i>
+	            </div>
+	        </div>
+	    </div>
+	    <div class="aui-chat-item aui-chat-right">
+	        <div class="aui-chat-media">
+	            <img src="../img/timg.jpg" />
+	        </div>
+	        <div class="aui-chat-inner">
+	            <div class="aui-chat-name">流浪男</div>
+	            <div class="aui-chat-content">
+	                <div class="aui-chat-arrow"></div>
+	                <p>手机套餐</p>
+	            </div>
+	        </div>
+	    </div>
+	</section>
+	</div>
+	
+	<!--<footer class="aui-bar aui-bar-tab jrtt-footer-search">
+		<div class="aui-bar-tab-item" tapmode>
+	        <i class="aui-iconfont aui-icon-pencil"></i>
+	    </div>
+	    <div class="aui-bar-tab-item" tapmode style="width:4%;">
+	        <input type="text" class="jrtt-index-footer-search"/>
+	    </div>
+	    <div class="aui-bar-tab-item" tapmode>
+	        <i class="aui-iconfont aui-icon-display"></i>
+	    </div>
+	    <div class="aui-bar-tab-item jrtt-send" tapmode>
+	        <i class="aui-iconfont aui-icon-plus"></i>
+	    </div>
+	</footer>-->
+	<!--<a href="" name="footer"></a>-->
+<footer class="aui-bar aui-bar-tab jrtt-footer-search" id="footer">
+    <div class="aui-bar-tab-item" tapmode>
+        <img src='../img/icon_voice@3x.png' alt="" style="width: 32px;"/>
+    </div>
+    <div class="aui-bar-tab-item" tapmode style="width:4%;">
+        <input type="text" class="jrtt-index-footer-search" style="position: absolute;left:0px;top:0px;padding:0 20px 0 20px;" autofocus="autofocus"/>
+        <img src="../img/search_bar_bg@3x.png" alt="" style="width: 100%;height: 30px;"/>
+    </div>
+    <div class="aui-bar-tab-item" tapmode>
+    	<img src="../img/icon_send@3x.png" alt="" style="width: 32px;" onclick="send();"/>
+    </div>
+</footer>
+</body>
+<script type="text/javascript" src="../js/api.js"></script>
+<script src="../js/jquery-1.10.2.js"></script>
+<script src="../js/touch.js" ></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript">
+	var initApp = function(){
+		
+	}
+	var initHtml = function(){
+		
+	}
+	var subfun = function(that){
+		if($(that).attr("data-fn")=="pop"){
+			window.history.back(-1); 
+		}else{
+			$(that).children('.aui-chat-inner').children('.aui-chat-content').addClass('chatTap');
+	        setTimeout(function(){
+	       		$(that).children('.aui-chat-inner').children('.aui-chat-content').removeClass('chatTap');
+	        },100);
+		}
+	}
+	var forward = function(that,fn){
+		if(fn=="pop"){
+			api.closeWin();
+		}else{
+			$(that).children('.aui-chat-inner').children('.aui-chat-content').addClass('chatTap');
+			var url = $(that).attr("data-url");
+			api.openWin({
+	            name: url.slice(0,url.length-5),
+	            url: url
+	        });
+	        setTimeout(function(){
+	       		$(that).children('.aui-chat-inner').children('.aui-chat-content').removeClass('chatTap');
+	        },100);
+		}
+	}
+	toast.hide();
+	window.document.body.scrollTop = document.body.scrollHeight;
+//	$('.jrtt-index-footer-search').on('input',function(){
+//		var val = $('.jrtt-index-footer-search').val();
+//		if(val != ""){
+//			$('.jrtt-send').html('<p class="jrtt-search-send" onclick=send();>发送</p>')
+//		}else{
+//			$('.jrtt-send').html('<i class="aui-iconfont aui-icon-plus"></i>')
+//		}
+//	});
+	function send(){
+		var val = $('.jrtt-index-footer-search').val().replace(/(^\s*)|(\s*$)/g, "");
+		if(val=="") {
+			$('.jrtt-index-footer-search').val("");
+			$('.jrtt-index-footer-search').attr('placeholder','请输入内容');
+			return;
+		}
+		$('.aui-chat').append('<div class="aui-chat-item aui-chat-right">'+
+	        '<div class="aui-chat-media">'+
+	            '<img src="../img/timg.jpg" />'+
+	        '</div>'+
+	        '<div class="aui-chat-inner">'+
+	            '<div class="aui-chat-name">流浪男</div>'+
+	            '<div class="aui-chat-content">'+
+	                '<div class="aui-chat-arrow"></div>'+
+	                '<p>'+val+'</p>'
+	            +'</div>'+
+	        '</div>'+
+	    '</div>');
+	    $('.jrtt-index-footer-search').val("");
+	    $('.jrtt-index-footer-search').attr('placeholder','');
+	    window.document.body.scrollTop = document.body.scrollHeight;
+	}
+	function detailsTap(ret){
+		$(ret).children('.aui-chat-inner').children('.aui-chat-content').addClass('chatTap');
+		window.location.href='jrtt-details-file.html'; 
+        setTimeout(function(){
+       		$(ret).children('.aui-chat-inner').children('.aui-chat-content').removeClass('chatTap');
+        },100);
+	}
+	function detailsTap2(ret){
+		$(ret).children('.aui-chat-inner').children('.aui-chat-content').addClass('chatTap');
+		window.location.href='jrtt-newdetails-file.html'; 
+        setTimeout(function(){
+       		$(ret).children('.aui-chat-inner').children('.aui-chat-content').removeClass('chatTap');
+        },100);
+	}
+
+</script>
+</html>

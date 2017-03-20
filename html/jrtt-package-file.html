@@ -1,0 +1,172 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>套餐</title>
+    <link rel="stylesheet" href="../css/api.css" />
+	<script src="../js/aui-toast.js"></script>
+    <link rel="stylesheet" href="../css/aui.2.0.css"/>
+    <link rel="stylesheet" href="../css/dropload.css" />
+	<link rel="stylesheet" href="../css/swiper.css" />
+	<link rel="stylesheet" href="../css/aui-pull-refresh.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+<header class="aui-bar aui-bar-nav jrtt-header" id="aui-header">
+    <div class="aui-pull-left jrtt-header-title">成都电信</div>
+    <a class="aui-pull-right aui-btn">
+        <img src="../img/logo@3x.png" alt="" style="width: 24px;"/>
+    </a>
+</header>
+<div class="jrtt-index-top">
+	<div class="swiper-container1 jrtt-top-title1" id="tuijian">
+		<div class="swiper-wrapper jrtt-container">
+			<div class="swiper-slide">
+				<a href="javascript:;" data-item="forword" data-url="../index.html" data-fn="1">推荐</a>
+			</div>
+			<div class="swiper-slide">
+				<a href="javascript:;" class="aa" data-item="forword" data-url="" data-fn="2">套餐</a>
+			</div>
+			<div class="swiper-slide jrtt-size4">
+				<a href="javascript:;" data-item="forword" data-url="jrtt-activity-file.html" data-fn="3">优惠活动</a>
+			</div>
+			<div class="swiper-slide">
+				<a href="javascript:;" data-item="forword" data-url="" data-fn="4">ITV</a>
+			</div>
+			<div class="swiper-slide jrtt-size4">
+				<a href="javascript:;" data-item="forword" data-url="jrtt-international-file.html" data-fn="5">国际漫游</a>
+			</div>
+			<div class="swiper-slide jrtt-size3">
+				<a href="javascript:;" data-item="forword" data-url="jrtt-business-file.html" data-fn="6">营业厅</a>
+			</div>
+			<div class="swiper-slide">
+				<a href="javascript:;" data-item="forword" data-url="" data-fn="7">手机</a>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="aui-refresh-content jrtt-content page out">
+	<div class="aui-content">
+		<!--轮播图-->
+		<div class="jrtt-package-carousel">
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<img src="../img/1.jpg" alt="" />
+					</div>
+					<div class="swiper-slide">
+						<img src="../img/2.jpg" alt="" />
+					</div>
+					<div class="swiper-slide">
+						<img src="../img/3.jpg" alt="" />
+					</div>
+					<div class="swiper-slide">
+						<img src="../img/4.jpg" alt="" />
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="aui-content aui-list aui-list-in">
+			<div class="aui-list-item" onclick="items(0);">
+				<div class=" jrtt-package-title">乐享</div>
+				<div class="jrtt-package-jiantou"><span class="aui-iconfont aui-icon-right"></span></div>
+			</div>
+			<!--内容1-->
+			<div class="jrtt-package-item">
+				<div class="aui-row jrtt-package-items">
+					<div class="aui-col-xs-8 jrtt-package-title">乐享 4G聊天版/19元</div>
+					<img src="../img/1.jpg" alt="" class="aui-col-xs-4 jrtt-package-items-img"/>
+				</div>
+			</div>
+			<!--内容1-->
+			<div class="aui-list-item" onclick="items(1);">
+				<div class=" jrtt-package-title">4G套餐</div>
+				<div class="jrtt-package-jiantou"><span class="aui-iconfont aui-icon-right"></span></div>
+			</div>
+			<!--内容2-->
+			<div class="jrtt-package-item">
+				<div class="aui-row jrtt-package-items">
+					<div class="aui-col-xs-8 jrtt-package-title">飞Young 4G聊天版/19元</div>
+					<img src="../img/2.jpg" alt="" class="aui-col-xs-4 jrtt-package-items-img"/>
+				</div>
+				<div class="aui-row jrtt-package-items">
+					<div class="aui-col-xs-8 jrtt-package-title">飞Young 4G聊天版/19元</div>
+					<img src="../img/1.jpg" alt="" class="aui-col-xs-4 jrtt-package-items-img"/>
+				</div>
+			</div>
+			<!--内容2-->
+		</div>
+	</div>
+</div>
+<br /><br />
+<footer class="aui-bar aui-bar-tab" id="footer">
+	<div class="aui-bar-tab-item aui-active" data-item="forword" data-url="" data-fn="8">
+        <i class="aui-iconfont aui-icon-home"></i>
+    </div>
+    <div class="aui-bar-tab-item" data-item="forword" data-url="" data-fn="9">
+        <i class="aui-iconfont aui-icon-comment"></i>
+    </div>
+    <div class="aui-bar-tab-item" data-item="forword" data-url="jrtt-my-file.html" data-fn="10">
+        <i class="aui-iconfont aui-icon-my"></i>
+    </div>
+</footer>
+
+</body>
+<script src="../js/api.js"></script>
+<script src="../js/jquery-1.10.2.js"></script>
+<script src="../js/touch.js" ></script>
+<script src="../js/dropload.js"></script>   <!--上拉刷新，下拉加载-->
+<script src="../js/swiper.js"></script>
+<script src="../js/common.js"></script>
+<script type="text/javascript">
+	var initApp = function(){
+		
+	}
+	var initHtml = function(){
+		
+	}
+	var subfun = function(that){
+		$(".jrtt-container div a").removeClass('aa');
+    	$(that).addClass('aa');
+	}
+	var forward = function(that,fn){
+		var url = $(that).attr("data-url");
+		switch(fn){
+			case "2":case "4":case "7":
+    			$(".jrtt-container div a").removeClass('aa');
+    			$(that).addClass('aa');
+    			break;
+			default:
+				api.openWin({
+		            name: url.slice(0,url.length-5),
+		            url: url
+		        });
+		}
+	}
+//滑动
+   	var swiper = new Swiper('.swiper-container1', {
+        slidesPerView: 'auto',
+        paginationClickable: true,
+        spaceBetween: 10
+ 	});
+ 	var t = $('#aui-header').height();
+	var t2 = t+$('.jrtt-index-top').height();
+	$('.jrtt-index-top').css('top',t+'px');
+	$('.jrtt-content').css('margin-top',t2+'px');
+
+//	轮播图
+	var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 'auto',
+        paginationClickable: true,
+        spaceBetween: 0
+ 	});
+//	套餐--列表
+	function items(ind){
+		$($('.jrtt-package-item')[ind]).toggleClass("aui-show");
+		$($('.aui-list-item')[ind]).find('.jrtt-package-jiantou span').toggleClass('aui-icon-down');
+	}
+</script>
+</html>

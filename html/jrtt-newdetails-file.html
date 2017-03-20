@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>详情</title>
+    <link rel="stylesheet" href="../css/api.css" />
+	<script src="../js/aui-toast.js"></script>
+    <link rel="stylesheet" href="../css/aui.2.0.css"/>
+    <link rel="stylesheet" href="../css/dropload.css" />
+	<link rel="stylesheet" href="../css/swiper.css" />
+	<link rel="stylesheet" href="../css/aui-pull-refresh.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../font/font-awesome-4.7.0/css/font-awesome.css" />
+    <link rel="stylesheet" href="../css/jrtt-details.css" />
+</head>
+<body>
+	<script>
+		var toast = new auiToast({});	//提示窗体
+		toast.loading({
+			title : "页面加载中",
+			duration : 100000
+		});
+	</script>
+	<header class="aui-bar aui-bar-nav jrtt-header" id="aui-header">
+	    <a class="aui-pull-left aui-btn" data-item="forword" data-url="" data-fn="pop">
+	        <span class="aui-iconfont aui-icon-left"></span>
+	    </a>
+	    <div class="aui-title jrtt-header-title jrtt-header-subTitle">详情</div>
+	    <!--<a class="aui-pull-right aui-btn">
+	        <span class="aui-iconfont aui-icon-my"></span>
+	    </a>-->
+	</header>
+	<div class="aui-refresh-content jrtt-content" style="margin-top: 50px;">
+		<div class="aui-content">
+			<div class="jrtt-package-item itemShow">
+				<div class="aui-row jrtt-package-items">
+					<img src="../img/2.jpg" alt="" class="aui-col-xs-4 jrtt-package-items-img"/>
+					<div class="aui-col-xs-8 jrtt-package-title">
+						<p class="jrtt-newdetails-title">4G上网套餐</p>
+						<p class="jrtt-newdetails-subTitle">和4G套餐含超多流量，超低资费，全国（不含港澳台）无漫游！4G套餐用户，宽带优惠享！</p>
+						<p class="jrtt-newdetails-money"><span>58</span>元/月</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="jrtt-newdetails">
+		<div class="jrtt-newdetails-left">
+			<p>适合用户</p>：
+		</div>
+		<div class="jrtt-newdetails-right">
+			<ul>
+				<li>动感地带</li>
+				<li>神州行</li>
+				<li>全球通</li>
+			</ul>
+		</div>
+	</div>
+	<div class="jrtt-newdetails">
+		<div class="jrtt-newdetails-left">
+			<p>生效日期</p>：
+		</div>
+		<div class="jrtt-newdetails-right">
+			<ul>
+				<li>次日</li>
+			</ul>
+		</div>
+	</div>
+	<div class="jrtt-newdetails">
+		<div class="jrtt-newdetails-left">
+			<p>商户</p>：
+		</div>
+		<div class="jrtt-newdetails-right">
+			<ul>
+				<li>北京移动。客服电话10086</li>
+			</ul>
+		</div>
+	</div>
+	<div class="jrtt-newdetails">
+		<div class="jrtt-newdetails-left">
+			<p>功能</p>：
+		</div>
+		<div class="jrtt-newdetails-right">
+			<ul>
+				<li class="jrtt-newdetails-right-fun fun-current">4G上网套餐58元</li>
+				<li class="jrtt-newdetails-right-fun">4G上网套餐88元</li>
+				<li class="jrtt-newdetails-right-fun">4G上网套餐128元</li>
+				<li class="jrtt-newdetails-right-fun">4G上网套餐158元</li>
+				<li class="jrtt-newdetails-right-fun">4G上网套餐188元</li>
+				<li class="jrtt-newdetails-right-fun">4G上网套餐288元</li>
+				<li class="jrtt-newdetails-right-fun">4G上网套餐388元</li>
+				<li class="jrtt-newdetails-right-fun">4G上网套餐588元</li>
+				<li class="jrtt-newdetails-right-fun">4G上网套餐888元</li>
+			</ul>
+		</div>
+	</div>
+	<div class="jrtt-newdetails-package">
+		<div class="jrtt-newdetails-package-title">
+			<ul>
+				<li class="current" onclick="package(0);">套餐详情</li>
+				<li onclick="package(1);">资费标准</li>
+				<li onclick="package(2);">常见问题</li>
+				<li onclick="package(3);">温馨提示</li>
+			</ul>
+		</div>
+		<div class="jrtt-newdetails-package-content">
+			<div class="jrtt-newdetails-package-content1 newdetails-show">
+				<p>温馨提示：套餐内包含的语音等免费资源当月有效，未用完部分不累计到下月。</p>
+				<p>年10月1日起， 套餐内当月未消费的剩余流量，可以结转至次月使用，结转流量次月月底失效。若您办理了套餐变更（含档位变更、变更回原套餐）、销号等业务，或者手机号码整月处于停机状态，当月剩余流量将无法结转。当月存在结转流量时，同一类型的流量优先扣减上月结转的剩余流量，再扣减套餐内流量。不同类型的流量，按照原有 的扣费顺序扣减，计费规则不变。</p>
+				<img src="../img/cont.jpg" alt="" style="width: 100%;"/>
+			</div>
+			<div class="jrtt-newdetails-package-content2">
+				<div  style="overflow: auto;">
+					<table border="1" class="jrtt-newdetails-package-content2-table">
+						<tr>
+							<th>月功能费</th>
+							<th>国内主叫时长</th>
+							<th>国内移动数据流量</th>
+						</tr>
+						<tr>
+							<td>58元/月</td>
+							<td>100分钟</td>
+							<td>500MB</td>
+						</tr>
+						<tr>
+							<td>88元/月</td>
+							<td>220分钟</td>
+							<td>700MB</td>
+						</tr>
+						<tr>
+							<td>128元/月</td>
+							<td>420分钟</td>
+							<td>700MB</td>
+						</tr>
+						<tr>
+							<td>158元/月</td>
+							<td>510分钟</td>
+							<td>1024MB</td>
+						</tr>
+						<tr>
+							<td>188元/月</td>
+							<td>600分钟</td>
+							<td>3072MB</td>
+						</tr>
+						<tr>
+							<td>288元/月</td>
+							<td>1000分钟</td>
+							<td>4096MB</td>
+						</tr>
+						<tr>
+							<td>388元/月</td>
+							<td>1400分钟</td>
+							<td>6144MB</td>
+						</tr>
+						<tr>
+							<td>588元/月</td>
+							<td>2200分钟</td>
+							<td>10230MB</td>
+						</tr>
+						<tr>
+							<td>688元/月</td>
+							<td>3600分钟</td>
+							<td>20480MB</td>
+						</tr>
+					</table>
+				</div>
+				<br />
+				<div style="overflow: auto;">
+					<table border="1" class="jrtt-newdetails-package-content2-table">
+						<tr>
+							<th>月功能费</th>
+							<th>国内主叫时长</th>
+							<th>国内移动数据流量</th>
+							<th>国际漫游</th>
+							<th>省际漫游</th>
+							<th>市内通话</th>
+						</tr>
+						<tr>
+							<td>58元/月</td>
+							<td>100分钟</td>
+							<td>500MB</td>
+							<td>1元/分钟</td>
+							<td>0.7元/分钟</td>
+							<td>0.22元/分钟</td>
+						</tr>
+						<tr>
+							<td>88元/月</td>
+							<td>220分钟</td>
+							<td>700MB</td>
+							<td>1元/分钟</td>
+							<td>0.7元/分钟</td>
+							<td>0.22元/分钟</td>
+						</tr>
+						<tr>
+							<td>128元/月</td>
+							<td>420分钟</td>
+							<td>700MB</td>
+							<td>1元/分钟</td>
+							<td>0.7元/分钟</td>
+							<td>0.22元/分钟</td>
+						</tr>
+						<tr>
+							<td>158元/月</td>
+							<td>510分钟</td>
+							<td>1024MB</td>
+							<td>1元/分钟</td>
+							<td>0.7元/分钟</td>
+							<td>0.22元/分钟</td>
+						</tr>
+						<tr>
+							<td>188元/月</td>
+							<td>600分钟</td>
+							<td>3072MB</td>
+							<td>1元/分钟</td>
+							<td>0.7元/分钟</td>
+							<td>0.22元/分钟</td>
+						</tr>
+						<tr>
+							<td>288元/月</td>
+							<td>1000分钟</td>
+							<td>4096MB</td>
+							<td>1元/分钟</td>
+							<td>0.7元/分钟</td>
+							<td>0.22元/分钟</td>
+						</tr>
+						<tr>
+							<td>388元/月</td>
+							<td>1400分钟</td>
+							<td>6144MB</td>
+							<td>1元/分钟</td>
+							<td>0.7元/分钟</td>
+							<td>0.22元/分钟</td>
+						</tr>
+						<tr>
+							<td>588元/月</td>
+							<td>2200分钟</td>
+							<td>10230MB</td>
+							<td>1元/分钟</td>
+							<td>0.7元/分钟</td>
+							<td>0.22元/分钟</td>
+						</tr>
+						<tr>
+							<td>688元/月</td>
+							<td>3600分钟</td>
+							<td>20480MB</td>
+							<td>1元/分钟</td>
+							<td>0.7元/分钟</td>
+							<td>0.22元/分钟</td>
+						</tr>
+					</table>
+				</div>
+				
+				<p>说明</p>
+				<p>
+					<b>1、2015年11月1日起，新订购58/88元档和4G套餐的客户将按最新资费执行；2015年11月1日前已办理58/88元档和4G套餐的客户，需要自行变更后才能享受新的资费标准。</b>
+				</p>
+				<p>2、套餐中所指的国内、全国等范围均不含港澳台地区。套餐中包含的流量在2G/3G/4G网络下均可使用。</p>
+				<p>、办理了和4G套餐的客户，套餐生效后，在全国范围内均可享受接听免费的优惠。（不含12520等特服号码）</p>
+				<p>4、超出后，38元档套餐国内主叫按0.25元/分钟计费，58—888元档套餐国内主叫按0.19元/分钟计费；2016年12月1日起，套餐内流量用尽后，超出资费将按每10元100MB计费，不足10元部分按0.29元/MB收取，以此类推；直至超出流量费用达到60元时，不再收取费用，此时您可以继续使用流量直至1GB。再次超出后，按同样规则以此类推，直至流量双封顶。</p>
+				<p>
+					<b>5、188档和288档套餐包含500MB促销流量，有效期截止至2018年12月31日。到期后若无相关通知，则自动延续一年。活动结束后，188元档和288元档套餐包含的国内移动数据流量将分别调整为：2.5GB、3.5GB。</b>
+				</p>
+				<p>
+					<b>6、2015年5月1日起，订购指定4G流量套餐的客户，每月可以获赠5GB/不限量的国内WLAN流量。本活动为短期促销，何时结束另行通知。</b>
+				</p>
+				<p>（1）<b>可获赠5GB WLAN流量的指定4G流量套餐包含：</b>50元/70元档流量可选包、50元/70元档4G流量模组、138元/158元/238元档4G飞享套餐升级版、128元/158元/188元档和4G套餐。</p>
+				<p><b>可获赠不限量WLAN流量的指定4G流量套餐包含：</b>100元及以上档位流量可选包、100元及以上档位4G流量模组、268元及以上档位4G飞享套餐升级版、288元及以上档位和4G套餐。</p>
+				<p>（2）符合条件的新订购套餐客户获赠的WLAN流量下月生效；符合条件的已订购套餐客户获赠的WLAN流量将于2015年6月1日生效。</p>
+				<p>（3）赠送的WLAN流量，仍执行每月50GB的WLAN流量封顶规则。</p>
+				<p>（4）指定4G流量套餐之间为“或”的关系，您订购其中任意一档套餐，即可获得WLAN流量赠送，且只赠送一次。若您同时订购多个指定套餐，则按最优赠送一次。</p>
+				<p>（5）您在获赠WLAN流量后，若将WLAN取消，则赠送的WLAN流量也会同时取消。您恢复WLAN功能后，也无法恢复赠送。您需要重新开通活动中的指定套餐，才可再次获赠相应的WLAN流量。</p>
+			</div>
+			<div class="jrtt-newdetails-package-content3">
+				<p>Q：套餐里包含的流量在4G网络下能用吗？ </p>
+				<p>A：套餐中包含的流量在2G/3G/4G网络下均可使用。</p>
+			</div>
+			<div class="jrtt-newdetails-package-content4">
+				<p>1、关于生效时间的说明：</p>
+				<p>（1）开通：新入网客户或全球通/神州行升级版标准卡标准资费客户，当月开通当月生效，当月套餐费及免费资源均按当月剩余天数进行计算，下月起按所办理的套餐执行。其他客户开通套餐，当月开通下月生效。</p>
+				<p>（2）变更/取消：当月变更/取消，下月生效。只有全球通、神州行升级版标准卡客户可以取消套餐，取消后执行相应品牌的标准资费；其他品牌客户无法取消套餐，只能变更为其它主套餐。</p>
+				<p>2、每月最后一天19点后无法办理。</p>
+				<p>3、与 2G/3G/4G主套餐、自动加油包、全球通专属数据包、新本地15元数据流量套餐、移动数据流量产品商务套餐、以及神州行标准客户的15元CMWAP包月不限量套餐、全球通/动感地带的MO套餐20元档等包月不限量套餐互斥，详询10086。</p>
+				<p>4、单次通话时长计算方法：通话时长计费单元为分钟的不足一分钟部分按一分钟计，计费单元为6秒的不足6秒部分按6秒计。</p>
+				<p>5、更多业务详情，请您咨询北京移动<a href="#" style="font-weight: bold;">在线客服</a>。</p>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="../js/api.js"></script>
+<script src="../js/jquery-1.10.2.js"></script>
+<script src="../js/touch.js" ></script>
+<script src="../js/dropload.js"></script>   <!--上拉刷新，下拉加载-->
+<script src="../js/swiper.js"></script>
+<script src="../js/aui-scroll.js"></script> <!--滚动（上拉加载）-->
+<script src="../js/aui-pull-refresh.js"></script>  <!--下拉刷新-->
+<script src="../js/common.js"></script>
+<script>
+	var initApp = function(){
+		
+	}
+	var initHtml = function(){
+		
+	}
+	var subfun = function(that){
+		if($(that).attr("data-fn")=="pop"){
+			window.history.back(-1); 
+		}
+	}
+	var forward = function(that,fn){
+		if(fn=="pop"){
+			api.closeWin();
+		}
+	}
+	toast.hide();
+	function package(ind){
+		$('.jrtt-newdetails-package-title ul li').removeClass('current');
+		$('.jrtt-newdetails-package-title ul li').eq(ind).addClass('current');
+		$('.jrtt-newdetails-package-content>div').removeClass('newdetails-show');
+		$('.jrtt-newdetails-package-content>div').eq(ind).addClass('newdetails-show')
+	}
+	$(document).on("tap", ".jrtt-newdetails-right-fun", function(){
+		$(this).siblings().removeClass('fun-current');
+		$(this).addClass('fun-current');
+		var money = $(this)[0].innerHTML;
+		var newMoney = parseInt(money.substring(12,6));
+		$('.jrtt-newdetails-money span').html(newMoney);
+	});
+</script>
+</html>
