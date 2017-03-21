@@ -1,0 +1,40 @@
+/*顶部*/
+.jrtt-header {
+    background: skyblue;
+    position: fixed;
+    top:0;
+}
+/*加号*/
+/*.jrtt-jiahao{
+    position: absolute;
+    right:0;
+    top:0;
+    display: block;
+    z-index: 10;
+    padding-right: 10px;
+    padding-left: 10px;
+    background: rgba(230,230,230,0.9); 
+    color:skyblue;
+    font-weight:700;
+}*/
+/*小字的边框*/
+.jrtt-photo .jrtt-border{
+    border-radius: 3px;
+    border: 1px solid skyblue;
+    color:skyblue;
+    font-size: 10px;
+   text-align: center;
+	padding-top:0;
+	padding-bottom:0;
+}
+/*覆盖aui里的样式*/
+.aui-bar-tab .aui-active {
+    color: skyblue;
+}
+/*顶部推荐的点击*/
+.jrtt-top-title1 .jrtt-container .swiper-slide .aa{
+	color:skyblue;
+}
+.jrtt-top-title .jrtt-container .swiper-slide .aa{
+	color:skyblue;
+}

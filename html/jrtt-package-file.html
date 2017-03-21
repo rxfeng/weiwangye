@@ -121,6 +121,7 @@
 <script src="../js/dropload.js"></script>   <!--上拉刷新，下拉加载-->
 <script src="../js/swiper.js"></script>
 <script src="../js/common.js"></script>
+<script src="../js/skin1.js"></script>
 <script type="text/javascript">
 	var initApp = function(){
 		
@@ -165,7 +166,9 @@
  	});
 //	套餐--列表
 	function items(ind){
-		$($('.jrtt-package-item')[ind]).toggleClass("aui-show");
+//		$($('.jrtt-package-item')[ind]).toggleClass("aui-show");  
+//		$($('.jrtt-package-item')[ind]).fadeToggle();
+		$($('.jrtt-package-item')[ind]).slideToggle();
 		$($('.aui-list-item')[ind]).find('.jrtt-package-jiantou span').toggleClass('aui-icon-down');
 	}
 </script>
