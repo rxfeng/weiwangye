@@ -114,6 +114,16 @@
 </footer>
 
 </body>
+<script id="jrtt-international-list-template" type="text/x-handlebars-template">
+	{{#each list}}
+	<div class="jrtt-international-items">
+		<div class="jrtt-international-title">{{text}}</div>
+		<div class="jrtt-international-items-imgs">
+			<img src="{{img}}" alt="" class="jrtt-international-items-img"/>
+		</div>
+	</div>
+	{{/each}}
+</script>
 <script src="../js/api.js"></script>
 <script src="../js/jquery-1.10.2.js"></script>
 <script src="../js/touch.js" ></script>
@@ -121,6 +131,7 @@
 <script src="../js/swiper.js"></script>
 <script src="../js/aui-scroll.js"></script> <!--滚动（上拉加载）-->
 <script src="../js/aui-pull-refresh.js"></script>  <!--下拉刷新-->
+<script src="../js/handlebars-v1.3.0.js"></script>
 <script src="../js/common.js"></script>
 <script type="text/javascript">
 	var initApp = function(){
@@ -176,11 +187,16 @@
             },3000);
             function foo(){
             	if(isfirst){
-            		$('.jrtt-international-item').append(
-            			'<div class="jrtt-international-items">'+
-							'<div class="jrtt-international-title">"高铁院士"两会答高铁八问：高铁不能装WiFi</div>'+
-							'<div class="jrtt-international-items-imgs"><img src="../img/2.jpg" alt="" class="jrtt-international-items-img"/></div>'+
-						'</div>');
+            		$.ajax({
+						url: '../internationalInfo.json',
+						type: 'get',
+						dataType: 'json',
+						data: {},
+						success: function (data) {
+							var myTemplate = Handlebars.compile($("#jrtt-international-list-template").html());
+							$('.jrtt-international-item').append(myTemplate(data));
+						}
+					});
             		isfirst = false;
             	}
             }
@@ -195,10 +211,21 @@
 		triggerDistance:100
 	},function(ret){
 		if(ret.status=='success'){
-			
+			$.ajax({
+				url: '../internationalInfo.json',
+				type: 'get',
+				dataType: 'json',
+				data: {},
+				success: function (data) {
+					setTimeout(function(){
+						var myTemplate = Handlebars.compile($("#jrtt-international-list-template").html());
+						$('.jrtt-international-item').prepend(myTemplate(data));  //插入到最开始的位置
+						pullRefresh.cancelLoading();  //刷新成功后调用此方法隐藏
+					},2000)
+				}
+			});	
 		}
-		pullRefresh.cancelLoading();  //刷新成功后调用此方法隐藏
-	},1500);
+	},1000);
 </script>
 
 

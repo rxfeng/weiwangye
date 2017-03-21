@@ -95,7 +95,7 @@
 			</div>
 		</div>
 		<div class="aui-card-list-content-padded">
-			<div class="aui-card-list-title jrtt-activity-title">贵阳翼支付会员营销活动</div>
+			<div class="aui-card-list-title jrtt-activity-title">新疆翼支付会员营销活动</div>
 			<div class="aui-card-list-title aui-ellipsis-1 jrtt-activity-subTitle">办翼支付会员送代金劵，超市购物打八折，封顶最高减30元，更多好礼</div>
 			<div class="aui-row aui-row-padded">
 				<div class="aui-col-xs-4">
@@ -399,13 +399,15 @@
 				dataType: 'json',
 				data: {},
 				success: function (data) {
-					var myTemplate = Handlebars.compile($("#jrtt-list-template").html());
-					$('.aui-content').append(myTemplate(data));
+					setTimeout(function(){
+						var myTemplate = Handlebars.compile($("#jrtt-list-template").html());
+						$('.aui-content').prepend(myTemplate(data));
+						pullRefresh.cancelLoading();  //刷新成功后调用此方法隐藏
+					},2000)
 				}
 			});
 		}
-		pullRefresh.cancelLoading();  //刷新成功后调用此方法隐藏
-	},1500);
+	},1000);
 </script>
 
 </html>

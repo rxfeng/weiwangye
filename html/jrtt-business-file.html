@@ -98,6 +98,17 @@
 </footer>
 
 </body>
+<script id="jrtt-business-list-template" type="text/x-handlebars-template">
+	{{#each list}}
+	<div class="aui-row jrtt-package-items">
+		<div class="aui-col-xs-8 jrtt-package-title">
+			<p class="jrtt-business-title">{{text}}</p>
+			<p class="jrtt-business-subTitle">{{subtext}}</p>
+		</div>
+		<img src="{{img}}" alt="" class="aui-col-xs-4 jrtt-package-items-img"/>
+	</div>
+	{{/each}}
+</script>
 <script src="../js/api.js"></script>
 <script src="../js/jquery-1.10.2.js"></script>
 <script src="../js/touch.js" ></script>
@@ -105,6 +116,7 @@
 <script src="../js/swiper.js"></script>
 <script src="../js/aui-scroll.js"></script> <!--滚动（上拉加载）-->
 <script src="../js/aui-pull-refresh.js"></script>  <!--下拉刷新-->
+<script src="../js/handlebars-v1.3.0.js"></script>
 <script src="../js/common.js"></script>
 <script type="text/javascript">
 	var initApp = function(){
@@ -158,15 +170,16 @@
             },3000);
             function foo(){
             	if(isfirst){
-            		$('.jrtt-package-item').append(
-            			'<div class="aui-row jrtt-package-items">'+
-							'<div class="aui-col-xs-8 jrtt-package-title">'+
-								'<p class="jrtt-business-title">三桥营业厅天翼手机卖场</p>'+
-								'<p class="jrtt-business-subTitle">三桥北路338号</p>'+
-							'</div>'+
-							'<img src="../img/2.jpg" alt="" class="aui-col-xs-4 jrtt-package-items-img"/>'+
-						'</div>'
-						);
+            		$.ajax({
+						url: '../businessInfo.json',
+						type: 'get',
+						dataType: 'json',
+						data: {},
+						success: function (data) {
+							var myTemplate = Handlebars.compile($("#jrtt-business-list-template").html());
+							$('.jrtt-package-item').append(myTemplate(data));
+						}
+					});
             		isfirst = false;
             	}
             }
@@ -181,10 +194,21 @@
 		triggerDistance:100
 	},function(ret){
 		if(ret.status=='success'){
-			
+			$.ajax({
+				url: '../businessInfo.json',
+				type: 'get',
+				dataType: 'json',
+				data: {},
+				success: function (data) {
+					setTimeout(function(){
+						var myTemplate = Handlebars.compile($("#jrtt-business-list-template").html());
+						$('.jrtt-package-item').prepend(myTemplate(data));
+						pullRefresh.cancelLoading();  //刷新成功后调用此方法隐藏
+					},2000)
+				}
+			});
 		}
-		pullRefresh.cancelLoading();  //刷新成功后调用此方法隐藏
-	},1500);
+	},1000);
 </script>
 
 </html>

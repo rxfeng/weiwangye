@@ -79,26 +79,26 @@
 			<div class="jrtt-line"></div>
 		</div>
 		<div class="aui-card-list-content-padded">
-		<div class="aui-card-list-title jrtt-activity-title">新疆翼支付会员营销活动</div>
-		<div class="aui-card-list-title aui-ellipsis-1 jrtt-activity-subTitle">办翼支付会员送代金劵，超市购物打八折，封顶最高减30元，更多好礼</div>
-		<div class="aui-row aui-row-padded">
-			<div class="aui-col-xs-4">
-				<img src="../img/right1.jpg" />
+			<div class="aui-card-list-title jrtt-activity-title">新疆翼支付会员营销活动</div>
+			<div class="aui-card-list-title aui-ellipsis-1 jrtt-activity-subTitle">办翼支付会员送代金劵，超市购物打八折，封顶最高减30元，更多好礼</div>
+			<div class="aui-row aui-row-padded">
+				<div class="aui-col-xs-4">
+					<img src="../img/right1.jpg" />
+				</div>
+				<div class="aui-col-xs-4">
+					<img src="../img/right2.jpg" />
+				</div>
+				<div class="aui-col-xs-4">
+					<img src="../img/right3.jpg" />
+				</div>
 			</div>
-			<div class="aui-col-xs-4">
-				<img src="../img/right2.jpg" />
+			<div class="jrtt-photo">
+				<ul>
+					<li class="jrtt-activity-time">2017-01-04起，2017-01-31止</li>
+				</ul>
 			</div>
-			<div class="aui-col-xs-4">
-				<img src="../img/right3.jpg" />
-			</div>
+			<div class="jrtt-line"></div>
 		</div>
-		<div class="jrtt-photo">
-			<ul>
-				<li class="jrtt-activity-time">2017-01-04起，2017-01-31止</li>
-			</ul>
-		</div>
-		<div class="jrtt-line"></div>
-	</div>
 		<div class="aui-card-list-content-padded">
 			<div class="aui-card-list-title jrtt-activity-title">新疆翼支付会员营销活动</div>
 			<div class="aui-card-list-title aui-ellipsis-1 jrtt-activity-subTitle">办翼支付会员送代金劵，超市购物打八折，封顶最高减30元，更多好礼</div>
@@ -199,6 +199,31 @@
     </div>
 </footer>
 </body>
+<script id="jrtt-activity-list-template" type="text/x-handlebars-template">
+	{{#each list}}
+	<div class="aui-card-list-content-padded">
+		<div class="aui-card-list-title jrtt-activity-title">{{text}}</div>
+		<div class="aui-card-list-title aui-ellipsis-1 jrtt-activity-subTitle">{{subtext}}</div>
+		<div class="aui-row aui-row-padded">
+			<div class="aui-col-xs-4">
+				<img src="{{img1}}" />
+			</div>
+			<div class="aui-col-xs-4">
+				<img src="../img/2.jpg" />
+			</div>
+			<div class="aui-col-xs-4">
+				<img src="../img/3.jpg" />
+			</div>
+		</div>
+		<div class="jrtt-photo">
+			<ul>
+				<li class="jrtt-activity-time">2017-01-04起，2017-01-31止</li>
+			</ul>
+		</div>
+		<div class="jrtt-line"></div>
+	</div>
+	{{/each}}
+</script>
 <script src="../js/api.js"></script>
 <script src="../js/jquery-1.10.2.js"></script>
 <script src="../js/touch.js" ></script>
@@ -206,6 +231,7 @@
 <script src="../js/swiper.js"></script>
 <script src="../js/aui-scroll.js"></script> <!--滚动（上拉加载）-->
 <script src="../js/aui-pull-refresh.js"></script>  <!--下拉刷新-->
+<script src="../js/handlebars-v1.3.0.js"></script>
 <script src="../js/common.js"></script>
 <script type="text/javascript">
 	var initApp = function(){
@@ -259,28 +285,16 @@
             },3000);
             function foo(){
             	if(isfirst){
-            		$('.jrtt-content').append(
-            			'<div class="aui-card-list-content-padded">'+
-							'<div class="aui-card-list-title jrtt-activity-title">新疆翼支付会员营销活动</div>'+
-							'<div class="aui-card-list-title aui-ellipsis-1 jrtt-activity-subTitle">办翼支付会员送代金劵，超市购物打八折，封顶最高减30元，更多好礼</div>'+
-							'<div class="aui-row aui-row-padded">'+
-								'<div class="aui-col-xs-4">'+
-									'<img src="../img/2.jpg" />'+
-								'</div>'+
-								'<div class="aui-col-xs-4">'+
-									'<img src="../img/3.jpg" />'+
-								'</div>'+
-								'<div class="aui-col-xs-4">'+
-									'<img src="../img/4.jpg" />'+
-								'</div>'+
-							'</div>'+
-							'<div class="jrtt-photo">'+
-								'<ul>'+
-									'<li class="jrtt-activity-time">2017-01-04起，2018-01-31止</li>'+
-								'</ul>'+
-							'</div>'+
-							'<div class="jrtt-line"></div>'+
-						'</div>');
+            		$.ajax({
+						url: '../activityInfo.json',
+						type: 'get',
+						dataType: 'json',
+						data: {},
+						success: function (data) {
+							var myTemplate = Handlebars.compile($("#jrtt-activity-list-template").html());
+							$('.jrtt-content').append(myTemplate(data));
+						}
+					});
             		isfirst = false;
             	}
             }
@@ -295,9 +309,20 @@
 		triggerDistance:100
 	},function(ret){
 		if(ret.status=='success'){
-			
+			$.ajax({
+				url: '../activityInfo.json',
+				type: 'get',
+				dataType: 'json',
+				data: {},
+				success: function (data) {
+					setTimeout(function(){
+						var myTemplate = Handlebars.compile($("#jrtt-activity-list-template").html());
+						$('.jrtt-content').prepend(myTemplate(data));  //插入到最开始的位置
+						pullRefresh.cancelLoading();  //刷新成功后调用此方法隐藏
+					},2000)
+				}
+			});
 		}
-		pullRefresh.cancelLoading();  //刷新成功后调用此方法隐藏
-	},1500);
+	},1000);
 </script>
 </html>
