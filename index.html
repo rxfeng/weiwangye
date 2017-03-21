@@ -14,6 +14,16 @@
 	<link rel="stylesheet" href="css/aui-pull-refresh.css" />
 	<link rel="stylesheet" href="font/font-awesome-4.7.0/css/font-awesome.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <style>
+    	.jrtt-package-item .jrtt-package-items{
+    		margin: 0 20px;
+    	}
+    	.jrtt-package-item .jrtt-package-items:last-child{
+			padding: 10px 0px 10px 0px;
+			margin: 0 20px;
+		}
+	
+    </style>
 </head>
 <body>
 <script>
@@ -24,7 +34,7 @@
 	});
 </script>
 <header class="aui-bar aui-bar-nav jrtt-header" id="aui-header">
-    <div class="aui-pull-left jrtt-header-title">成都电信</div>
+    <div class="aui-pull-left jrtt-header-title">新疆电信</div>
     <a class="aui-pull-right aui-btn">
         <img src="img/logo@3x.png" alt="" style="width: 24px;"/>
     </a>
@@ -271,12 +281,23 @@
     </div>
 </footer>
 </body>
+<script id="jrtt-list-template" type="text/x-handlebars-template">
+	<div class="jrtt-package-item" style="display: block">
+		{{#each list}}
+		<div class="aui-row jrtt-package-items">
+			<div class="aui-col-xs-8 jrtt-package-title">{{text}}</div>
+			<img src="{{img}}" alt="" class="aui-col-xs-4 jrtt-package-items-img"/>
+		</div>
+		{{/each}}
+	</div>
+</script>
 <script src="js/api.js"></script>
 <script src="js/jquery-1.10.2.js"></script>
 <script src="js/touch.js" ></script>
 <script src="js/swiper.js"></script>
 <script src="js/aui-scroll.js"></script> <!--滚动（上拉加载）-->
 <script src="js/aui-pull-refresh.js"></script>  <!--下拉刷新-->
+<script src="js/handlebars-v1.3.0.js"></script>
 <script src="js/common.js"></script>
 <script type="text/javascript">
 	var initApp = function(){
@@ -347,28 +368,17 @@
             },3000);
             function foo(){
             	if(isfirst){
-            		$('.jrtt-content').append(
-            			'<div class="aui-card-list-content-padded">'+
-							'<div class="aui-card-list-title jrtt-activity-title">贵阳翼支付会员营销活动</div>'+
-							'<div class="aui-card-list-title aui-ellipsis-1 jrtt-activity-subTitle">办翼支付会员送代金劵，超市购物打八折，封顶最高减30元，更多好礼</div>'+
-							'<div class="aui-row aui-row-padded">'+
-								'<div class="aui-col-xs-4">'+
-									'<img src="img/2.jpg" />'+
-								'</div>'+
-								'<div class="aui-col-xs-4">'+
-									'<img src="img/3.jpg" />'+
-								'</div>'+
-								'<div class="aui-col-xs-4">'+
-									'<img src="img/4.jpg" />'+
-								'</div>'+
-							'</div>'+
-							'<div class="jrtt-photo">'+
-								'<ul>'+
-									'<li class="jrtt-activity-time">2017-01-04起，2018-01-31止</li>'+
-								'</ul>'+
-							'</div>'+
-							'<div class="jrtt-line"></div>'+
-						'</div>');
+            		// 请求数据
+					$.ajax({
+						url: 'shuju.json',
+						type: 'get',
+						dataType: 'json',
+						data: {},
+						success: function (data) {
+							var myTemplate = Handlebars.compile($("#jrtt-list-template").html());
+							$('.aui-content').append(myTemplate(data));
+						}
+					});
             		isfirst = false;
             	}
             }
@@ -383,7 +393,16 @@
 		triggerDistance:100
 	},function(ret){
 		if(ret.status=='success'){
-			
+			$.ajax({
+				url: 'shuju.json',
+				type: 'get',
+				dataType: 'json',
+				data: {},
+				success: function (data) {
+					var myTemplate = Handlebars.compile($("#jrtt-list-template").html());
+					$('.aui-content').append(myTemplate(data));
+				}
+			});
 		}
 		pullRefresh.cancelLoading();  //刷新成功后调用此方法隐藏
 	},1500);
