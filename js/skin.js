@@ -1,5 +1,5 @@
 //	换肤 --index
-if(10>1){
+if(10>11){
 		var css=document.createElement("link");
 	    css.href = "css/skin-1.css";
 	    css.rel = "stylesheet";
