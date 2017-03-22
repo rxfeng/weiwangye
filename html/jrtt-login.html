@@ -94,7 +94,7 @@
 		<div class="jrtt-login-input jrtt-login-password">
 			<input type="tel" placeholder="请输入验证码" value=""/>
 		</div>
-		<div class="jrtt-login-input jrtt-login-btn" data-item="forword" data-url="" data-fn="login">
+		<div class="jrtt-login-input jrtt-login-btn" data-item="forword" data-url="jrtt-my-file.html" data-fn="login">
 			<input type="text" placeholder="进入微网页" disabled="disabled"/>
 		</div>
 	</div>
@@ -129,8 +129,7 @@
 				toast.success({
                     title:"登录成功",
                     duration:2000
-               	});
-               window.history.back(-1);
+               });
 			 }else{
 			 	 toast.fail({
                     title:"登录失败",
@@ -152,7 +151,10 @@
 	                    title:"登录成功",
 	                    duration:2000
 	                });
-	                api.closeWin();
+	                api.openWin({
+			            name: url.slice(0,url.length-5),
+			            url: url
+			        });
 				}else{ 
 				 	toast.fail({
 	                    title:"登录失败",
