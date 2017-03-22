@@ -154,7 +154,7 @@
 
 <br />
 <footer class="aui-bar aui-bar-tab" id="footer">
-	<div class="aui-bar-tab-item" tapmode data-item="forword" data-url="" data-fn="pop">
+	<div class="aui-bar-tab-item" tapmode data-item="forword" data-url="../index.html" data-fn="pop">
         <i class="aui-iconfont aui-icon-home"></i>
     </div>
     <div class="aui-bar-tab-item" tapmode>
@@ -186,6 +186,7 @@
 		}
 	}
 	var forward = function(that,fn){
+		var url = $(that).attr("data-url");
 		if(fn=="pop"){
 			api.closeWin();
 		}

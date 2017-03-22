@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport"
+          content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title></title>
+    <link rel="stylesheet" href="../css/api.css"/>
+    <link rel="stylesheet" href="../css/aui.2.0.css"/>
+    <link rel="stylesheet" href="../css/swiper.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../font/font-awesome-4.7.0/css/font-awesome.css" />
+    <style type="text/css">
+    	.jrtt-login{
+    		margin-top: 100px;
+    	}
+    	.jrtt-login .jrtt-login-input{
+    		margin-bottom: 20px;
+    	}
+    	.jrtt-login .jrtt-login-input input{
+    		height: 30px;
+    		width: 80%;
+    		margin: 0 auto;
+    		border-radius: 30px;
+    		border:1px solid #ccc;
+    		padding-left: 20px;
+    	}
+    	.jrtt-login .jrtt-login-tel{
+    		position: relative;
+    	}
+    	.jrtt-login .jrtt-login-input input:focus{
+    		border:1px solid pink;
+    	}
+    	.jrtt-login .jrtt-login-btn input{
+    		padding: 0;
+    		text-align: center;
+    		background: pink;
+    		color: #fff;
+    		border: 0;
+    	}
+    	.jrtt-login .jrtt-login-btn input::-webkit-input-placeholder {
+    		color:#fff;
+    		font-size: 18px;
+    	}
+    	.jrtt-login .jrtt-login-yzm{
+    		height: 100%;
+    		line-height: 46px;
+    		padding: 0 10px;
+    		position: absolute;
+    		right: 10%;
+    		bottom: 0px;
+    		font-size:14px;
+    		border-left: 1px solid #ccc;
+    	}
+    	.jrtt-skin{
+    		display: flex;
+    	}
+    	.jrtt-skin div{
+    		width: 80px;
+    		height: 30px;
+    		margin: 10px;
+    	}
+    	.jrtt-skin div:nth-of-type(1){
+    		background: #ff8e0c;
+    	}
+    	.jrtt-skin div:nth-of-type(2){
+    		background: skyblue;
+    	}
+    </style>
+</head>
+<body>
+	<header class="aui-bar aui-bar-nav jrtt-header" id="aui-header">
+		<a class="aui-pull-left aui-btn" data-item="forword" data-url="" data-fn="pop">
+	        <span class="aui-iconfont aui-icon-left"></span>
+	    </a>
+	    <div class="aui-title jrtt-header-title">新疆电信</div>
+	</header>
+	<div class="jrtt-login">
+		<div class="jrtt-login-input jrtt-login-tel">
+			<input type="tel" placeholder="手机号" value=""/>
+			<div class="jrtt-login-yzm" onclick="pin();">发送验证码</div>
+		</div>
+		<div class="jrtt-login-input jrtt-login-password">
+			<input type="tel" placeholder="请输入验证码" value=""/>
+		</div>
+		<div class="jrtt-login-input jrtt-login-btn" data-item="forword" data-url="" data-fn="login">
+			<input type="text" placeholder="进入微网页" disabled="disabled"/>
+		</div>
+	</div>
+	<div class="jrtt-skin">
+		<div onclick="one();"></div>
+		<div onclick="two();"></div>
+	</div>
+</body>
+<script src="../js/jquery-1.10.2.js"></script>
+<script src="../js/api.js"></script>
+<script src="../js/aui-tab.js"></script>
+<script src="../js/aui-toast.js"></script>
+<script src="../js/touch.js" ></script>
+<script src="../js/swiper.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/skin1.js"></script>
+<script>
+	var toast = new auiToast({})
+	var initApp = function(){
+		
+	}
+	var initHtml = function(){
+		
+	}
+	var subfun = function(that){
+		var tel = $('.jrtt-login-tel>input').val();
+		var password = $('.jrtt-login-password>input').val();
+		if($(that).attr("data-fn")=="login"){
+			 if(tel==1 && password==1){
+				toast.success({
+                    title:"登录成功",
+                    duration:2000
+               	});
+               window.history.back(-1);
+			 }else{
+			 	 toast.fail({
+                    title:"登录失败",
+                    duration:2000
+               });
+			 }
+		}else if($(that).attr("data-fn")=="pop"){
+			window.history.back(-1); 
+		}
+	}
+	var forward = function(that,fn){
+		var url = $(that).attr("data-url");
+		switch(fn){
+			case "login":
+				var tel = $('.jrtt-login-tel>input').val();
+				var password = $('.jrtt-login-password>input').val();
+				if(tel==1 && password==1){
+					toast.success({
+	                    title:"登录成功",
+	                    duration:2000
+	                });
+	                api.closeWin();
+				}else{ 
+				 	toast.fail({
+	                    title:"登录失败",
+	                    duration:2000
+	                });
+				 	return false;
+				}
+				break;
+    		case "pop":
+    			api.closeWin();
+    			break;
+		}
+	}
+//	手机号验证
+	function checkMobile(s){  
+	    var length = s.length;  
+	    if(length == 11 && /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1})|(14[0-9]{1})|)+\d{8})$/.test(s) )  
+	    {  
+	        return true;  
+	    }else{  
+	        return false;  
+	    }  
+	} 
+	function pin(){
+		var tel = $('.jrtt-login-tel>input').val();
+		if(checkMobile(tel)){
+			//请求验证码
+			toast.success({
+                title:"已发送验证码",
+                duration:2000
+           	});
+		}else{
+			toast.fail({
+                title:"手机号有误",
+                duration:2000
+            });
+		}
+	}
+
+	
+</script>
+</html>

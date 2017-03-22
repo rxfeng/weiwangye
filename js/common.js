@@ -7,11 +7,14 @@ $(document).on("tap","[data-item = 'forword']",function(){
 	if(_type == "app"){
 		forward(this,_fn);
 	}else{
-		subfun(this);
-		if($this.attr("data-url")==""){
-			return;
-		}else{
-			window.location = $this.attr("data-url");
+		var a = subfun(this);
+		if(a!=false){
+			if($this.attr("data-url")==""){
+				return;
+			}else{
+				window.location = $this.attr("data-url");
+			}
 		}
 	}
 });
+var skin;
