@@ -1,0 +1,426 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>成都电信</title>
+    <link rel="icon" href="../icon/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/api.css" />
+    <script src="../js/aui-toast.js"></script>
+    <link rel="stylesheet" href="../css/aui.2.0.css"/>
+	<link rel="stylesheet" href="../css/swiper.css" />
+    <link rel="stylesheet" href="../css/dropload.css" />
+	<link rel="stylesheet" href="../css/aui-pull-refresh.css" />
+	<link rel="stylesheet" href="../font/font-awesome-4.7.0/css/font-awesome.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <style>
+    	.jrtt-package-item .jrtt-package-items{
+    		margin: 0 20px;
+    	}
+    	.jrtt-package-item .jrtt-package-items:last-child{
+			padding: 10px 0px 10px 0px;
+			margin: 0 20px;
+		}
+		.jrtt-item-close{
+			font-size: 18px;
+			position: absolute;
+			right:15px;
+			top:0;
+			z-index: 10;
+		}
+    </style>
+</head>
+<body>
+<script>
+	var toast = new auiToast({});	//提示窗体
+	toast.loading({
+		title : "页面加载中",
+		duration : 100000
+	});
+</script>
+<header class="aui-bar aui-bar-nav jrtt-header" id="aui-header">
+    <div class="aui-pull-left jrtt-header-title">新疆电信</div>
+    <a class="aui-pull-right aui-btn" data-item="forword" data-url="jrtt-login.html" data-fn="login">
+        <img src="../img/logo@3x.png" alt="" style="width: 24px;"/>
+    </a>
+</header>
+<div class="jrtt-index-top">
+	<div class="swiper-container jrtt-top-title1" id="tuijian">
+		<div class="swiper-wrapper jrtt-container">
+			<div class="swiper-slide">
+				<a class="aa" href="javascript:;" data-item="forword" data-url="" data-fn="1">推荐</a>
+			</div>
+			<div class="swiper-slide">
+				<a href="javascript:;" data-item="forword" data-url="jrtt-package-file.html" data-fn="2">套餐</a>
+			</div>
+			<div class="swiper-slide jrtt-size4">
+				<a href="javascript:;" data-item="forword" data-url="jrtt-activity-file.html" data-fn="3">优惠活动</a>
+			</div>
+			<div class="swiper-slide">
+				<a href="javascript:;" data-item="forword" data-url="" data-fn="4">ITV</a>
+			</div>
+			<div class="swiper-slide jrtt-size4">
+				<a href="javascript:;" data-item="forword" data-url="jrtt-international-file.html" data-fn="5">国际漫游</a>
+			</div>
+			<div class="swiper-slide jrtt-size3">
+				<a href="javascript:;" data-item="forword" data-url="jrtt-business-file.html" data-fn="6">营业厅</a>
+			</div>
+			<div class="swiper-slide">
+				<a href="javascript:;" data-item="forword" data-url="" data-fn="7">手机</a>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="aui-refresh-content jrtt-content">
+	<div class="aui-tips aui-margin-b-15 myclose" id="tips-1">
+		<i class="aui-iconfont aui-icon-info"></i>
+		<div class="aui-tips-title">猜你感兴趣的内容</div>
+		<i class="aui-iconfont aui-icon-close" onclick="likeInfoClose(this);"></i>
+	</div>
+	<div class="aui-info aui-padded-l-10 aui-padded-r-10 jrtt-today">
+	    <div class="aui-info-item jrtt-today-title">
+	    	<span>今日要闻</span>
+	        <span class="aui-margin-l-5">朝鲜大马互限对方人员离境</span>
+	    </div>
+	    <div class="aui-info-item jrtt-today-close" onclick="todayClose();"> 
+	    	<!--<i class="aui-iconfont aui-icon-close"></i>-->
+	    	<i class="fa fa-close" style="font-size: 18px;"></i>
+	    </div>
+	    <div class="jrtt-disinclination" style="display: none" onclick="$('.jrtt-today').hide();">不感兴趣</div>
+	</div>
+	<div class="aui-content">
+		<div class="jrtt-package-item" style="display: block">
+			<div class="aui-row jrtt-package-items">
+				<div class="aui-col-xs-8 jrtt-package-title">飞Young 4G聊天版/19元</div>
+				<img src="../img/2.jpg" alt="" class="aui-col-xs-4 jrtt-package-items-img"/>
+			</div>
+			<div class="aui-row jrtt-package-items">
+				<div class="aui-col-xs-8 jrtt-package-title">飞Young 4G聊天版/19元</div>
+				<img src="../img/1.jpg" alt="" class="aui-col-xs-4 jrtt-package-items-img"/>
+			</div>
+		</div>
+		<div class="aui-card-list-content-padded">
+			<div class="aui-card-list-title jrtt-activity-title">新疆翼支付会员营销活动</div>
+			<div class="aui-card-list-title aui-ellipsis-1 jrtt-activity-subTitle">办翼支付会员送代金劵，超市购物打八折，封顶最高减30元，更多好礼</div>
+			<div class="aui-row aui-row-padded">
+				<div class="aui-col-xs-4">
+					<img src="../img/3.jpg" />
+				</div>
+				<div class="aui-col-xs-4">
+					<img src="../img/4.jpg" />
+				</div>
+				<div class="aui-col-xs-4">
+					<img src="../img/1.jpg" />
+				</div>
+			</div>
+			<div class="jrtt-photo">
+				<ul>
+					<li class="jrtt-activity-time">2017-01-04起，2017-01-31止</li>
+				</ul>
+			</div>
+			<div class="jrtt-line"></div>
+		</div>
+		<div class="aui-card-list-content-padded">
+			<div class="aui-row aui-row-padded">
+				<div class="aui-col-xs-8">
+					<div class="jrtt-business-title">
+						三桥营业厅天翼手机卖场
+					</div>
+					<div class="jrtt-photo">
+						<ul>
+							<li class="jrtt-business-subTitle">三桥北路338号</li>
+						</ul>
+					</div>
+				</div>
+				<div class="aui-col-xs-4">
+					<img src="../img/1.jpg" />
+				</div>
+			</div>
+			<div class="jrtt-line"></div>
+		</div>	
+
+
+			
+			<div class="aui-card-list-content-padded jrtt-details-tap">
+			    <div class="aui-card-list-title">实拍：74米的大货车 他们是怎么拐弯的</div>
+			    <img src="../img/2.jpg"/>
+			    <div class="jrtt-photo">
+			        <ul>
+			            <li class="jrtt-border">阳光宽频</li>
+			            <li>同林文化</li>
+			            <li>50评论</li>
+			            <li>5小时前</li>
+			        </ul>
+			    </div>
+			    <div class="jrtt-line"></div>
+			</div>
+			<div class="aui-card-list-content-padded">
+			    <div class="aui-card-list-title">外媒：中国境内韩国乐天集团4家超市接收检查后被关闭</div>
+			    <div class="jrtt-photo">
+			        <ul>
+			        	<li class="jrtt-border">热</li>
+			            <li>环球网</li>
+			            <li>1.2万评论</li>
+			            <li>5小时前</li>
+			        </ul>
+			    </div>
+			    <div class="jrtt-line"></div>
+			</div>
+			<div class="aui-card-list-content-padded jrtt-details-tap">
+			    <div class="aui-card-list-title">实拍：74米的大货车 他们是怎么拐弯的</div>
+			    <video width="100%" src="../img/fun.mp4" type="video/mp4" class="video1">
+			    	不支持视频播放
+			    </video>
+			    <div class="jrtt-vedio-switch jrtt-vedio-start"><img src="../img/start.jpg" alt="" /></div>
+    			<div class="jrtt-vedio-switch jrtt-vedio-stop"><img src="../img/stop.jpg" alt="" /></div>
+    			<div class="jrtt-vedio-list-time">02:44</div>
+			    <div class="jrtt-photo">
+			        <ul>
+			            <li class="jrtt-border">阳光宽频</li>
+			            <li>同林文化</li>
+			            <li>50评论</li>
+			            <li>5小时前</li>
+			        </ul>
+			    </div>
+			    <div class="jrtt-line"></div>
+			</div>
+			<div class="aui-card-list-content-padded">
+			    <div class="aui-card-list-title">老人八十万现金留给保姆，保姆为圆一个梦，过得依然寒酸</div>
+			    <div class="aui-row aui-row-padded">
+			        <div class="aui-col-xs-4">
+			            <img src="../img/1.jpg" />
+			        </div>
+			        <div class="aui-col-xs-4">
+			            <img src="../img/2.jpg" />
+			        </div>
+			        <div class="aui-col-xs-4">
+			            <img src="../img/3.jpg" />
+			        </div>
+			    </div>
+			    <div class="jrtt-photo">
+			        <ul>
+			            <li>同林文化</li>
+			            <li>50评论</li>
+			            <li>5小时前</li>
+			        </ul>
+			    </div>
+			    <div class="jrtt-line"></div>
+			</div>
+			<div class="aui-card-list-content-padded">
+				<i class="fa fa-close jrtt-item-close"></i>
+			    <div class="aui-row aui-row-padded">
+			        <div class="aui-col-xs-8">
+			        	<div>
+			        		你知道什么时候最适合结婚吗?
+			        	</div>
+			            <div class="jrtt-photo">
+					        <ul>
+			            		<li>粉红玫瑰</li>
+			            		<li>评论</li>
+			            		<li>110</li>
+			            		<li>22分钟前</li>
+			            	</ul>
+					    </div>
+			        </div>
+			        <div class="aui-col-xs-4">
+			            <img src="../img/2.jpg" />
+			        </div>
+			    </div>
+			    <div class="jrtt-line"></div>
+			</div>
+			<div class="aui-card-list-content-padded">
+			    <i class="fa fa-close jrtt-item-close"></i>
+			    <div class="aui-row aui-row-padded">
+			        <div class="aui-col-xs-8">
+			            <div>
+			        		你知道什么时结婚吗? 你知道什么时候最适合结婚吗?
+			        	</div>
+			            <div class="jrtt-photo">
+					        <ul>
+			            		<li>粉红玫瑰</li>
+			            		<li>评论</li>
+			            		<li>110</li>
+			            		<li>22分钟前</li>
+			            	</ul>
+					    </div>
+			        </div>
+			        <div class="aui-col-xs-4">
+			            <img src="../img/4.jpg" />
+			        </div>
+			    </div>
+			    <div class="jrtt-line"></div>
+			</div>
+			<div class="aui-card-list-content-padded">
+				<i class="fa fa-close jrtt-item-close"></i>
+			    <div class="aui-row aui-row-padded">
+			        <div class="aui-col-xs-8">
+			            <div>
+			        		你知道什么时结婚吗? 你知道什么时候最适合结婚吗?
+			        	</div>
+			            <div class="jrtt-photo">
+					        <ul>
+			            		<li>粉红玫瑰</li>
+			            		<li>评论</li>
+			            		<li>110</li>
+			            		<li>22分钟前</li>
+			            	</ul>
+					    </div>
+			        </div>
+			        <div class="aui-col-xs-4">
+			            <img src="../img/2.jpg" />
+			        </div>
+			    </div>
+			    <div class="jrtt-line"></div>
+			</div>
+	</div>
+</div>
+<i class="fa fa-spinner fa-pulse jrtt-spinner"></i>
+<br /><br /><br />
+<footer class="aui-bar aui-bar-tab jrtt-footer-search" id="footer">
+    <div class="aui-bar-tab-item" tapmode>
+        <img src='../img/voice.png' alt="" style="width: 32px;"/>
+    </div>
+    <div class="aui-bar-tab-item" tapmode style="width:4%;" data-item="forword" data-url="jrtt-chat-file.html" data-fn="8">
+        <!--<input type="text" class="jrtt-index-footer-search" style="position: absolute;left:20px;top:0px;"/> onclick="searchTap();"-->
+        <img src="../img/search_bar_bg@3x.png" alt="" style="width: 100%;height: 30px;"/>
+    </div>
+    <div class="aui-bar-tab-item" tapmode>
+    	<img src="../img/send.png" alt="" style="width: 32px;"/>
+    </div>
+</footer>
+</body>
+<script id="jrtt-list-template" type="text/x-handlebars-template">
+	<div class="jrtt-package-item" style="display: block">
+		{{#each list}}
+		<div class="aui-row jrtt-package-items">
+			<div class="aui-col-xs-8 jrtt-package-title">{{text}}</div>
+			<img src="{{img}}" alt="" class="aui-col-xs-4 jrtt-package-items-img"/>
+		</div>
+		{{/each}}
+	</div>
+</script>
+<script src="../js/api.js"></script>
+<script src="../js/jquery-1.10.2.js"></script>
+<script src="../js/touch.js" ></script>
+<script src="../js/swiper.js"></script>
+<script src="../js/aui-scroll.js"></script> <!--滚动（上拉加载）-->
+<script src="../js/aui-pull-refresh.js"></script>  <!--下拉刷新-->
+<script src="../js/handlebars-v1.3.0.js"></script>
+<script src="../js/aui-skin.js"></script>
+<script src="../js/common.js"></script>
+<script type="text/javascript">
+	var initApp = function(){
+		
+	}
+	var initHtml = function(){
+		
+	}
+	var subfun = function(that){
+		var toast = new auiToast({});	//提示窗体
+		$(".jrtt-container div a").removeClass('aa');
+    	$(that).addClass('aa');
+	}
+	var forward = function(that,fn){
+		var url = $(that).attr("data-url");
+		switch(fn){
+			case "1":case "4":case "7":
+    			$(".jrtt-container div a").removeClass('aa');
+    			$(that).addClass('aa');
+    			break;
+			default:
+				api.openWin({
+		            name: url.slice(0,url.length-5),
+		            url: url
+		        });
+		}
+	}
+	var t = $('#aui-header').height();
+	var t2 = t+$('.jrtt-index-top').height();
+	$('.jrtt-index-top').css('top',t+'px');
+	$('.jrtt-content').css('margin-top',t2+'px');
+	//滑动
+   	var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 'auto',
+        paginationClickable: true,
+        spaceBetween: 10
+ 	});
+
+
+//	点击今日要闻关闭按钮（定时5秒关闭和点击关闭）
+	function todayClose(){
+		$('.jrtt-disinclination').show();
+		setTimeout(function(){
+			$('.jrtt-disinclination').hide();
+		},5000);
+	}
+//	猜你喜欢的内容 隐藏
+	function likeInfoClose(ret){
+		$(ret).parent('div').css('display','none');
+	}
+	setInterval(function(){
+		 $('#tips-1').slideUp(500)
+	},3000);
+	$(document).on('tap','.jrtt-item-close',function(){
+		$(this).parent().hide();
+	});
+	toast.hide();
+</script>
+<script>
+//下拉加载
+	var isfirst = true;
+	var scroll = new auiScroll({
+        listen:true,
+        distance:0 //判断到达底部的距离，isToBottom为true
+    },function(ret){
+        if(ret.isToBottom){
+            $('.jrtt-spinner').show();
+            setTimeout(function(){
+            	$('.jrtt-spinner').hide();
+				foo();
+            },3000);
+            function foo(){
+            	if(isfirst){
+            		// 请求数据
+					$.ajax({
+						url: 'shuju.json',
+						type: 'get',
+						dataType: 'json',
+						data: {},
+						success: function (data) {
+							var myTemplate = Handlebars.compile($("#jrtt-list-template").html());
+							$('.aui-content').append(myTemplate(data));
+						}
+					});
+            		isfirst = false;
+            	}
+            }
+            isfirst = true;
+        }else{
+        	$('.jrtt-spinner').hide();
+        }
+    });
+//	上拉刷新
+	var pullRefresh = new auiPullToRefresh({
+		container:document.querySelector('.aui-refresh-content'),
+		triggerDistance:100
+	},function(ret){
+		if(ret.status=='success'){
+			$.ajax({
+				url: 'shuju.json',
+				type: 'get',
+				dataType: 'json',
+				data: {},
+				success: function (data) {
+					setTimeout(function(){
+						var myTemplate = Handlebars.compile($("#jrtt-list-template").html());
+						$('.aui-content').prepend(myTemplate(data));
+						pullRefresh.cancelLoading();  //刷新成功后调用此方法隐藏
+					},2000)
+				}
+			});
+		}
+	},1000);
+</script>
+
+</html>

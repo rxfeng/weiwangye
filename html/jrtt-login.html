@@ -30,12 +30,12 @@
     		position: relative;
     	}
     	.jrtt-login .jrtt-login-input input:focus{
-    		border:1px solid pink;
+    		border:1px solid #ff8e0c;
     	}
     	.jrtt-login .jrtt-login-btn input{
     		padding: 0;
     		text-align: center;
-    		background: pink;
+    		background: #ff8e0c;
     		color: #fff;
     		border: 0;
     	}
@@ -53,6 +53,11 @@
     		font-size:14px;
     		border-left: 1px solid #ccc;
     	}
+    	.jrtt-chang-skin{
+    		margin-left: 10px;
+    		font-size: 18px;
+    		font-weight: bold;
+    	}
     	.jrtt-skin{
     		display: flex;
     	}
@@ -60,12 +65,17 @@
     		width: 80px;
     		height: 30px;
     		margin: 10px;
+    		border-radius: 30px;
     	}
+    	
     	.jrtt-skin div:nth-of-type(1){
     		background: #ff8e0c;
     	}
     	.jrtt-skin div:nth-of-type(2){
     		background: skyblue;
+    	}
+    	.jrtt-skin div:nth-of-type(3){
+    		background: pink;
     	}
     </style>
 </head>
@@ -88,9 +98,11 @@
 			<input type="text" placeholder="进入微网页" disabled="disabled"/>
 		</div>
 	</div>
+	<p class="jrtt-chang-skin">更换皮肤</p>
 	<div class="jrtt-skin">
 		<div onclick="one();"></div>
 		<div onclick="two();"></div>
+		<div onclick="three();"></div>
 	</div>
 </body>
 <script src="../js/jquery-1.10.2.js"></script>
@@ -99,8 +111,8 @@
 <script src="../js/aui-toast.js"></script>
 <script src="../js/touch.js" ></script>
 <script src="../js/swiper.js"></script>
+<script src="../js/aui-skin.js"></script>
 <script src="../js/common.js"></script>
-<script src="../js/skin1.js"></script>
 <script>
 	var toast = new auiToast({})
 	var initApp = function(){
@@ -180,6 +192,6 @@
 		}
 	}
 
-	
+
 </script>
 </html>

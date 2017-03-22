@@ -1,6 +1,6 @@
 /*顶部*/
 .jrtt-header {
-    background: #ff8e0c;
+    background: pink;
     position: fixed;
     top:0;
 }
@@ -14,14 +14,14 @@
     padding-right: 10px;
     padding-left: 10px;
     background: rgba(230,230,230,0.9); 
-    color:#ff8e0c;
+    color:pink;
     font-weight:700;
 }*/
 /*小字的边框*/
 .jrtt-photo .jrtt-border{
     border-radius: 3px;
-    border: 1px solid #ff8e0c;
-    color:#ff8e0c;
+    border: 1px solid pink;
+    color:pink;
     font-size: 10px;
    text-align: center;
 	padding-top:0;
@@ -29,26 +29,26 @@
 }
 /*覆盖aui里的样式*/
 .aui-bar-tab .aui-active {
-    color: #ff8e0c;
+    color: pink;
 }
 /*顶部推荐的点击*/
 .jrtt-top-title1 .jrtt-container .swiper-slide .aa{
-	color:#ff8e0c;
+	color:pink;
 }
 .jrtt-top-title .jrtt-container .swiper-slide .aa{
-	color:#ff8e0c;
+	color:pink;
 }
 .jrtt-details-comment button{
-	background: #ff8e0c;
+	background: pink;
 }
 /*登录页面*/
 .jrtt-login .jrtt-login-input input:focus{
-	border:1px solid #ff8e0c;
+	border:1px solid pink;
 }
 .jrtt-login .jrtt-login-btn input{
 	padding: 0;
 	text-align: center;
-	background: #ff8e0c;
+	background: pink;
 	color: #fff;
 	border: 0;
 }
