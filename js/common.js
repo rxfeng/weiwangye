@@ -1,5 +1,5 @@
-//var _type = "app";
-var _type = "web";
+var _type = "app";
+//var _type = "web";
 //公共的
 $(document).on("tap","[data-item = 'forword']",function(){
 	var $this= $(this);
