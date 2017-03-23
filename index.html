@@ -5,10 +5,17 @@
     <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
     <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
     <title>新疆电信</title>
+    <script src="js/aui-toast.js"></script>
     <link rel="icon" href="icon/logo.png" type="image/x-icon">
 </head>
-<body>
-
+<body style="background:#fff;">
+<script>
+	var toast = new auiToast({});	//提示窗体
+	toast.loading({
+		title : "页面加载中",
+		duration : 100000
+	});
+</script>
 </body>
 <script src="js/jquery-1.10.2.js"></script>
 <script src="js/api.js"></script>
@@ -16,15 +23,18 @@
 <script src="js/common.js"></script>
 <script>
 	window.onload = function(){
-//		if(_type=="app"){
-//			api.openWin({
-//		        name: "index",
-//		        url: "html/index.html"
-//		    });
-//		}else if(_type=="web"){
-//			window.location.href="html/index.html"; 
-//		}
-		window.location.href="html/index.html"; 
+		if(_type=="app"){
+			setTimeout(function(){
+				api.openWin({
+			        name: "index1",
+			        url: "html/index.html"
+			    });
+				console.log("index");
+			},100);
+		}else if(_type=="web"){
+			window.location.href="html/index.html"; 
+		}
 	}
+	toast.hide();
 </script>
 </html>

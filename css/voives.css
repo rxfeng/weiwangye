@@ -1,0 +1,261 @@
+#VoiceMain{
+	width: 100%;
+	height: 100%;
+	background: rgba(33,33,33,0.1);
+	display: none;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	font-size:14px;
+}
+#Voice{
+	width: 100%;
+	height: 180px;
+	position: fixed;
+	bottom: 50px;
+	background: #fff;
+	text-align: center;
+	display: none;
+	box-shadow: 0px -3px 3px rgba(33,33,33,0.3);
+}
+#VoiceMain.active,#VoiceMain.active #Voice{
+	display: block;
+}
+.voicestart span,.voicestart div{
+	display: none;
+}
+
+.voicestart[type="stop"] span.voicestext,
+.voicestart[type="right"] span.voicesright,
+.voicestart[type="left_"] span.voicesleft,
+.voicestart[type="left"] span.voicesplaytime{
+	color:#999;
+	margin-top: 5px;
+	height: 30px;
+	display: block;
+	line-height: 40px;
+}
+.voicestart[type="stop"] #voicerecord,
+.voicestart[type="voices"]  #voicerecord,
+.voicestart[type="right"]  #voicerecord,
+.voicestart[type="left_"]  #voicerecord,
+.voicestart[type="left"]  #voiceplay{
+width: 110px;
+height: 110px;
+border-radius:110px;
+background: rgb(24,180,237);
+margin: 10px auto;
+text-align: center;
+display: block;
+}
+.voicestart[type="stop"] #voicerecord i,
+.voicestart[type="voices"] #voicerecord i,
+.voicestart[type="right"] #voicerecord i,
+.voicestart[type="left_"] #voicerecord i,
+.voicestart[type="left"]  #voiceplay i{
+	color: #fff;
+	line-height: 110px;
+	font-size: 4rem;
+}
+.voicestart[type="voices"] #voiceplay,
+.voicestart[type="right"] #voiceplay,
+.voicestart[type="left_"] #voiceplay,
+.voicestart[type="left"] #voicesave{
+width: 40px;
+height: 40px;
+border-radius:50px;
+background:#fff;
+border: 1px solid rgb(24,180,237);
+position: absolute;
+top:80px;
+left: 30px;
+display: block;
+}
+.voicestart[type="voices"] #voicedel,
+.voicestart[type="right"] #voicedel,
+.voicestart[type="left_"] #voicedel,
+.voicestart[type="left"] #voicedel{
+width: 40px;
+height: 40px;
+border-radius:50px;
+background:#fff;
+border: 1px solid rgb(24,180,237);
+position: absolute;
+top:80px;
+right: 30px;
+display: block;
+}
+.voicestart[type="voices"] #voicedel.active,
+.voicestart[type="right"] #voicedel.active,
+.voicestart[type="left_"] #voicedel.active{
+	border: 1px solid rgb(244,67,54);
+	background:rgb(244,67,54); 
+}
+.voicestart[type="voices"] #voiceplay.active,
+.voicestart[type="right"] #voiceplay.active,
+.voicestart[type="left_"] #voiceplay.active{
+	background:rgb(24,180,237);
+}
+.voicestart[type="voices"] #voicedel.active i,
+.voicestart[type="voices"] #voiceplay.active i,
+.voicestart[type="right"] #voicedel.active i,
+.voicestart[type="right"] #voiceplay.active i,
+.voicestart[type="left_"] #voicedel.active i,
+.voicestart[type="left_"] #voiceplay.active i{
+	color: #fff;
+}
+.voicestart[type="voices"] #voiceplay i,
+.voicestart[type="voices"] #voicedel i,
+.voicestart[type="right"] #voiceplay i,
+.voicestart[type="right"] #voicedel i,
+.voicestart[type="left_"] #voiceplay i,
+.voicestart[type="left_"] #voicedel i,
+.voicestart[type="left"] #voicesave i,
+.voicestart[type="left"] #voicedel i{
+color: rgb(24,180,237);
+font-size: 1.5rem;
+}
+.voicestart[type="voices"] #colorfulPulse{
+height: 30px;
+margin:5px auto;
+text-align: center;
+width: 122px;
+overflow: hidden;
+display: block;
+line-height: 40px;
+}
+.voicestart[type="voices"] #colorfulPulse div{
+float: left;
+margin: 4px 10px;
+display: block;
+}
+.voicestart[type="left"] #voiceplay.active i.aui-icon-playfill:before { content: "\e750"!important; }
+#colorfulPulse span {display: inline-block;width: 3px;height: 10px;animation-name: scale;-webkit-animation-name: scale;-moz-animation-name: scale;-ms-animation-name: scale;-o-animation-name: scale;
+animation-duration: 1.2s;
+-webkit-animation-duration: 1.2s;
+-moz-animation-duration: 1.2s;
+-ms-animation-duration: 1.2s;
+-o-animation-duration: 1.2s;
+animation-iteration-count: infinite;
+-webkit-animation-iteration-count: infinite;
+-moz-animation-iteration-count: infinite;
+-ms-animation-iteration-count: infinite;
+-o-animation-iteration-count: infinite;
+background: rgb(24,180,237);
+margin: 20px 1px;
+float: left;
+}
+
+.item-1 {
+animation-delay: -1s;
+-webkit-animation-delay: -1s;
+-moz-animation-delay: -1s;
+-ms-animation-delay: -1s;
+-o-animation-delay: -1s;
+}
+.item-2 {
+animation-delay: -0.9s;
+-webkit-animation-delay: -0.9s;
+-moz-animation-delay: -0.9s;
+-ms-animation-delay: -0.9s;
+-o-animation-delay: -0.9s;
+}
+.item-3 {
+animation-delay: -0.8s;
+-webkit-animation-delay: -0.8s;
+-moz-animation-delay: -0.8s;
+-ms-animation-delay: -0.8s;
+-o-animation-delay: -0.8s;
+}
+.item-4 {
+animation-delay: -0.7s;
+-webkit-animation-delay: -0.7s;
+-moz-animation-delay: -0.7s;
+-ms-animation-delay: -0.7s;
+-o-animation-delay: -0.7s;
+}
+.item-5 {
+animation-delay: -0.6s;
+-webkit-animation-delay: -0.6s;
+-moz-animation-delay: -0.6s;
+-ms-animation-delay: -0.6s;
+-o-animation-delay: -0.6s;
+}
+.item-6 {
+animation-delay: -0.5s;
+-webkit-animation-delay: -0.5s;
+-moz-animation-delay: -0.5s;
+-ms-animation-delay: -0.5s;
+-o-animation-delay: -0.5s;
+}
+.item-7 {
+animation-delay: -0.4s;
+-webkit-animation-delay: -0.4s;
+-moz-animation-delay: -0.4s;
+-ms-animation-delay: -0.4s;
+-o-animation-delay: -0.4s;
+}
+@-webkit-keyframes scale {
+0%, 40%, 100% {
+-moz-transform: scaleY(0.2);
+-ms-transform: scaleY(0.2);
+-o-transform: scaleY(0.2);
+-webkit-transform: scaleY(0.2);
+transform: scaleY(0.2);
+}
+20%, 60% {
+-moz-transform: scaleY(1);
+-ms-transform: scaleY(1);
+-o-transform: scaleY(1);
+-webkit-transform: scaleY(1);
+transform: scaleY(1);
+}
+}
+@-moz-keyframes scale {
+0%, 40%, 100% {
+-moz-transform: scaleY(0.2);
+-ms-transform: scaleY(0.2);
+-o-transform: scaleY(0.2);
+-webkit-transform: scaleY(0.2);
+transform: scaleY(0.2);
+}
+20%, 60% {
+-moz-transform: scaleY(1);
+-ms-transform: scaleY(1);
+-o-transform: scaleY(1);
+-webkit-transform: scaleY(1);
+transform: scaleY(1);
+}
+}
+@-ms-keyframes scale {
+0%, 40%, 100% {
+-moz-transform: scaleY(0.2);
+-ms-transform: scaleY(0.2);
+-o-transform: scaleY(0.2);
+-webkit-transform: scaleY(0.2);
+transform: scaleY(0.2);
+}
+20%, 60% {
+-moz-transform: scaleY(1);
+-ms-transform: scaleY(1);
+-o-transform: scaleY(1);
+-webkit-transform: scaleY(1);
+transform: scaleY(1);
+}
+}
+@keyframes scale {
+0%, 40%, 100% {
+-moz-transform: scaleY(0.2);
+-ms-transform: scaleY(0.2);
+-o-transform: scaleY(0.2);
+-webkit-transform: scaleY(0.2);
+transform: scaleY(0.2);
+}
+20%, 60% {
+-moz-transform: scaleY(1);
+-ms-transform: scaleY(1);
+-o-transform: scaleY(1);
+-webkit-transform: scaleY(1);
+transform: scaleY(1);
+}
+}

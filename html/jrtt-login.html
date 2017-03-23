@@ -130,12 +130,14 @@
                     title:"登录成功",
                     duration:2000
                });
+               location.replace('index.html');
 			 }else{
 			 	 toast.fail({
                     title:"登录失败",
                     duration:2000
-               });
-			 }
+              });
+			}
+			return false;
 		}else if($(that).attr("data-fn")=="pop"){
 			window.history.back(-1); 
 		}
@@ -151,16 +153,18 @@
 	                    title:"登录成功",
 	                    duration:2000
 	                });
-	                api.openWin({
-			            name: url.slice(0,url.length-5),
-			            url: url
-			        });
+					var jsfun = "location.reload();"
+					api.execScript({
+					    name: 'index1',
+					    script: jsfun
+					});
+					api.closeWin();
+					
 				}else{ 
 				 	toast.fail({
 	                    title:"登录失败",
 	                    duration:2000
-	                });
-				 	return false;
+	               });
 				}
 				break;
     		case "pop":
@@ -193,7 +197,5 @@
             });
 		}
 	}
-
-
 </script>
 </html>
