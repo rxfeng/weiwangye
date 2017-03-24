@@ -1,13 +1,13 @@
-var _type = "app";
-//var _type = "web";
+//var _type = "app";
+var _type = "web";
 //公共的
 $(document).on("tap","[data-item = 'forword']",function(){
 	var $this= $(this);
 	var _fn = $this.attr("data-fn");      //跳转那个页面的标识
 	if(_type == "app"){
-		forward(this,_fn);
+		appfun(this,_fn);
 	}else{
-		var a = subfun(this);
+		var a = webfun(this);
 		if(a!=false){
 			if($this.attr("data-url")==""){
 				return;
@@ -52,7 +52,7 @@ function three(){
 	$($('#footer>div')[0]).children().attr('src','../img/voice-3.png')   
     $($('#footer>div')[2]).children().attr('src','../img/send-3.png') 
 }
-var skinInt = 2;
+var skinInt = 1;
 if(skinInt==1){
 	var skinOne = new auiSkin({
 		name:"skin1",

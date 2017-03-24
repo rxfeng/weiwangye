@@ -6,6 +6,7 @@
     <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
     <title>新疆电信</title>
     <script src="js/aui-toast.js"></script>
+    <link rel="stylesheet" href="css/aui.2.0.css"/>
     <link rel="icon" href="icon/logo.png" type="image/x-icon">
 </head>
 <body style="background:#fff;">
@@ -26,10 +27,9 @@
 		if(_type=="app"){
 			setTimeout(function(){
 				api.openWin({
-			        name: "index1",
+			        name: "index",
 			        url: "html/index.html"
-			    });
-				console.log("index");
+			   });
 			},100);
 		}else if(_type=="web"){
 			window.location.href="html/index.html"; 

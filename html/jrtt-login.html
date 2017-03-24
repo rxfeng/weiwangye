@@ -104,6 +104,7 @@
 		<div onclick="two();"></div>
 		<div onclick="three();"></div>
 	</div>
+	
 </body>
 <script src="../js/jquery-1.10.2.js"></script>
 <script src="../js/api.js"></script>
@@ -121,7 +122,7 @@
 	var initHtml = function(){
 		
 	}
-	var subfun = function(that){
+	var webfun = function(that){
 		var tel = $('.jrtt-login-tel>input').val();
 		var password = $('.jrtt-login-password>input').val();
 		if($(that).attr("data-fn")=="login"){
@@ -129,20 +130,20 @@
 				toast.success({
                     title:"登录成功",
                     duration:2000
-               });
-               location.replace('index.html');
+              });
+               location.replace('jrtt-my-file.html');
 			 }else{
 			 	 toast.fail({
                     title:"登录失败",
                     duration:2000
-              });
-			}
-			return false;
+             	});
+			} 
+            return false;
 		}else if($(that).attr("data-fn")=="pop"){
 			window.history.back(-1); 
 		}
 	}
-	var forward = function(that,fn){
+	var appfun = function(that,fn){
 		var url = $(that).attr("data-url");
 		switch(fn){
 			case "login":
@@ -153,13 +154,27 @@
 	                    title:"登录成功",
 	                    duration:2000
 	                });
-					var jsfun = "location.reload();"
-					api.execScript({
-					    name: 'index1',
-					    script: jsfun
-					});
-					api.closeWin();
+//					var jsfun = "location.reload();console.log(111)"
+//					api.execScript({
+//					    name: 'index',
+//					    script: jsfun
+//					});
 					
+					api.openWin({
+			            name: url.slice(0,url.length-5),
+			            url: url,
+			        	animation:{
+			        		type:"movein",
+			        		duration:0
+			        	}
+			        });
+			        api.closeWin({
+			        	name:"jrtt-login",
+			        	animation:{
+			        		type:"movein",
+			        		duration:0
+			        	}
+			        });
 				}else{ 
 				 	toast.fail({
 	                    title:"登录失败",
@@ -196,6 +211,7 @@
                 duration:2000
             });
 		}
-	}
+	} 
+
 </script>
 </html>

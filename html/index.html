@@ -316,12 +316,12 @@
 	var initHtml = function(){
 		
 	}
-	var subfun = function(that){
+	var webfun = function(that){
 		var toast = new auiToast({});	//提示窗体
 		$(".jrtt-container div a").removeClass('aa');
     	$(that).addClass('aa');
 	}
-	var forward = function(that,fn){
+	var appfun = function(that,fn){
 		var url = $(that).attr("data-url");
 		switch(fn){
 			case "1":case "4":case "7":
@@ -421,7 +421,6 @@
 			});
 		}
 	},1000);
-	console.log("index1")
 </script>
 
 </html>
