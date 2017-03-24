@@ -25,6 +25,12 @@
     	.jrtt-chat-time{
     		font-size:12px;
     	}
+    	.aui-chat .aui-chat-right .aui-chat-content p.jrtt-listening-p{
+    		background:deepskyblue;
+    	}
+    	.aui-chat .aui-chat-right .jrtt-listening{
+    		background-image: linear-gradient(45deg, deepskyblue, deepskyblue 50%, transparent 50%);
+    	}
     </style>
 </head>
 <body>
@@ -167,8 +173,7 @@
 	            </div>
 	        </div>
 	    </div>
-	    
-	  
+	 
 	</section>
 	</div>
 
@@ -248,12 +253,18 @@
 	}
 
 	function listen(that){
+		$(that).children('p').addClass('jrtt-listening-p');
+		$(that).children('div').addClass('jrtt-listening');
 		var netAudio = api.require('netAudio');
 		netAudio.play({
 		    path: $(that).attr("voicePath")
 		}, function(ret, err) {
 		    if (ret) {
 		        console.log(JSON.stringify(ret));
+		        if(ret.complete){
+		        	$(that).children('p').removeClass('jrtt-listening-p');
+					$(that).children('div').removeClass('jrtt-listening');
+		        }
 		    } else {
 		        console.log(JSON.stringify(err));
 		    }

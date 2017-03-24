@@ -44,9 +44,10 @@
     		font-size: 18px;
     	}
     	.jrtt-login .jrtt-login-yzm{
+    		width: 100px;
     		height: 100%;
     		line-height: 46px;
-    		padding: 0 10px;
+    		text-align: center;
     		position: absolute;
     		right: 10%;
     		bottom: 0px;
@@ -77,6 +78,9 @@
     	.jrtt-skin div:nth-of-type(3){
     		background: pink;
     	}
+    	.jrtt-red{
+    		color:red;
+    	}
     </style>
 </head>
 <body>
@@ -89,7 +93,7 @@
 	<div class="jrtt-login">
 		<div class="jrtt-login-input jrtt-login-tel">
 			<input type="tel" placeholder="手机号" value=""/>
-			<div class="jrtt-login-yzm" onclick="pin();">发送验证码</div>
+			<div class="jrtt-login-yzm" onclick="pin(this);">发送验证码</div>
 		</div>
 		<div class="jrtt-login-input jrtt-login-password">
 			<input type="tel" placeholder="请输入验证码" value=""/>
@@ -115,6 +119,7 @@
 <script src="../js/aui-skin.js"></script>
 <script src="../js/common.js"></script>
 <script>
+	var timer = null;
 	var toast = new auiToast({})
 	var initApp = function(){
 		
@@ -197,14 +202,29 @@
 	        return false;  
 	    }  
 	} 
-	function pin(){
+	var num = 10;
+	function pin(that){
 		var tel = $('.jrtt-login-tel>input').val();
 		if(checkMobile(tel)){
 			//请求验证码
-			toast.success({
-                title:"已发送验证码",
-                duration:2000
-           	});
+			if(num==10){
+				toast.success({
+	                title:"已发送验证码",
+	                duration:2000
+	            });
+				timer = setInterval(function(){
+		       		if(num < 0){
+		       			clearInterval(timer);
+		       			num = 10;
+		       			$(that).html('重新发送');
+		       			$(that).addClass('jrtt-red')
+		       		}else{
+		       			$(that).removeClass('jrtt-red')
+		       			$(that).html('剩余'+ num-- +'s');
+		       		}
+		       	},1000);
+			}
+           	
 		}else{
 			toast.fail({
                 title:"手机号有误",
@@ -212,6 +232,5 @@
             });
 		}
 	} 
-
 </script>
 </html>
