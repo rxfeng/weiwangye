@@ -383,7 +383,7 @@
             	if(isfirst){
             		// 请求数据
 					$.ajax({
-						url: 'shuju.json',
+						url: '../shuju.json',
 						type: 'get',
 						dataType: 'json',
 						data: {},
@@ -407,7 +407,7 @@
 	},function(ret){
 		if(ret.status=='success'){
 			$.ajax({
-				url: 'shuju.json',
+				url: '../shuju.json',
 				type: 'get',
 				dataType: 'json',
 				data: {},

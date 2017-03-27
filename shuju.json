@@ -2,15 +2,15 @@
 	"list":[
 		{
 			"text":"飞Young 4G畅想版/19元",
-			"img":"img/2.jpg"
+			"img":"../img/2.jpg"
 		},
 		{
 			"text":"飞翔 4G畅想版/19元",
-			"img":"img/3.jpg"
+			"img":"../img/3.jpg"
 		},
 		{
 			"text":"年轻 4G畅想版/19元",
-			"img":"img/1.jpg"
+			"img":"../img/1.jpg"
 		}
 	]
 }
