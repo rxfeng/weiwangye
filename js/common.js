@@ -17,7 +17,21 @@ $(document).on("tap","[data-item = 'forword']",function(){
 		}
 	}
 });
+//cookie 一个存 一个取
+function setCookies(name,value){
+   var Days = 360; //此 cookie 将被保存 360 天
+   var exp= new Date();     //new Date("December 31, 9998");
+   exp.setTime(exp.getTime() + Days*24*60*60*1000);
+   document.cookie = name + "="+ escape(value) +";expires="+ exp.toGMTString();
+// document.cookie = name + "="+ escape(value) +";expires="+ new Date((new Date()).getTime() + hours * 3600000);   //永久保存
+}
+function getCookies(name){
+   var arr = document.cookie.match(new RegExp("(^| )"+name+"=([^;]*)(;|$)"));
+   if(arr != null) return unescape(arr[2]); return null;
+}
+
 //换肤
+var skinInt = 2;
 
 function one(){
 	var skinOne = new auiSkin({
@@ -27,8 +41,9 @@ function one(){
 	});
 //	skinTwo.removeSkin();
 	skinOne.setSkin();
-	$($('#footer>div')[0]).children().attr('src','../img/voice.png')   
-    $($('#footer>div')[2]).children().attr('src','../img/send.png') 
+	$($('#footer>div')[0]).children().attr('src','../img/voice.png');   
+    $($('#footer>div')[2]).children().attr('src','../img/send.png');
+    skinInt = 1;
 }
 
 function two(){
@@ -38,8 +53,9 @@ function two(){
 	    default:false
 	});
 	skinTwo.setSkin();
-	$($('#footer>div')[0]).children().attr('src','../img/voice-1.png')   
-    $($('#footer>div')[2]).children().attr('src','../img/send-1.png') 
+	$($('#footer>div')[0]).children().attr('src','../img/voice-1.png');   
+    $($('#footer>div')[2]).children().attr('src','../img/send-1.png');
+    skinInt = 2;
 }
 
 function three(){
@@ -49,35 +65,15 @@ function three(){
 	    default:false
 	});
 	skinThree.setSkin();
-	$($('#footer>div')[0]).children().attr('src','../img/voice-3.png')   
-    $($('#footer>div')[2]).children().attr('src','../img/send-3.png') 
+	$($('#footer>div')[0]).children().attr('src','../img/voice-3.png');   
+    $($('#footer>div')[2]).children().attr('src','../img/send-3.png');
+    skinInt = 3;
 }
-var skinInt = 1;
+
 if(skinInt==1){
-	var skinOne = new auiSkin({
-		name:"skin1",
-		skinPath:'../css/skin-1.css',
-	    default:false
-	});
-	skinOne.setSkin();
-	$($('#footer>div')[0]).children().attr('src','../img/voice.png')   
-    $($('#footer>div')[2]).children().attr('src','../img/send.png') 
+	one();
 }else if(skinInt==2){
-	var skinTwo = new auiSkin({
-		name:"skin2",
-		skinPath:'../css/skin-2.css',
-	    default:false
-	});
-	skinTwo.setSkin();
-	$($('#footer>div')[0]).children().attr('src','../img/voice-1.png')   
-    $($('#footer>div')[2]).children().attr('src','../img/send-1.png') 
+	two();
 }else if(skinInt==3){
-	var skinThree = new auiSkin({
-		name:"skin3",
-		skinPath:'../css/skin-3.css',
-	    default:false
-	});
-	skinThree.setSkin();
-	$($('#footer>div')[0]).children().attr('src','../img/voice-3.png')   
-    $($('#footer>div')[2]).children().attr('src','../img/send-3.png') 
+	three();
 }
