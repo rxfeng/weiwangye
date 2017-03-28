@@ -15,7 +15,7 @@
 </head>
 <body>
 <header class="aui-bar aui-bar-nav jrtt-header" id="aui-header">
-    <div class="aui-pull-left jrtt-header-title">成都电信</div>
+    <div class="aui-pull-left jrtt-header-title">新疆电信</div>
     <a class="aui-pull-right aui-btn" data-item="forword" data-url="jrtt-login.html" data-fn="login">
         <img src="../img/logo@3x.png" alt="" style="width: 24px;"/>
     </a>
@@ -121,8 +121,11 @@
 <script src="../js/dropload.js"></script>   <!--上拉刷新，下拉加载-->
 <script src="../js/swiper.js"></script>
 <script src="../js/aui-skin.js"></script>
+<script src="../js/aui-dialog.js"></script>
 <script src="../js/common.js"></script>
 <script type="text/javascript">
+	
+	
 	var initApp = function(){
 		
 	}
@@ -146,6 +149,23 @@
 		            url: url
 		        });
 		}
+	}
+	var dialog = new auiDialog({})
+	//	点击返回键
+	apiready = function(){
+		api.addEventListener({
+		    name: 'keyback'
+		}, function(ret, err) {
+			dialog.alert({
+                title:"",
+                msg:'确定要退出吗？',
+                buttons:['取消','确定']
+            },function(ret){
+                if(ret.buttonIndex==2){
+                    api.closeWidget({silent:false});
+                }
+            });
+		});
 	}
 //滑动
    	var swiper = new Swiper('.swiper-container1', {

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
     <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
-    <title>成都电信</title>
+    <title>新疆电信</title>
     <link rel="icon" href="../icon/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/api.css" />
     <script src="../js/aui-toast.js"></script>
@@ -308,6 +308,7 @@
 <script src="../js/aui-pull-refresh.js"></script>  <!--下拉刷新-->
 <script src="../js/handlebars-v1.3.0.js"></script>
 <script src="../js/aui-skin.js"></script>
+<script src="../js/aui-dialog.js"></script>
 <script src="../js/common.js"></script>
 <script type="text/javascript">
 	var initApp = function(){
@@ -334,6 +335,23 @@
 		            url: url
 		        });
 		}
+	}
+	var dialog = new auiDialog({})
+	//	点击返回键
+	apiready = function(){
+		api.addEventListener({
+		    name: 'keyback'
+		}, function(ret, err) {
+			dialog.alert({
+                title:"",
+                msg:'确定要退出吗？',
+                buttons:['取消','确定']
+            },function(ret){
+                if(ret.buttonIndex==2){
+                    api.closeWidget({silent:false});
+                }
+            });
+		});
 	}
 	var t = $('#aui-header').height();
 	var t2 = t+$('.jrtt-index-top').height();

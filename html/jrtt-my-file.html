@@ -172,6 +172,7 @@
 <script src="../js/touch.js" ></script>
 <script src="../js/swiper.js"></script>
 <script src="../js/aui-skin.js"></script>
+<script src="../js/aui-dialog.js"></script>
 <script src="../js/common.js"></script>
 <script>
 	var initApp = function(){
@@ -208,5 +209,22 @@
 		$('.jrtt-spinner').hide();
 		$('.jrtt-spinner').parent('p').html('1');
 	},3000);
+	var dialog = new auiDialog({})
+	//	点击返回键
+	apiready = function(){
+		api.addEventListener({
+		    name: 'keyback'
+		}, function(ret, err) {
+			dialog.alert({
+                title:"",
+                msg:'确定要退出吗？',
+                buttons:['取消','确定']
+            },function(ret){
+                if(ret.buttonIndex==2){
+                    api.closeWidget({silent:false});
+                }
+            });
+		});
+	}
 </script>
 </html>

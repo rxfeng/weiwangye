@@ -118,6 +118,7 @@
 <script src="../js/aui-pull-refresh.js"></script>  <!--下拉刷新-->
 <script src="../js/handlebars-v1.3.0.js"></script>
 <script src="../js/aui-skin.js"></script>
+<script src="../js/aui-dialog.js"></script>
 <script src="../js/common.js"></script>
 <script type="text/javascript">
 	var initApp = function(){
@@ -143,6 +144,23 @@
 		            url: url
 		        });
 		}
+	}
+	var dialog = new auiDialog({})
+	//	点击返回键
+	apiready = function(){
+		api.addEventListener({
+		    name: 'keyback'
+		}, function(ret, err) {
+			dialog.alert({
+                title:"",
+                msg:'确定要退出吗？',
+                buttons:['取消','确定']
+            },function(ret){
+                if(ret.buttonIndex==2){
+                    api.closeWidget({silent:false});
+                }
+            });
+		});
 	}
 //滑动
    	var swiper = new Swiper('.swiper-container', {

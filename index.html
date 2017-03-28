@@ -23,18 +23,21 @@
 <script src="js/aui-skin.js"></script>
 <script src="js/common.js"></script>
 <script>
+	setTimeout(function(){toast.hide();},2000)
 	window.onload = function(){
 		if(_type=="app"){
 			setTimeout(function(){
 				api.openWin({
 			        name: "index",
-			        url: "html/index.html"
+			        url: "html/index.html",
+			        animation:{
+			        	type:"fade"
+			        }
 			   });
-			},100);
+			},10);
 		}else if(_type=="web"){
 			window.location.href="html/index.html"; 
 		}
 	}
-	toast.hide();
 </script>
 </html>
