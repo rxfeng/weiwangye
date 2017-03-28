@@ -1,4 +1,4 @@
-<!doctype html>
+<!--<!doctype html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -14,7 +14,7 @@
 	var toast = new auiToast({});	//提示窗体
 	toast.loading({
 		title : "页面加载中",
-		duration : 100000
+		duration : 2000
 	});
 </script>
 </body>
@@ -23,7 +23,9 @@
 <script src="js/aui-skin.js"></script>
 <script src="js/common.js"></script>
 <script>
-	setTimeout(function(){toast.hide();},2000)
+	setTimeout(function(){
+		toast.hide();
+	},2000);
 	window.onload = function(){
 		if(_type=="app"){
 			setTimeout(function(){
@@ -34,10 +36,10 @@
 			        	type:"fade"
 			        }
 			   });
-			},10);
+			},100);
 		}else if(_type=="web"){
 			window.location.href="html/index.html"; 
 		}
 	}
 </script>
-</html>
+</html>-->

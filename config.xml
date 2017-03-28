@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <widget id="A6933144143445" version="0.0.1">
-  <name>jinritoutiao</name>
+  <name>微网页</name>
   <description></description>
   <author email="473867601@qq.com" href="http://www.apicloud.com">小小小小小欣</author>
-  <content src="index.html"/>
+  <content src="html/index.html"/>
   <preference name="pageBounce" value="false"/>
   <preference name="appBackground" value="rgba(0,0,0,0.0)"/>
   <preference name="windowBackground" value="rgba(0,0,0,0.0)"/>

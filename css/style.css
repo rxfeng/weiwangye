@@ -1,4 +1,4 @@
-html,body {  font-size:22px; font-family: 'myFont'; }
+html,body {  font-size:22px; font-family: 'myFont'; background-color:#FFFFFF;}
 .hover{ opacity: .8; }
 
 .flex-wrap{ display: -webkit-box;	display: -webkit-flex;	display: flex; }
