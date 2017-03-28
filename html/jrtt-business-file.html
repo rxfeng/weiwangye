@@ -157,7 +157,7 @@
                 buttons:['取消','确定']
             },function(ret){
                 if(ret.buttonIndex==2){
-                    api.closeWidget({silent:false});
+                    api.closeWidget({silent:true});
                 }
             });
 		});
