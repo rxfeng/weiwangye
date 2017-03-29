@@ -99,3 +99,18 @@ html,body{
 .jrtt-package-item .jrtt-package-items .jrtt-package-items-img{
 	width: 80px;
 }
+.aui-chat-left .aui-chat-inner .aui-chat-content:active{
+	background:#eee;
+}
+.aui-chat .aui-chat-right .aui-chat-status{
+	right:0;
+}
+.jrtt-chat-time{
+	font-size:12px;
+}
+.aui-chat .aui-chat-right .aui-chat-content p.jrtt-listening-p{
+	background:deepskyblue;
+}
+.aui-chat .aui-chat-right .jrtt-listening{
+	background-image: linear-gradient(45deg, deepskyblue, deepskyblue 50%, transparent 50%);
+}

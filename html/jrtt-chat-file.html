@@ -13,25 +13,6 @@
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/jrtt-chat.css" /> <!--聊天样式-->
     <link rel="stylesheet" href="../css/voives.css" />
-	<style>
-    	.aui-chat-left .aui-chat-inner .chatTap{
-    		background: rgba(0,0,0,0.1);
-    		position: relative;
-    		z-index: 1;
-    	}
-    	.aui-chat .aui-chat-right .aui-chat-status{
-    		right:0;
-    	}
-    	.jrtt-chat-time{
-    		font-size:12px;
-    	}
-    	.aui-chat .aui-chat-right .aui-chat-content p.jrtt-listening-p{
-    		background:deepskyblue;
-    	}
-    	.aui-chat .aui-chat-right .jrtt-listening{
-    		background-image: linear-gradient(45deg, deepskyblue, deepskyblue 50%, transparent 50%);
-    	}
-    </style>
 </head>
 <body>
 	<script>
@@ -53,7 +34,7 @@
 	<div style="overflow: hidden;margin-bottom: 60px;margin-top: 50px;">
 		<section class="aui-chat">
 	    <div class="aui-chat-header">2016年7月13日</div>
-	 	<div class="aui-chat-item aui-chat-left" data-item="forword" data-url="jrtt-details-file.html" data-fn="1">
+	 	<div class="aui-chat-item aui-chat-left" data-item="forword" data-url="jrtt-details-file.html" data-fn="detail">
 	        <div class="aui-chat-media">
 	            <img src="../img/logo@3x.png" />
 	        </div>
@@ -91,7 +72,6 @@
 	        </div>
 	    </div>
 	    
-	    
 		<div class="aui-chat-item aui-chat-right">
 	        <div class="aui-chat-media">
 	            <img src="../img/timg.jpg" />
@@ -120,7 +100,7 @@
 	        </div>
 	    </div>
 		
-	    <div class="aui-chat-item aui-chat-left" data-item="forword" data-url="jrtt-newdetails-file.html" data-fn="1">
+	    <div class="aui-chat-item aui-chat-left" data-item="forword" data-url="jrtt-newdetails-file.html" data-fn="detail">
 	        <div class="aui-chat-media">
 	            <img src="../img/logo@3x.png" />
 	        </div>
@@ -280,25 +260,18 @@
 		if($(that).attr("data-fn")=="pop"){
 			window.history.back(-1); 
 		}else{
-			$(that).children('.aui-chat-inner').children('.aui-chat-content').addClass('chatTap');
-	        setTimeout(function(){
-	       		$(that).children('.aui-chat-inner').children('.aui-chat-content').removeClass('chatTap');
-	        },100);
+			
 		}
 	}
 	var appfun = function(that,fn){
 		if(fn=="pop"){
 			api.closeWin();
 		}else{
-			$(that).children('.aui-chat-inner').children('.aui-chat-content').addClass('chatTap');
 			var url = $(that).attr("data-url");
 			api.openWin({
 	            name: url.slice(0,url.length-5),
 	            url: url
-	        });
-	        setTimeout(function(){
-	       		$(that).children('.aui-chat-inner').children('.aui-chat-content').removeClass('chatTap');
-	        },100);
+	       });
 		}
 	}
 	toast.hide();
@@ -325,20 +298,6 @@
 	    $('.jrtt-index-footer-search').val("");
 	    $('.jrtt-index-footer-search').attr('placeholder','');
 	    window.document.body.scrollTop = document.body.scrollHeight;
-	}
-	function detailsTap(ret){
-		$(ret).children('.aui-chat-inner').children('.aui-chat-content').addClass('chatTap');
-		window.location.href='jrtt-details-file.html'; 
-        setTimeout(function(){
-       		$(ret).children('.aui-chat-inner').children('.aui-chat-content').removeClass('chatTap');
-        },100);
-	}
-	function detailsTap2(ret){
-		$(ret).children('.aui-chat-inner').children('.aui-chat-content').addClass('chatTap');
-		window.location.href='jrtt-newdetails-file.html'; 
-        setTimeout(function(){
-       		$(ret).children('.aui-chat-inner').children('.aui-chat-content').removeClass('chatTap');
-        },100);
 	}
 </script>
 </html>

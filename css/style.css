@@ -159,6 +159,7 @@ body{
     padding: 5px;
     border-radius: 50px;
 }
+
 /* 个人中心 */
 .jrtt-myinfo-top{
 	width:100%;
@@ -237,6 +238,10 @@ body{
 	float: right;
 	font-size: 14px;
 }
+.aui-list-item-inner.aui-list-item-arrow{
+	font-size: 14px;
+	line-height: 30px;
+}
 /*推荐内容样式*/
 
 .jrtt-disinclination{
@@ -297,6 +302,20 @@ body{
 .jrtt-top-title1 .jrtt-container .swiper-slide .aa{
 	color:#ff8e0c;
 }	
+.jrtt-package-item .jrtt-package-items{
+	margin: 0 20px;
+}
+.jrtt-package-item .jrtt-package-items:last-child{
+	padding: 10px 0px 10px 0px;
+	margin: 0 20px;
+}
+.jrtt-item-close{
+	font-size: 18px;
+	position: absolute;
+	right:15px;
+	top:0;
+	z-index: 10;
+}
 /*套餐*/
 .jrtt-content .aui-list-item{
 	padding: 0;
@@ -517,4 +536,7 @@ body{
 }
 .jrtt-content .itemShow{
 	display: block;
+}
+.jrtt-myinfo-top-box:active {
+	background-color: #fcfcfc;
 }
