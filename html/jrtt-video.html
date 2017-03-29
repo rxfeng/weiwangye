@@ -1,0 +1,152 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>新疆电信</title>
+    <link rel="icon" href="../icon/logo.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <script src="../js/aui-toast.js"></script>
+    <link rel="stylesheet" href="../css/aui.2.0.css"/>
+	<link rel="stylesheet" href="../css/swiper.css" />
+    <link rel="stylesheet" href="../css/dropload.css" />
+	<link rel="stylesheet" href="../css/aui-pull-refresh.css" />
+	<link rel="stylesheet" href="../font/font-awesome-4.7.0/css/font-awesome.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+<script>
+	var toast = new auiToast({});	//提示窗体
+	toast.loading({
+		title : "页面加载中",
+		duration : 100000
+	});
+</script>
+<header class="aui-bar aui-bar-nav jrtt-header" id="aui-header">
+	<a class="aui-pull-left aui-btn" data-item="forword" data-url="" data-fn="pop">
+        <span class="aui-iconfont aui-icon-left"></span>
+    </a>
+    <div class="aui-title jrtt-header-title">视频详情</div>
+</header>
+<div class="aui-refresh-content jrtt-content">
+	<div class="aui-content">
+		<div class="aui-card-list-content-padded jrtt-details-tap" style="position: relative;">
+		    <div class="aui-card-list-title">实拍：74米的大货车 他们是怎么拐弯的,74米的大货车 他们是怎么拐弯的</div>
+		    <video width="100%" src="../img/fun.mp4" type="video/mp4" class="video1" onclick="aa(this);">
+		    	不支持视频播放
+		    </video>
+		    <div class="jrtt-vedio-switch jrtt-vedio-start"><img src="../img/start.jpg" alt="" /></div>
+			<div class="jrtt-vedio-switch jrtt-vedio-stop"><img src="../img/stop.jpg" alt="" /></div>
+			<div class="jrtt-vedio-list-time">02:44</div>
+		    <div class="jrtt-photo">
+		        <ul>
+		            <li class="jrtt-border">阳光宽频</li>
+		            <li>同林文化</li>
+		            <li>50评论</li>
+		            <li>5小时前</li>
+		        </ul>
+		    </div>
+		    <div class="jrtt-line"></div>
+		</div>
+	</div>
+</div>
+</body>
+<script src="../js/api.js"></script>
+<script src="../js/jquery-1.10.2.js"></script>
+<script src="../js/touch.js" ></script>
+<script src="../js/swiper.js"></script>
+<script src="../js/aui-scroll.js"></script> <!--滚动（上拉加载）-->
+<script src="../js/aui-pull-refresh.js"></script>  <!--下拉刷新-->
+<script src="../js/handlebars-v1.3.0.js"></script>
+<script src="../js/aui-skin.js"></script>
+<script src="../js/aui-dialog.js"></script>
+<script src="../js/common.js"></script>
+<script type="text/javascript">
+	var initApp = function(){
+		
+	}
+	var initHtml = function(){
+		
+	}
+	var webfun = function(that){
+		if($(that).attr("data-fn")=="pop"){
+			window.history.back(-1); 
+		}
+	}
+	var appfun = function(that,fn){
+		var url = $(that).attr("data-url");
+		switch(fn){
+			case "pop":
+    			api.closeWin();
+    			break;
+			default:
+				api.openWin({
+		            name: url.slice(0,url.length-5),
+		            url: url
+		        });
+		}
+	}
+	var t = $('#aui-header').height();
+	var t2 = t+$('.jrtt-index-top').height();
+	$('.jrtt-content').css('margin-top',t2+'px');
+	toast.hide();
+</script>
+<script>
+	//	点击视频的开关按钮
+	var $start = $('.jrtt-vedio-start');
+	var $stop = $('.jrtt-vedio-stop');
+	var t;
+	var timer = null;
+	var hour ;
+	var second;
+	var ind ;
+	var $video1;
+	$start.on('tap',function(){
+//		$('.video1').pause();
+		var v1 = document.getElementsByClassName('video1');
+		clearInterval(timer);
+		for(var i = 0;i<v1.length;i++){
+			v1[i].pause();
+			$start.show();
+		}
+		
+		var that = this;
+		$video1 = document.getElementsByClassName('video1')[0];
+		t = $(this).siblings('.jrtt-vedio-list-time').html();
+		t =Number(t.slice(0,2)*60) + Number(t.slice(3,5));
+		$(this).hide();
+		$(this).siblings('.jrtt-vedio-stop').show();
+		$video1.play();
+		timer = setInterval(function(){
+			if(t>0) t--;
+			if(t==0 || t==NaN){
+				clearInterval(timer);
+				$start.show();
+				t = $(this).siblings('.jrtt-vedio-list-time').html();
+			}
+			hour = parseInt(t/60)>9 ? parseInt(t/60):"0"+(parseInt(t/60)||"0");
+			second = t%60>9?t%60:"0"+(t%60||"0");
+			$(that).siblings('.jrtt-vedio-list-time').html(hour +":"+ second);
+		},1000);
+		
+		setTimeout(function(){
+			$stop.hide();
+		},1000); 
+	});
+	$stop.on('tap',function(){
+		$(this).hide();
+		$(this).siblings('.jrtt-vedio-start').show();
+		$video1.pause();
+		clearInterval(timer);
+	});
+	function aa(src){
+		if($(src).siblings('.jrtt-vedio-start').css('display')=="none"){
+			$(src).siblings('.jrtt-vedio-stop').show();
+			setTimeout(function(){
+				$(src).siblings('.jrtt-vedio-stop').hide();
+			},1000);
+		}
+	}
+</script>
+</html>

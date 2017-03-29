@@ -540,3 +540,47 @@ body{
 .jrtt-myinfo-top-box:active {
 	background-color: #fcfcfc;
 }
+/* 视频页面  */
+.jrtt-vedio ul li{
+	margin-left: 5px;
+}
+.jrtt-vedio .jrtt-border{
+	padding:0px;
+	padding-top:2px;
+	padding-left:1px;
+	line-height:12px;
+}
+.jrtt-vedio-list-title{
+	position: absolute;
+	padding: 10px;
+	color:#fff;
+	padding-right: 20px;
+}
+.jrtt-vedio-list-time{
+	position: absolute;
+	bottom: 50px;
+	right:30px;
+	color:#fff;
+	font-size: 8px;
+	background: rgba(0,0,0,0.5);
+	padding: 2px 7px 0px 7px;
+	border-radius: 20px;
+}
+.jrtt-vedio-switch{
+	position: absolute;
+	top:50%;
+	left:50%;
+	margin-left: -50px;
+	margin-top: -65px;
+}
+
+.jrtt-vedio-switch img{
+	width:100px;
+	opacity: 0.8;
+}
+.jrtt-vedio-start{
+	display: block;
+}
+.jrtt-vedio-stop{
+	display: none;	
+}

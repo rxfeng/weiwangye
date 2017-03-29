@@ -24,6 +24,7 @@
   <permission name="bootCompleted"/>  
   <permission name="hardware"/>  
   <permission name="contact"/>  
+  <preference name="autoUpdate" value="true" />
   <access origin="*"/>  
   <feature name="fs"/>  
   <feature name="netAudio"/> 
