@@ -148,18 +148,34 @@
 	var dialog = new auiDialog({})
 	//	点击返回键
 	apiready = function(){
+//		api.addEventListener({
+//		    name: 'keyback'
+//		}, function(ret, err) {
+//			dialog.alert({
+//              title:"",
+//              msg:'确定要退出吗？',
+//              buttons:['取消','确定']
+//          },function(ret){
+//              if(ret.buttonIndex==2){
+//                  api.closeWidget({silent:true});
+//              }
+//          });
+//		});
+		var backSecond = 0;
 		api.addEventListener({
-		    name: 'keyback'
-		}, function(ret, err) {
-			dialog.alert({
-                title:"",
-                msg:'确定要退出吗？',
-                buttons:['取消','确定']
-            },function(ret){
-                if(ret.buttonIndex==2){
-                    api.closeWidget({silent:true});
-                }
-            });
+		    name : 'keyback'
+		}, function (ret, err) {
+		    var curSecond = new Date().getSeconds();
+		    if (Math.abs(curSecond - backSecond) > 2) {
+		        backSecond = curSecond;
+		        api.toast({
+		            msg : '连续按两次退出app',
+		            duration : 2000,
+		            location : 'bottom'
+		        });
+		    } else {
+				api.closeWidget({silent:true});
+		    }
 		});
 	}
 //滑动
