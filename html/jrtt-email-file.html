@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>意见反馈</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+	<script src="../js/aui-toast.js"></script>
+    <link rel="stylesheet" href="../css/aui.2.0.css"/>
+    <link rel="stylesheet" href="../css/dropload.css" />
+	<link rel="stylesheet" href="../css/swiper.css" />
+	<link rel="stylesheet" href="../css/aui-pull-refresh.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+<header class="aui-bar aui-bar-nav jrtt-header" id="aui-header">
+    <div class="aui-pull-left jrtt-header-title">新疆电信</div>
+    <a class="aui-pull-right aui-btn" data-item="forword" data-url="jrtt-login.html" data-fn="login">
+        <img src="../img/logo@3x.png" alt="" style="width: 24px;"/>
+    </a>
+</header>
+<div class="jrtt-email-box">
+	<textarea name="" rows="3" cols="10" class="textarea" placeholder="请您针对本站的知识使用及页面功能留下宝贵意见"></textarea>
+	<input type="text" class="input" placeholder="请留下您的联系方式"/>
+	<button onclick="tijiao();">提交反馈</button>
+</div>
+<footer class="aui-bar aui-bar-tab" id="footer">
+	<div class="aui-bar-tab-item" data-item="forword" data-url="index.html" data-fn="tap">
+        <i class="aui-iconfont aui-icon-home"></i>
+    </div>
+    <div class="aui-bar-tab-item aui-active" data-item="forword" data-url="" data-fn="tap">
+        <i class="aui-iconfont aui-icon-comment"></i>
+    </div>
+    <div class="aui-bar-tab-item" data-item="forword" data-url="jrtt-my-file.html" data-fn="tap">
+        <i class="aui-iconfont aui-icon-my"></i>
+    </div>
+</footer>
+
+</body>
+<script src="../js/api.js"></script>
+<script src="../js/jquery-1.10.2.js"></script>
+<script src="../js/touch.js" ></script>
+<script src="../js/dropload.js"></script>   <!--上拉刷新，下拉加载-->
+<script src="../js/swiper.js"></script>
+<script src="../js/aui-skin.js"></script>
+<script src="../js/aui-dialog.js"></script>
+<script src="../js/aui-tab.js"></script>
+<script src="../js/common.js"></script>
+<script>
+	var initApp = function(){
+		
+	}
+	var initHtml = function(){
+		
+	}
+	var webfun = function(that){
+		
+	}
+	var appfun = function(that,fn){
+		var url = $(that).attr("data-url");
+		switch(fn){
+			case "5":
+    			break;
+			default:
+				api.openWin({
+		            name: url.slice(0,url.length-5),
+		            url: url
+		        });
+		}
+	}
+	var dialog = new auiDialog({})
+	//	点击返回键
+	apiready = function(){
+		var backSecond = 0;
+		api.addEventListener({
+		    name : 'keyback'
+		}, function (ret, err) {
+		    var curSecond = new Date().getSeconds();
+		    if (Math.abs(curSecond - backSecond) > 2) {
+		        backSecond = curSecond;
+		        api.toast({
+		            msg : '连续按两次退出app',
+		            duration : 2000,
+		            location : 'bottom'
+		        });
+		    } else {
+				api.closeWidget({silent:true});
+		    }
+		});
+	}
+	var t = $('#aui-header').height();
+	$('.jrtt-email-box').css('margin-top',t+'px');
+	function tijiao(){
+		var tel = $('.input').val();
+		if(checkMobile(tel)){
+			
+		}else{
+			alert("请输入正确的手机号");
+		}	
+	}
+	
+	
+</script>
+</html>

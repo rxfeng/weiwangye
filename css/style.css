@@ -585,3 +585,29 @@ body{
 .jrtt-vedio-stop{
 	display: none;	
 }
+/*反馈页面*/
+.jrtt-email-box{
+	padding: 20px;
+}
+.jrtt-email-box .textarea{
+	border:1px solid #ccc;
+	padding:10px;
+	overflow: auto;
+	font-size: 14px;
+	border-radius: 2px;
+}
+.jrtt-email-box .input{
+	margin-top: 20px;
+	border:1px solid #ccc;
+	border-radius: 2px;
+	font-size: 14px;
+	padding-left: 10px;
+}
+.jrtt-email-box button{
+	width: 100%;
+	background: #ff8e0c;
+	border: 0;
+	color:#fff;
+	margin-bottom: 20px;
+	margin-top:20px;
+}

@@ -68,7 +68,12 @@
 				</div>
 			</div>
 		</div>
-		
+		<div class="aui-tab" id="tab">
+		    <div class="aui-tab-item aui-active">手机套餐</div>
+		    <div class="aui-tab-item"><div></div>融合套餐</div>
+		    <div class="aui-tab-item">宽带iTV</div>
+		    <div class="aui-tab-item">可选包</div>
+		</div>
 		<div class="aui-content aui-list aui-list-in">
 			<div class="aui-list-item" onclick="items(0);">
 				<div class=" jrtt-package-title">乐享</div>
@@ -106,7 +111,7 @@
 	<div class="aui-bar-tab-item aui-active" data-item="forword" data-url="" data-fn="8">
         <i class="aui-iconfont aui-icon-home"></i>
     </div>
-    <div class="aui-bar-tab-item" data-item="forword" data-url="" data-fn="9">
+    <div class="aui-bar-tab-item" data-item="forword" data-url="jrtt-email-file.html" data-fn="9">
         <i class="aui-iconfont aui-icon-comment"></i>
     </div>
     <div class="aui-bar-tab-item" data-item="forword" data-url="jrtt-my-file.html" data-fn="10">
@@ -122,6 +127,7 @@
 <script src="../js/swiper.js"></script>
 <script src="../js/aui-skin.js"></script>
 <script src="../js/aui-dialog.js"></script>
+<script src="../js/aui-tab.js"></script>
 <script src="../js/common.js"></script>
 <script type="text/javascript">
 	var initApp = function(){
@@ -205,5 +211,12 @@
 		$($('.jrtt-package-item')[ind]).slideToggle();
 		$($('.aui-list-item')[ind]).find('.jrtt-package-jiantou span').toggleClass('aui-icon-down');
 	}
+	var tab = new auiTab({
+        element:document.getElementById("tab"),
+        index:1,
+        repeatClick:false
+    },function(ret){
+        console.log(ret);
+    });
 </script>
 </html>

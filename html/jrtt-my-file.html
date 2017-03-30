@@ -148,13 +148,13 @@
 
 <br />
 <footer class="aui-bar aui-bar-tab" id="footer">
-	<div class="aui-bar-tab-item" tapmode data-item="forword" data-url="index.html" data-fn="home">
+	<div class="aui-bar-tab-item" data-item="forword" data-url="index.html" data-fn="home">
         <i class="aui-iconfont aui-icon-home"></i>
     </div>
-    <div class="aui-bar-tab-item" tapmode>
+    <div class="aui-bar-tab-item" data-item="forword" data-url="jrtt-email-file.html" data-fn="9">
         <i class="aui-iconfont aui-icon-comment"></i>
     </div>
-    <div class="aui-bar-tab-item aui-active" tapmode>
+    <div class="aui-bar-tab-item aui-active" data-item="forword" data-url="" data-fn="10">
         <i class="aui-iconfont aui-icon-my"></i>
     </div>
 </footer>
@@ -196,6 +196,11 @@
 			api.openWin({
 	            name: "index",
 	            url: "index.html"
+	        });
+		}else{
+			api.openWin({
+	            name: url.slice(0,url.length-5),
+	            url: url
 	        });
 		}
 	}
