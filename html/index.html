@@ -180,7 +180,6 @@
 		    <video width="100%" src="../img/mov_bbb.mp4" type="video/mp4" class="video1">
 		    	不支持视频播放
 		    </video>
-		    
 		    <div class="jrtt-vedio-switch jrtt-vedio-start"><img src="../img/start.jpg" alt="" /></div>
 		    <div class="jrtt-vedio-switch jrtt-vedio-stop"><img src="../img/stop.jpg" alt="" /></div>
 		    <div class="jrtt-vedio-list-time">00:03</div>
@@ -473,9 +472,9 @@
 	},1000);
 </script>
 <script>
-	console.log($('.video1').height())
 	var h = $('.video1').height();
 	var w = $('.video1').width();
-	$('.video1').siblings('.video-img').css({'height':h+'px','width':w+'px'})
+	$('.video1').css('height',h+'px');
+	$('.video1').siblings('.video-img').css({'height':h+1+'px','width':w+'px'})
 </script>
 </html>

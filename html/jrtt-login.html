@@ -81,6 +81,17 @@
     	.jrtt-red{
     		color:red;
     	}
+    	.jrtt-city{
+			display: flex;
+			flex-wrap: wrap;
+			
+		}
+		.jrtt-city-txt{
+			padding: 0 10px;
+			border: 1px solid #ccc;
+			border-radius: 3px;
+			margin:10px;
+		}
     </style>
 </head>
 <body>
@@ -108,8 +119,16 @@
 		<div onclick="two();"></div>
 		<div onclick="three();"></div>
 	</div>
+	<p class="jrtt-chang-skin">城市更换</p>
+	<div class="jrtt-city"></div>
 </body>
+<script id="jrtt-city-template" type="text/x-handlebars-template">
+	{{#each list}}
+		<p class="jrtt-city-txt" onclick="city('{{city}}');">{{city}}</p>
+	{{/each}}
+</script>
 <script src="../js/jquery-1.10.2.js"></script>
+<script src="../js/handlebars-v1.3.0.js"></script>
 <script src="../js/api.js"></script>
 <script src="../js/aui-tab.js"></script>
 <script src="../js/aui-toast.js"></script>
@@ -117,6 +136,7 @@
 <script src="../js/swiper.js"></script>
 <script src="../js/aui-skin.js"></script>
 <script src="../js/common.js"></script>
+<script src="../model/model.js"></script>
 <script>
 	var timer = null;
 	var toast = new auiToast({})
@@ -231,5 +251,21 @@
             });
 		}
 	} 
+</script>
+<script>
+	//更换城市
+	getCity(
+		function(data){
+			var myTemplate = Handlebars.compile($("#jrtt-city-template").html());
+			$('.jrtt-city').html(myTemplate(data));
+		},
+		function(){
+			console.log('error');
+		},
+		'ajax请求页面传入的值'
+	)
+	function city(str){
+		console.log(str);
+	}
 </script>
 </html>

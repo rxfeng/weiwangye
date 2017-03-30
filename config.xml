@@ -17,6 +17,7 @@
   <preference name="smartUpdate" value="false"/>  
   <preference name="debug" value="true"/>  
   <preference name="statusBarAppearance" value="false"/>  
+  <preference name="autoUpdate" value="true"/>  
   <permission name="readPhoneState"/>  
   <permission name="location"/>  
   <permission name="fileSystem"/>  
@@ -24,7 +25,6 @@
   <permission name="bootCompleted"/>  
   <permission name="hardware"/>  
   <permission name="contact"/>  
-  <preference name="autoUpdate" value="true" />
   <access origin="*"/>  
   <feature name="fs"/>  
   <feature name="netAudio"/> 

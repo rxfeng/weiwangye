@@ -14,6 +14,12 @@
 	<link rel="stylesheet" href="../css/aui-pull-refresh.css" />
 	<link rel="stylesheet" href="../font/font-awesome-4.7.0/css/font-awesome.css" />
     <link rel="stylesheet" href="../css/style.css" />
+    <style>
+    	.video-img{
+    		/*visibility: hidden;*/
+    		position: absolute;
+    	}
+    </style>
 </head>
 <body>
 <script>
@@ -33,12 +39,9 @@
 	<div class="aui-content">
 		<div class="aui-card-list-content-padded jrtt-details-tap" style="position: relative;">
 		    <div class="aui-card-list-title">实拍：74米的大货车 他们是怎么拐弯的,74米的大货车 他们是怎么拐弯的</div>
-		    <video width="100%" src="../img/fun.mp4" type="video/mp4" class="video1" onclick="aa(this);">
+		    <video width="100%" controls="controls" src="../img/fun.mp4" type="video/mp4" class="video1" onclick="aa(this);">
 		    	不支持视频播放
 		    </video>
-		    <div class="jrtt-vedio-switch jrtt-vedio-start"><img src="../img/start.jpg" alt="" /></div>
-			<div class="jrtt-vedio-switch jrtt-vedio-stop"><img src="../img/stop.jpg" alt="" /></div>
-			<div class="jrtt-vedio-list-time">02:44</div>
 		    <div class="jrtt-photo">
 		        <ul>
 		            <li class="jrtt-border">阳光宽频</li>
@@ -47,7 +50,6 @@
 		            <li>5小时前</li>
 		        </ul>
 		    </div>
-		    <div class="jrtt-line"></div>
 		</div>
 	</div>
 </div>
@@ -91,62 +93,5 @@
 	var t2 = t+$('.jrtt-index-top').height();
 	$('.jrtt-content').css('margin-top',t2+'px');
 	toast.hide();
-</script>
-<script>
-	//	点击视频的开关按钮
-	var $start = $('.jrtt-vedio-start');
-	var $stop = $('.jrtt-vedio-stop');
-	var t;
-	var timer = null;
-	var hour ;
-	var second;
-	var ind ;
-	var $video1;
-	$start.on('tap',function(){
-//		$('.video1').pause();
-		var v1 = document.getElementsByClassName('video1');
-		clearInterval(timer);
-		for(var i = 0;i<v1.length;i++){
-			v1[i].pause();
-			$start.show();
-		}
-		
-		var that = this;
-		$video1 = document.getElementsByClassName('video1')[0];
-		t = $(this).siblings('.jrtt-vedio-list-time').html();
-		t =Number(t.slice(0,2)*60) + Number(t.slice(3,5));
-		$(this).hide();
-		$(this).siblings('.jrtt-vedio-stop').show();
-		$video1.play();
-		timer = setInterval(function(){
-			if(t>0) t--;
-			if(t==0 || t==NaN){
-				clearInterval(timer);
-				$start.show();
-				t = $(this).siblings('.jrtt-vedio-list-time').html();
-			}
-			hour = parseInt(t/60)>9 ? parseInt(t/60):"0"+(parseInt(t/60)||"0");
-			second = t%60>9?t%60:"0"+(t%60||"0");
-			$(that).siblings('.jrtt-vedio-list-time').html(hour +":"+ second);
-		},1000);
-		
-		setTimeout(function(){
-			$stop.hide();
-		},1000); 
-	});
-	$stop.on('tap',function(){
-		$(this).hide();
-		$(this).siblings('.jrtt-vedio-start').show();
-		$video1.pause();
-		clearInterval(timer);
-	});
-	function aa(src){
-		if($(src).siblings('.jrtt-vedio-start').css('display')=="none"){
-			$(src).siblings('.jrtt-vedio-stop').show();
-			setTimeout(function(){
-				$(src).siblings('.jrtt-vedio-stop').hide();
-			},1000);
-		}
-	}
 </script>
 </html>
