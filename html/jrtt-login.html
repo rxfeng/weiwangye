@@ -121,6 +121,71 @@
 	</div>
 	<p class="jrtt-chang-skin">城市更换</p>
 	<div class="jrtt-city"></div>
+	<style>
+		.jrtt-package-type{
+			
+		}
+		.jrtt-package-type-item{
+			display: flex;
+			padding: 20px 10px;
+			width: 100%;
+		}
+		.jrtt-package-type-item .jrtt-package-type-item-txt{
+			width: 100px;
+		}
+		
+		.jrtt-package-type-item .jrtt-package-type-item-range{
+			margin-top: -10px;
+		}
+		.jrtt-package-type-item-input{
+			display: flex;
+			justify-content: center;
+		}
+		.jrtt-package-type-item-input input{
+			width: 60px;
+			min-height: 30px;
+			height: 20px;
+			border: 1px solid #ccc;
+			text-align: center;
+			font-size: 14px;
+			border-radius: 3px;
+		}
+		.jrtt-package-type-item-input p{
+			margin-left: 10px;
+		}
+	</style>
+	<div class="jrtt-package-type">
+		<div class="jrtt-package-type-item">
+			<p class="jrtt-package-type-item-txt">通话时长：</p>
+			<div class="aui-range jrtt-package-type-item-range" style="width: 100%;">
+		        <input type="range" class="aui-range" value="0" max="100" min="0" step="1" id="range1" style="width: 100%;"/>
+		   </div>
+		</div>
+		<div class="jrtt-package-type-item-input jrtt-package-type-item-time">
+			<input type="number" value="0"/><p>分钟</p>
+		</div>
+		<div class="jrtt-package-type-item">
+			<p class="jrtt-package-type-item-txt">短信条数：</p>
+			<div class="aui-range jrtt-package-type-item-range" style="width: 100%;">
+		        <input type="range" class="aui-range" value="0" max="100" min="0" step="1" id="range2" style="width: 100%;"/>
+		    </div>
+		</div>
+		<div class="jrtt-package-type-item-input jrtt-package-type-item-num">
+			<input type="number" value="0"/><p>条</p>
+		</div>
+		
+		<div class="jrtt-package-type-item">
+			<p class="jrtt-package-type-item-txt">上网流量：</p>
+			<div class="aui-range jrtt-package-type-item-range" style="width: 100%;">
+		        <input type="range" class="aui-range" value="0" max="100" min="0" step="1" id="range3" style="width: 100%;"/>
+		    </div>
+		</div>
+		<div class="jrtt-package-type-item-input jrtt-package-type-item-MB">
+			<input type="number" value="0"/><p>MB</p>
+		</div>
+		
+	</div>
+
 </body>
 <script id="jrtt-city-template" type="text/x-handlebars-template">
 	{{#each list}}
@@ -135,6 +200,7 @@
 <script src="../js/touch.js" ></script>
 <script src="../js/swiper.js"></script>
 <script src="../js/aui-skin.js"></script>
+<script src="../js/aui-range.js"></script>
 <script src="../js/common.js"></script>
 <script src="../model/model.js"></script>
 <script>
@@ -211,7 +277,6 @@
     			break;
 		}
 	}
-
 	var num = 10;
 	function pin(that){
 		var tel = $('.jrtt-login-tel>input').val();
@@ -242,6 +307,21 @@
             });
 		}
 	} 
+	var range = new auiRange({
+	    element:document.getElementById("range1") //滑块容器
+	},function(ret){
+	    $('.jrtt-package-type-item-time>input').val(ret.value)
+	})
+	var range = new auiRange({
+	    element:document.getElementById("range2") //滑块容器
+	},function(ret){
+	    $('.jrtt-package-type-item-num>input').val(ret.value)
+	})
+	var range = new auiRange({
+	    element:document.getElementById("range3") //滑块容器
+	},function(ret){
+	    $('.jrtt-package-type-item-MB>input').val(ret.value)
+	})
 </script>
 <script>
 	//更换城市
