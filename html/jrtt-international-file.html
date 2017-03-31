@@ -59,7 +59,7 @@
 	<div class="jrtt-international-top">
 		<div class="jrtt-international-more">
 			<div class="jrtt-international-title">热门国家/地区</div>
-			<div style="color:skyblue;font-size: 14px;">更多</div>
+			<div style="color:skyblue;font-size: 14px;" data-item="forword" data-url="jrtt-map.html" data-fn="tap">更多</div>
 		</div>
 		<div class="jrtt-international-country">
 			<div><img src="../img/001.jpg" alt="" /><p>中国香港</p></div>
@@ -156,8 +156,21 @@
 			default:
 				api.openWin({
 		            name: url.slice(0,url.length-5),
-		            url: url
+		            url: url,
+		        	delay:300,
+		        	progress:{
+		        		type:"default",
+		        		title:"努力加载中...",
+		        		text:"请稍等"
+		        	}
 		        });
+		        api.showProgress({
+				    title: '努力加载中...',
+				    text: '先喝杯茶...'
+				});
+				setTimeout(function(){
+					api.hideProgress();
+				},2000)
 		}
 	}
 	var dialog = new auiDialog({})

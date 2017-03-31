@@ -320,6 +320,11 @@
     		case "pop":
     			api.closeWin();
     			break;
+    		default:
+    			api.openWin({
+		            name: url.slice(0,url.length-5),
+		            url: url
+		        });
 		}
 	}
 	var num = 10;
