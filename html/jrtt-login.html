@@ -91,6 +91,7 @@
 			border: 1px solid #ccc;
 			border-radius: 3px;
 			margin:10px;
+			line-height: 25px;
 		}
     </style>
 </head>
@@ -121,75 +122,119 @@
 	</div>
 	<p class="jrtt-chang-skin">城市更换</p>
 	<div class="jrtt-city"></div>
-	<style>
-		.jrtt-package-type{
-			
-		}
-		.jrtt-package-type-item{
-			display: flex;
-			padding: 20px 10px;
-			width: 100%;
-		}
-		.jrtt-package-type-item .jrtt-package-type-item-txt{
-			width: 100px;
-		}
-		
-		.jrtt-package-type-item .jrtt-package-type-item-range{
-			margin-top: -10px;
-		}
-		.jrtt-package-type-item-input{
-			display: flex;
-			justify-content: center;
-		}
-		.jrtt-package-type-item-input input{
-			width: 60px;
-			min-height: 30px;
-			height: 20px;
-			border: 1px solid #ccc;
-			text-align: center;
-			font-size: 14px;
-			border-radius: 3px;
-		}
-		.jrtt-package-type-item-input p{
-			margin-left: 10px;
-		}
-	</style>
 	<div class="jrtt-package-type">
 		<div class="jrtt-package-type-item">
-			<p class="jrtt-package-type-item-txt">通话时长：</p>
-			<div class="aui-range jrtt-package-type-item-range" style="width: 100%;">
-		        <input type="range" class="aui-range" value="0" max="100" min="0" step="1" id="range1" style="width: 100%;"/>
+			<div class="jrtt-package-type-top">
+				<p class="jrtt-package-type-item-txt">套餐类型：</p>
+				<div class="aui-list-item-inner">
+	               <label class="jrtt-package-type-list"><input class="aui-radio" type="radio" name="radio2" value="不限" checked> <p>不限</p></label>
+	               <label class="jrtt-package-type-list"><input class="aui-radio" type="radio" name="radio2" value="3G"> <p>3G</p></label>
+	               <label class="jrtt-package-type-list"><input class="aui-radio" type="radio" name="radio2" value="4G"> <p>4G</p></label>
+	            </div>
+			</div>
+		</div>
+		
+		<div class="jrtt-package-type-item">
+			<div class="jrtt-package-type-top">
+				<p class="jrtt-package-type-item-txt">通话时长：</p>
+				<div class="jrtt-package-type-item-input jrtt-package-type-item-time">
+					<input type="number" value="0"/><p>分钟</p>
+				</div>
+			</div>
+			<div class="aui-range jrtt-package-type-item-range">
+		        <input type="range" class="aui-range" value="0" max="100" min="0" step="1" id="range1" />
+		  </div>
+		   <div style="width: 100%;padding: 0 10px;">
+		   		<div class="jrtt-package-type-item-line">
+					<p></p>
+					<p></p>
+					<p></p>
+					<p></p>
+					<p></p>
+			   </div>
+			   <div class="jrtt-package-item-shuzi">
+			   	    <p>0</p>
+			   	    <p>400</p>
+			   	    <p>800</p>
+			   	    <p>1200</p>
+			   	    <p>1600</p>
+			   	    <p>2000</p>
+			   </div>
 		   </div>
 		</div>
-		<div class="jrtt-package-type-item-input jrtt-package-type-item-time">
-			<input type="number" value="0"/><p>分钟</p>
-		</div>
+		
 		<div class="jrtt-package-type-item">
-			<p class="jrtt-package-type-item-txt">短信条数：</p>
-			<div class="aui-range jrtt-package-type-item-range" style="width: 100%;">
-		        <input type="range" class="aui-range" value="0" max="100" min="0" step="1" id="range2" style="width: 100%;"/>
+			<div class="jrtt-package-type-top">
+				<p class="jrtt-package-type-item-txt">短信条数：</p>
+				<div class="jrtt-package-type-item-input jrtt-package-type-item-num">
+					<input type="number" value="0"/><p>条</p>
+				</div>
+			</div>
+			<div class="aui-range jrtt-package-type-item-range">
+		        <input type="range" class="aui-range" value="0" max="100" min="0" step="1" id="range2"/>
 		    </div>
-		</div>
-		<div class="jrtt-package-type-item-input jrtt-package-type-item-num">
-			<input type="number" value="0"/><p>条</p>
+		    <div style="width: 100%;padding: 0 10px;">
+		   		<div class="jrtt-package-type-item-line">
+					<p></p>
+					<p></p>
+					<p></p>
+					<p></p>
+					<p></p>
+			   </div>
+			   <div class="jrtt-package-item-shuzi">
+			   	    <p>0</p>
+			   	    <p>200</p>
+			   	    <p>400</p>
+			   	    <p>600</p>
+			   	    <p>800</p>
+			   	    <p>1000</p>
+			   </div>
+		   </div>
 		</div>
 		
 		<div class="jrtt-package-type-item">
-			<p class="jrtt-package-type-item-txt">上网流量：</p>
-			<div class="aui-range jrtt-package-type-item-range" style="width: 100%;">
-		        <input type="range" class="aui-range" value="0" max="100" min="0" step="1" id="range3" style="width: 100%;"/>
+			<div class="jrtt-package-type-top">
+				<p class="jrtt-package-type-item-txt">上网流量：</p>
+				<div class="jrtt-package-type-item-input jrtt-package-type-item-MB">
+					<input type="number" value="0"/><p>MB</p>
+				</div>
+			</div>
+			<div class="aui-range jrtt-package-type-item-range">
+		        <input type="range" class="aui-range" value="0" max="100" min="0" step="1" id="range3"/>
 		    </div>
-		</div>
-		<div class="jrtt-package-type-item-input jrtt-package-type-item-MB">
-			<input type="number" value="0"/><p>MB</p>
+		    <div style="width: 100%;padding: 0 10px;">
+		   		<div class="jrtt-package-type-item-line">
+					<p></p>
+					<p></p>
+					<p></p>
+					<p></p>
+					<p></p>
+			   </div>
+			   <div class="jrtt-package-item-shuzi">
+			   	    <p>0</p>
+			   	    <p>4096</p>
+			   	    <p>8192</p>
+			   	    <p>12288</p>
+			   	    <p>16384</p>
+			   	    <p>20480</p>
+			   </div>
+		   </div>
 		</div>
 		
+		<div class="jrtt-btn-compute-box">
+			<button class="jrtt-btn-compute" onclick="compute();">开始计算</button>
+		</div>
+		
+		<!--<div class="aui-list-item-input">
+            <input type="checkbox" class="aui-switch" checked>
+        </div>-->
 	</div>
-
+	<div style="height: 100px;"></div>
 </body>
 <script id="jrtt-city-template" type="text/x-handlebars-template">
 	{{#each list}}
-		<p class="jrtt-city-txt" onclick="city('{{city}}');">{{city}}</p>
+		<!--<p class="jrtt-city-txt" onclick="city('{{city}}',this);">{{city}}</p>-->
+		<p class="jrtt-city-txt" onclick="city(this);">{{city}}</p>
 	{{/each}}
 </script>
 <script src="../js/jquery-1.10.2.js"></script>
@@ -307,21 +352,52 @@
             });
 		}
 	} 
-	var range = new auiRange({
+	var range1 = new auiRange({
 	    element:document.getElementById("range1") //滑块容器
 	},function(ret){
-	    $('.jrtt-package-type-item-time>input').val(ret.value)
-	})
-	var range = new auiRange({
+	    $('.jrtt-package-type-item-time>input').val(ret.value*20)
+	});
+	var range2 = new auiRange({
 	    element:document.getElementById("range2") //滑块容器
 	},function(ret){
-	    $('.jrtt-package-type-item-num>input').val(ret.value)
-	})
-	var range = new auiRange({
+	    $('.jrtt-package-type-item-num>input').val(ret.value*10)
+	});
+	var range3 = new auiRange({
 	    element:document.getElementById("range3") //滑块容器
 	},function(ret){
-	    $('.jrtt-package-type-item-MB>input').val(ret.value)
+	    $('.jrtt-package-type-item-MB>input').val(Math.round(ret.value*204.8))
+	});
+	var max ;
+	$('.jrtt-package-type-item-time>input').on('blur',function(){
+		fanwei(this,'#range1',2000);
+	});
+	$('.jrtt-package-type-item-num>input').on('blur',function(){
+		fanwei(this,'#range2',1000);
+	});
+
+	$('.jrtt-package-type-item-MB>input').on('blur',function(){
+		fanwei(this,'#range3',20480);
 	})
+	function fanwei(that,obj,max){
+		if($(that).val()>=0 && $(that).val()<=max){
+			$(obj).val($(that).val()/(max/100)) 
+		}else if($(that).val()<0){
+			$(obj).val(0);
+			$(that).val(0)
+		}else if($(that).val()>max){
+			$(obj).val(max);
+			$(that).val(max)
+		}
+	}
+	function compute(){
+		var radios = document.getElementsByName("radio2");
+		for(var i = 0 ;i < radios.length;i++){
+			if(radios[i].checked){
+				console.log("套餐类型："+radios[i].value+"，通话时长"+$('.jrtt-package-type-item-time>input').val()+'，短信条数：'+$('.jrtt-package-type-item-num>input').val()+'，上网流量：'+$('.jrtt-package-type-item-MB>input').val());
+//				console.log($(radios[i]).siblings('p')[0].innerHTML)
+			}
+		}
+	}
 </script>
 <script>
 	//更换城市
@@ -335,8 +411,14 @@
 		},
 		'ajax请求页面传入的值'
 	)
-	function city(str){
-		console.log(str);
+	function city(obj){
+		console.log($(obj).html());
+		$('.jrtt-city p').css('font-weight','normal');
+		$(obj).css('font-weight','700');
 	}
+	$('.aui-switch').on('tap',function(){
+		console.log(this.checked);
+	});
+	
 </script>
 </html>
