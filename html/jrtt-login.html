@@ -93,6 +93,9 @@
 			margin:10px;
 			line-height: 25px;
 		}
+		.jrtt-city-active{
+			font-weight: 700;
+		}
     </style>
 </head>
 <body>
@@ -418,8 +421,8 @@
 	)
 	function city(obj){
 		console.log($(obj).html());
-		$('.jrtt-city p').css('font-weight','normal');
-		$(obj).css('font-weight','700');
+		$('.jrtt-city p').removeClass('jrtt-city-active');
+		$(obj).addClass('jrtt-city-active');
 	}
 	$('.aui-switch').on('tap',function(){
 		console.log(this.checked);
