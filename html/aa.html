@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<style type="text/css">
+		body, html {width: 100%;height: 100%;margin:0;font-family:"微软雅黑";}
+		#allmap{width:100%;height:500px;}
+		p{margin-left:5px; font-size:14px;}
+	</style>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=3jtDlxAzvvbkrPcsEFugwfIFcuNsxf3i"></script>
+	<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+	<title>给多个点添加信息窗口</title>
+</head>
+<body>
+	<style type="text/css">
+		.rxfeng-box{
+			width: 230px;
+			padding:0 10px;
+			border: 1px solid #ccc;
+		}
+		.rxfeng-title{
+			font-size: 16px;
+		}
+		.rxfeng-cont{
+			display: flex;
+			margin-top: -10px;
+		}
+		.rxfeng-cont img{
+			width: 100px;
+			height: 100%;
+		}
+	</style>
+	<div class="rxfeng-box">
+		<h1 class="rxfeng-title">丰联广场</h1>
+		<div class="rxfeng-cont">
+			<p>丰联广场12层1202一呼百应科技有限公司</p>
+			<img src="../img/002.jpg" alt="" />
+		</div>
+	</div>
+	<div id="allmap"></div>
+	<p>点击标注点，可查看由纯文本构成的简单型信息窗口</p>
+</body>
+</html>
+
+<script>
+	var myopt = [[116.417854,39.921988,"<h1 class='rxfeng-title'>丰联广场</h1>"+"<div class='rxfeng-cont'>"+"<p>丰联广场12层1202一呼百应科技有限公司</p>"+
+	"<img src='../img/002.jpg' />"+"</div>"],[116.406605,39.921585,"<h4 style='margin:0 0 5px 0;padding:0.2em 0'>东华门大街</h4>" + 
+	"<img style='float:right;margin:4px' id='imgDemo' src='../img/1.jpg' width='100' title='天安门'/>" + 
+	"<p style='margin:0;line-height:1.5;font-size:13px;text-indent:2em'>北京市东城区东华门大街</p>"],[116.412222,39.912345,"<h4 style='margin:0 0 5px 0;padding:0.2em 0'>正义路</h4>" + 
+	"<img style='float:right;margin:4px' id='imgDemo' src='../img/1.jpg' width='100' title='天安门'/>" + 
+	"<p style='margin:0;line-height:1.5;font-size:13px;text-indent:2em'>北京市东城区正义路甲5号</p>" + 
+	"</div>"]];
+	var map = new BMap.Map("allmap");
+	map.centerAndZoom(new BMap.Point(116.417854,39.921988), 15);
+	var opts = {
+				width : 120,     // 信息窗口宽度
+				title : "" , // 信息窗口标题
+				enableMessage:true//设置允许信息窗发送短息
+			   };
+	for(var i = 0;i<myopt.length;i++){
+		var marker = new BMap.Marker(new BMap.Point(myopt[i][0],myopt[i][1]));  // 创建标注
+		var content = myopt[i][2];
+		map.addOverlay(marker);               // 将标注添加到地图中
+		addClickHandler(content,marker);
+	}
+	function addClickHandler(content,marker){
+		marker.addEventListener("click",function(e){
+			openInfo(content,e)}
+		);
+	}
+	function openInfo(content,e){
+		var p = e.target;
+		var point = new BMap.Point(p.getPosition().lng, p.getPosition().lat);
+		var infoWindow = new BMap.InfoWindow(content,opts);  // 创建信息窗口对象 
+		map.openInfoWindow(infoWindow,point); //开启信息窗口
+	}
+</script>
+
