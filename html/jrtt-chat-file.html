@@ -34,7 +34,7 @@
 	<div style="overflow: hidden;margin-bottom: 60px;margin-top: 50px;">
 		<section class="aui-chat">
 	    <div class="aui-chat-header">2016年7月13日</div>
-	 	<div class="aui-chat-item aui-chat-left" data-item="forword" data-url="jrtt-details-file.html" data-fn="detail">
+	 	<div class="aui-chat-item aui-chat-left" data-item="forword" data-url="jrtt-details2-file.html" data-fn="detail">
 	        <div class="aui-chat-media">
 	            <img src="../img/logo@3x.png" />
 	        </div>
@@ -191,7 +191,6 @@
 <script src="../js/aui-skin.js"></script>
 <script src="../js/app.js"></script>
 <script src="../js/hammerswipe.js"></script>
-<script src="../js/common.js"></script>
 <script id="jrtt-chat-voicelist-template" type="text/x-handlebars-template">
 	<div class="aui-chat-item aui-chat-right">
         <div class="aui-chat-media">
@@ -221,6 +220,37 @@
         </div>
    </div>
 </script>
+<script>
+	var initApp = function(){
+		
+	}
+	var initHtml = function(){
+		
+	}
+	var webfun = function(that){
+		if($(that).attr("data-fn")=="pop"){
+			window.history.back(-1); 
+		}else{
+			window.location = $(that).attr("data-url")+'?haha=11';
+		}
+		return false;
+	}
+	var appfun = function(that,fn){
+		if(fn=="pop"){
+			api.closeWin();
+		}else{
+			var url = $(that).attr("data-url");
+			api.openWin({
+	            name: url.slice(0,url.length-5),
+	            url: url,
+	            pageParam:{
+	            	haha:11
+	            }
+	       });
+		}
+	}
+</script>
+<script src="../js/common.js"></script>
 <script type="text/javascript">
 	apiready = function(){
 		$app.Voicemodule(".jrtt-luyin",function(path,time){
@@ -250,30 +280,7 @@
 		    }
 		});
 	}
-	var initApp = function(){
-		
-	}
-	var initHtml = function(){
-		
-	}
-	var webfun = function(that){
-		if($(that).attr("data-fn")=="pop"){
-			window.history.back(-1); 
-		}else{
-			
-		}
-	}
-	var appfun = function(that,fn){
-		if(fn=="pop"){
-			api.closeWin();
-		}else{
-			var url = $(that).attr("data-url");
-			api.openWin({
-	            name: url.slice(0,url.length-5),
-	            url: url
-	       });
-		}
-	}
+	
 	toast.hide();
 	window.document.body.scrollTop = document.body.scrollHeight;
 //	$('.jrtt-index-footer-search').on('input',function(){

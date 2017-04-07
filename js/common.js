@@ -1,6 +1,16 @@
 //var _type = "app";
 var _type = "web";
 //公共的
+if(_type=="app"){
+	initApp();
+}else if(_type=="web"){
+	initHtml();
+}
+function GetQueryString(name){
+     var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+     var r = window.location.search.substr(1).match(reg);
+     if(r!=null)return  unescape(r[2]); return null;
+}
 $(document).on("tap","[data-item = 'forword']",function(){
 	var $this= $(this);
 	var _fn = $this.attr("data-fn");      //跳转那个页面的标识
