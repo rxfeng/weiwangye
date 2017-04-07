@@ -58,3 +58,8 @@
 .jrtt-btn-compute{
 	background: #ff8e0c;
 }
+/*详情*/
+.jrtt-details-list h3{
+	border-color:#ff8e0c;
+	color:#ff8e0c;
+}

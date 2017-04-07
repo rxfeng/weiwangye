@@ -537,9 +537,6 @@ body{
 .jrtt-content .itemShow{
 	display: block;
 }
-.jrtt-myinfo-top-box:active {
-	background-color: #fcfcfc;
-}
 /* 视频页面  */
 .jrtt-vedio ul li{
 	margin-left: 5px;
@@ -652,11 +649,15 @@ body{
 .aui-range .aui-range-tip{
 	display: none;	
 }
-
+.jrtt-package-type-lines{
+	width: 100%;
+	padding: 0 22px;
+	margin-top: -6px;
+}
 .jrtt-package-type-item .jrtt-package-type-item-line{
 	width: 100%;
 	display: flex;
-	height: 10px;
+	height: 8px;
 	border-right:1px solid #ccc;
 }
 .jrtt-package-type-item .jrtt-package-type-item-line p{
@@ -700,4 +701,46 @@ body{
 .jrtt-package-type-list .aui-radio{
 	width: 20px;
 	height: 20px;
+}
+/*详情*/
+.jrtt-detail-title h3{
+	text-align: center;
+}
+.jrtt-details{
+	padding: 0 10px;
+}
+.jrtt-details-list h3{
+	border-left:5px solid #ff8e0c;
+	font-weight: 700;
+	color:#ff8e0c;
+	padding-left: 5px;
+	line-height: 15px;
+}
+.jrtt-details-list h4{
+	font-weight: 700;
+	margin-top: 10px;
+}
+.jrtt-details-list p{
+	margin-top: 5px;
+	line-height: 20px;
+	margin-bottom: 10px;
+}
+.jrtt-details-list-ul p{
+	margin-bottom: 0;
+}
+/*点击跳转选中的效果*/
+.jrtt-myinfo-top-box:active {
+	background-color: #fcfcfc;
+}
+.aui-card-list-content-padded:active {
+	background-color: #eee;
+}
+.jrtt-package-items:active{
+	background-color: #eee;
+}
+.jrtt-international-items:active{
+	background-color: #eee;
+}
+.jrtt-package-items:active{
+	background-color: #eee;
 }

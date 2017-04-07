@@ -47,7 +47,7 @@ function getCookies(name){
 }
 
 //换肤
-var skinInt = 2;
+var skinInt = 1;
 
 function one(){
 	var skinOne = new auiSkin({

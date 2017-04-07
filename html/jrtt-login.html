@@ -96,6 +96,7 @@
 		.jrtt-city-active{
 			font-weight: 700;
 		}
+	  	
     </style>
 </head>
 <body>
@@ -147,7 +148,7 @@
 			<div class="aui-range jrtt-package-type-item-range">
 		        <input type="range" class="aui-range" value="0" max="100" min="0" step="1" id="range1" />
 		  </div>
-		   <div style="width: 100%;padding: 0 10px;">
+		   <div class="jrtt-package-type-lines">
 		   		<div class="jrtt-package-type-item-line">
 					<p></p>
 					<p></p>
@@ -176,7 +177,7 @@
 			<div class="aui-range jrtt-package-type-item-range">
 		        <input type="range" class="aui-range" value="0" max="100" min="0" step="1" id="range2"/>
 		    </div>
-		    <div style="width: 100%;padding: 0 10px;">
+		    <div class="jrtt-package-type-lines">
 		   		<div class="jrtt-package-type-item-line">
 					<p></p>
 					<p></p>
@@ -204,8 +205,8 @@
 			</div>
 			<div class="aui-range jrtt-package-type-item-range">
 		        <input type="range" class="aui-range" value="0" max="100" min="0" step="1" id="range3"/>
-		    </div>
-		    <div style="width: 100%;padding: 0 10px;">
+		   </div>
+		    <div class="jrtt-package-type-lines">
 		   		<div class="jrtt-package-type-item-line">
 					<p></p>
 					<p></p>
@@ -249,6 +250,7 @@
 <script src="../js/swiper.js"></script>
 <script src="../js/aui-skin.js"></script>
 <script src="../js/aui-range.js"></script>
+<script src="../model/model.js"></script>
 <script>
 	var timer = null;
 	var toast = new auiToast({})
@@ -328,10 +330,8 @@
 		        });
 		}
 	}
-	
 </script>
 <script src="../js/common.js"></script>
-<script src="../model/model.js"></script>
 <script>
 	var num = 10;
 	function pin(that){
@@ -412,6 +412,7 @@
 </script>
 <script>
 	//更换城市
+//	调用getCity方法，参数{方法1，方法2，obj}
 	getCity(
 		function(data){
 			var myTemplate = Handlebars.compile($("#jrtt-city-template").html());
@@ -420,16 +421,15 @@
 		function(){
 			console.log('error');
 		},
-		'ajax请求页面传入的值'
+		{city:'sjz'}
 	)
 	function city(obj){
 		console.log($(obj).html());
 		$('.jrtt-city p').removeClass('jrtt-city-active');
 		$(obj).addClass('jrtt-city-active');
 	}
-	$('.aui-switch').on('tap',function(){
-		console.log(this.checked);
-	});
-	
+//	$(document).on('tap','.aui-switch',function(){
+//		console.log(this.checked);
+//	})
 </script>
 </html>

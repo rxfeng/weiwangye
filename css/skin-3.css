@@ -58,3 +58,8 @@
 .jrtt-btn-compute{
 	background: pink;
 }
+/*详情*/
+.jrtt-details-list h3{
+	border-color: pink;
+	color: pink;
+}

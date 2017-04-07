@@ -1,10 +1,11 @@
 //获取城市
 function getCity(onSuccess, onError, data) {
+	console.log(data.city);
 	$.ajax({
 		url: '../city.json',
 		type: 'get',
 		dataType: 'json',
-		data: {},
+		data: JSON.stringify(data),
 		success: function (result) {
 			onSuccess(result);
 		},
