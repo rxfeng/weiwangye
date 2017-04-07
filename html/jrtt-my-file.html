@@ -196,6 +196,11 @@
 			api.openWin({
 	            name: "index",
 	            url: "index.html"
+	       });
+		}else{
+			api.openWin({
+	            name: url.slice(0,url.length-5),
+	            url: url
 	        });
 		}
 	}
