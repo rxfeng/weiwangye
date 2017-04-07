@@ -116,7 +116,7 @@
 		}
 	}
 	var initHtml = function(){
-		console.log(GetQueryString('haha'));
+		console.log(getArg('haha'));
 	}
 	var webfun = function(that){
 		if($(that).attr("data-fn")=="pop"){
@@ -132,7 +132,7 @@
 <script src="../js/common.js"></script>
 <script>
 	var t = $('#aui-header').height();
-	$('.jrtt-detail-title').css('margin-top',t+'px');
+	$('.jrtt-detail-title').css('margin-top',t+5+'px');
 	toast.hide();
 </script>
 </html>
