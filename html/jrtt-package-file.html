@@ -2,29 +2,30 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="viewport"
+          content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
     <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
     <title>套餐</title>
-    <link rel="stylesheet" type="text/css" href="../css/api.css" />
-	<script src="../js/aui-toast.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <script src="../js/aui-toast.js"></script>
     <link rel="stylesheet" href="../css/aui.2.0.css"/>
-    <link rel="stylesheet" href="../css/dropload.css" />
-	<link rel="stylesheet" href="../css/swiper.css" />
-	<link rel="stylesheet" href="../css/aui-pull-refresh.css" />
-    <link rel="stylesheet" href="../css/style.css" />
-   	<style>
-   		.jrtt-list{
-   			display: none;
-   		}
-   	</style>
+    <link rel="stylesheet" href="../css/dropload.css"/>
+    <link rel="stylesheet" href="../css/swiper.css"/>
+    <link rel="stylesheet" href="../css/aui-pull-refresh.css"/>
+    <link rel="stylesheet" href="../css/style.css"/>
+    <style>
+        .jrtt-list {
+            display: none;
+        }
+    </style>
 </head>
 <body>
 <script>
-	var toast = new auiToast({});	//提示窗体
-	toast.loading({
-		title : "页面加载中",
-		duration : 1000
-	});
+    var toast = new auiToast({});	//提示窗体
+    toast.loading({
+        title: "页面加载中",
+        duration: 1000
+    });
 </script>
 <header class="aui-bar aui-bar-nav jrtt-header" id="aui-header">
     <div class="aui-pull-left jrtt-header-title">新疆电信</div>
@@ -33,97 +34,102 @@
     </a>
 </header>
 <div class="jrtt-index-top">
-	<div class="swiper-container1 jrtt-top-title1" id="tuijian">
-		<div class="swiper-wrapper jrtt-container">
-			<div class="swiper-slide">
-				<a href="javascript:;" data-item="forword" data-url="index.html" data-fn="1">推荐</a>
-			</div>
-			<div class="swiper-slide">
-				<a href="javascript:;" class="aa" data-item="forword" data-url="" data-fn="2">套餐</a>
-			</div>
-			<div class="swiper-slide jrtt-size4">
-				<a href="javascript:;" data-item="forword" data-url="jrtt-activity-file.html" data-fn="3">优惠活动</a>
-			</div>
-			<div class="swiper-slide">
-				<a href="javascript:;" data-item="forword" data-url="" data-fn="4">ITV</a>
-			</div>
-			<div class="swiper-slide jrtt-size4">
-				<a href="javascript:;" data-item="forword" data-url="jrtt-international-file.html" data-fn="5">国际漫游</a>
-			</div>
-			<div class="swiper-slide jrtt-size3">
-				<a href="javascript:;" data-item="forword" data-url="jrtt-business-file.html" data-fn="6">营业厅</a>
-			</div>
-			<div class="swiper-slide">
-				<a href="javascript:;" data-item="forword" data-url="" data-fn="7">手机</a>
-			</div>
-		</div>
-	</div>
+    <div class="swiper-container1 jrtt-top-title1" id="tuijian">
+        <div class="swiper-wrapper jrtt-container">
+            <div class="swiper-slide">
+                <a href="javascript:;" data-item="forword" data-url="index.html" data-fn="1">推荐</a>
+            </div>
+            <div class="swiper-slide">
+                <a href="javascript:;" class="aa" data-item="forword" data-url="" data-fn="2">套餐</a>
+            </div>
+            <div class="swiper-slide jrtt-size4">
+                <a href="javascript:;" data-item="forword" data-url="jrtt-activity-file.html" data-fn="3">优惠活动</a>
+            </div>
+            <div class="swiper-slide">
+                <a href="javascript:;" data-item="forword" data-url="" data-fn="4">ITV</a>
+            </div>
+            <div class="swiper-slide jrtt-size4">
+                <a href="javascript:;" data-item="forword" data-url="jrtt-international-file.html" data-fn="5">国际漫游</a>
+            </div>
+            <div class="swiper-slide jrtt-size3">
+                <a href="javascript:;" data-item="forword" data-url="jrtt-business-file.html" data-fn="6">营业厅</a>
+            </div>
+            <div class="swiper-slide">
+                <a href="javascript:;" data-item="forword" data-url="" data-fn="7">手机</a>
+            </div>
+        </div>
+    </div>
 </div>
 <div class="aui-refresh-content jrtt-content">
-	<div class="aui-content">
-		<!--轮播图-->
-		<div class="jrtt-package-carousel">
-			<div class="swiper-container">
-				<div class="swiper-wrapper">
-					<div class="swiper-slide">
-						<img src="../img/1.jpg" alt="" />
-					</div>
-					<div class="swiper-slide">
-						<img src="../img/2.jpg" alt="" />
-					</div>
-					<div class="swiper-slide">
-						<img src="../img/3.jpg" alt="" />
-					</div>
-					<div class="swiper-slide">
-						<img src="../img/4.jpg" alt="" />
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="aui-tab" id="tab">
-		    <div class="aui-tab-item aui-active">手机套餐</div>
-		    <div class="aui-tab-item"><div></div>融合套餐</div>
-		    <div class="aui-tab-item">宽带iTV</div>
-		    <div class="aui-tab-item">可选包</div>
-		</div>
-		<div class="aui-content aui-list aui-list-in jrtt-list" style="display: block;">
-			<div class="aui-list-item">
-				<div class=" jrtt-package-title">乐享</div>
-				<div class="jrtt-package-jiantou"><span class="aui-iconfont aui-icon-right"></span></div>
-			</div>
-			<!--内容1-->
-			<div class="jrtt-package-item" data-item="forword" data-url="jrtt-details2-file.html" data-fn="tap">
-				<div class="aui-row jrtt-package-items">
-					<div class="aui-col-xs-8 jrtt-package-title">乐享 4G聊天版/19元</div>
-					<img src="../img/1.jpg" alt="" class="aui-col-xs-4 jrtt-package-items-img"/>
-				</div>
-			</div>
-			
-			<div class="aui-list-item">
-				<div class=" jrtt-package-title">4G套餐</div>
-				<div class="jrtt-package-jiantou"><span class="aui-iconfont aui-icon-right"></span></div>
-			</div>
-			<!--内容2-->
-			<div class="jrtt-package-item">
-				<div class="aui-row jrtt-package-items" data-item="forword" data-url="jrtt-details2-file.html" data-fn="tap">
-					<div class="aui-col-xs-8 jrtt-package-title">飞Young 4G聊天版/19元</div>
-					<img src="../img/2.jpg" alt="" class="aui-col-xs-4 jrtt-package-items-img"/>
-				</div>
-				<div class="aui-row jrtt-package-items" data-item="forword" data-url="jrtt-details2-file.html" data-fn="tap">
-					<div class="aui-col-xs-8 jrtt-package-title">飞Young 4G聊天版/19元</div>
-					<img src="../img/1.jpg" alt="" class="aui-col-xs-4 jrtt-package-items-img"/>
-				</div>
-			</div>
-			
-		</div>
-		<div class="jrtt-list">2</div>
-		<div class="jrtt-list">3</div>
-		<div class="jrtt-list">4</div>
-	</div>
+    <div class="aui-content">
+        <!--轮播图-->
+        <div class="jrtt-package-carousel">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="../img/1.jpg" alt=""/>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../img/2.jpg" alt=""/>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../img/3.jpg" alt=""/>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../img/4.jpg" alt=""/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="aui-tab" id="tab">
+            <div class="aui-tab-item aui-active">手机套餐</div>
+            <div class="aui-tab-item">
+                <div></div>
+                融合套餐
+            </div>
+            <div class="aui-tab-item">宽带iTV</div>
+            <div class="aui-tab-item">可选包</div>
+        </div>
+        <div class="aui-content aui-list aui-list-in jrtt-list" style="display: block;">
+            <div class="aui-list-item">
+                <div class=" jrtt-package-title">乐享</div>
+                <div class="jrtt-package-jiantou"><span class="aui-iconfont aui-icon-right"></span></div>
+            </div>
+            <!--内容1-->
+            <div class="jrtt-package-item" data-item="forword" data-url="jrtt-details2-file.html" data-fn="tap">
+                <div class="aui-row jrtt-package-items">
+                    <div class="aui-col-xs-8 jrtt-package-title">乐享 4G聊天版/19元</div>
+                    <img src="../img/1.jpg" alt="" class="aui-col-xs-4 jrtt-package-items-img"/>
+                </div>
+            </div>
+
+            <div class="aui-list-item">
+                <div class=" jrtt-package-title">4G套餐</div>
+                <div class="jrtt-package-jiantou"><span class="aui-iconfont aui-icon-right"></span></div>
+            </div>
+            <!--内容2-->
+            <div class="jrtt-package-item">
+                <div class="aui-row jrtt-package-items" data-item="forword" data-url="jrtt-details2-file.html"
+                     data-fn="tap">
+                    <div class="aui-col-xs-8 jrtt-package-title">飞Young 4G聊天版/19元</div>
+                    <img src="../img/2.jpg" alt="" class="aui-col-xs-4 jrtt-package-items-img"/>
+                </div>
+                <div class="aui-row jrtt-package-items" data-item="forword" data-url="jrtt-details2-file.html"
+                     data-fn="tap">
+                    <div class="aui-col-xs-8 jrtt-package-title">飞Young 4G聊天版/19元</div>
+                    <img src="../img/1.jpg" alt="" class="aui-col-xs-4 jrtt-package-items-img"/>
+                </div>
+            </div>
+
+        </div>
+        <div class="jrtt-list">2</div>
+        <div class="jrtt-list">3</div>
+        <div class="jrtt-list">4</div>
+    </div>
 </div>
-<br /><br />
+<br/><br/>
 <footer class="aui-bar aui-bar-tab" id="footer">
-	<div class="aui-bar-tab-item aui-active" data-item="forword" data-url="" data-fn="8">
+    <div class="aui-bar-tab-item aui-active" data-item="forword" data-url="" data-fn="8">
         <i class="aui-iconfont aui-icon-home"></i>
     </div>
     <div class="aui-bar-tab-item" data-item="forword" data-url="jrtt-email-file.html" data-fn="9">
@@ -137,102 +143,105 @@
 </body>
 <script src="../js/api.js"></script>
 <script src="../js/jquery-1.10.2.js"></script>
-<script src="../js/touch.js" ></script>
-<script src="../js/dropload.js"></script>   <!--上拉刷新，下拉加载-->
+<script src="../js/touch.js"></script>
+<script src="../js/dropload.js"></script>
+<!--上拉刷新，下拉加载-->
 <script src="../js/swiper.js"></script>
 <script src="../js/aui-skin.js"></script>
 <script src="../js/aui-dialog.js"></script>
 <script src="../js/aui-tab.js"></script>
 <script type="text/javascript">
-	var initApp = function(){
-		
-	}
-	var initHtml = function(){
-		
-	}
-	var webfun = function(that){
-		$(".jrtt-container div a").removeClass('aa');
-    	$(that).addClass('aa');
-	}
-	var appfun = function(that,fn){
-		var url = $(that).attr("data-url");
-		switch(fn){
-			case "2":case "4":case "7":
-    			$(".jrtt-container div a").removeClass('aa');
-    			$(that).addClass('aa');
-    			break;
-			default:
-				api.openWin({
-		            name: url.slice(0,url.length-5),
-		            url: url
-		        });
-		}
-	}
+    var initApp = function () {
+
+    }
+    var initHtml = function () {
+
+    }
+    var webfun = function (that) {
+        $(".jrtt-container div a").removeClass('aa');
+        $(that).addClass('aa');
+    }
+    var appfun = function (that, fn) {
+        var url = $(that).attr("data-url");
+        switch (fn) {
+            case "2":
+            case "4":
+            case "7":
+                $(".jrtt-container div a").removeClass('aa');
+                $(that).addClass('aa');
+                break;
+            default:
+                api.openWin({
+                    name: url.slice(0, url.length - 5),
+                    url: url
+                });
+        }
+    }
 </script>
 <script src="../js/common.js"></script>
 <script type="text/javascript">
-	var dialog = new auiDialog({})
-	//	点击返回键
-	apiready = function(){
-		var backSecond = 0;
-		api.addEventListener({
-		    name : 'keyback'
-		}, function (ret, err) {
-		    var curSecond = new Date().getSeconds();
-		    if (Math.abs(curSecond - backSecond) > 2) {
-		        backSecond = curSecond;
-		        api.toast({
-		            msg : '连续按两次退出app',
-		            duration : 2000,
-		            location : 'bottom'
-		        });
-		    } else {
-				api.closeWidget({silent:true});
-		    }
-		});
-	}
-//滑动
-   	var swiper = new Swiper('.swiper-container1', {
+    var dialog = new auiDialog({})
+    //	点击返回键
+    apiready = function () {
+        var backSecond = 0;
+        api.addEventListener({
+            name: 'keyback'
+        }, function (ret, err) {
+            var curSecond = new Date().getSeconds();
+            if (Math.abs(curSecond - backSecond) > 2) {
+                backSecond = curSecond;
+                api.toast({
+                    msg: '连续按两次退出app',
+                    duration: 2000,
+                    location: 'bottom'
+                });
+            } else {
+                api.closeWidget({silent: true});
+            }
+        });
+    }
+    //滑动
+    var swiper = new Swiper('.swiper-container1', {
         slidesPerView: 'auto',
         paginationClickable: true,
         spaceBetween: 10
- 	});
- 	var t = $('#aui-header').height();
-	var t2 = t+$('.jrtt-index-top').height();
-	$('.jrtt-index-top').css('top',t+'px');
-	$('.jrtt-content').css('margin-top',t2+'px');
+    });
+    var t = $('#aui-header').height();
+    var t2 = t + $('.jrtt-index-top').height();
+    $('.jrtt-index-top').css('top', t + 'px');
+    $('.jrtt-content').css('margin-top', t2 + 'px');
 
-//	轮播图
-	var swiper = new Swiper('.swiper-container', {
+    //	轮播图
+    var swiper = new Swiper('.swiper-container', {
         slidesPerView: 'auto',
         paginationClickable: true,
         spaceBetween: 0
- 	});
-//	套餐--列表
-	$(document).on('tap','.aui-list-item',function(){
+    });
+    //	套餐--列表
+    $(document).on('tap', '.aui-list-item', function () {
 //		$(this).next('.jrtt-package-item').toggleClass("aui-show");
-		$(this).next('.jrtt-package-item').slideToggle();
-		$(this).find('span').toggleClass('aui-icon-down');	
-	});
-//	tab栏切换
-	var tab = new auiTab({
-        element:document.getElementById("tab"),
-        index:1,
-        repeatClick:false
-    },function(ret){
+        $(this).next('.jrtt-package-item').slideToggle();
+        $(this).find('span').toggleClass('aui-icon-down');
+    });
+    //	tab栏切换
+    var tab = new auiTab({
+        element: document.getElementById("tab"),
+        index: 1,
+        repeatClick: false
+    }, function (ret) {
         console.log();
         var len = $('.jrtt-list').length;
-        for(var i = 0;i<len;i++){
-        	$('.jrtt-list')[i].style.display = "none";
+        for (var i = 0; i < len; i++) {
+            $('.jrtt-list')[i].style.display = "none";
         }
-        if(ret.index==1){
-        	$('.jrtt-list')[0].style.display="block";
-        }else if(ret.index==2){
-        	$('.jrtt-list')[1].style.display="block";
-        }else if(ret.index==3){
-        	$('.jrtt-list')[2].style.display="block";
-        }else if(ret.index==4){
-        	$('.jrtt-list')[3].style.display="block";
+        if (ret.index == 1) {
+            $('.jrtt-list')[0].style.display = "block";
+        } else if (ret.index == 2) {
+            $('.jrtt-list')[1].style.display = "block";
+        } else if (ret.index == 3) {
+            $('.jrtt-list')[2].style.display = "block";
+        } else if (ret.index == 4) {
+            $('.jrtt-list')[3].style.display = "block";
         }
     });
     toast.hide();

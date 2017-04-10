@@ -1,98 +1,105 @@
 <html>
 <head>
-	<meta charset="utf-8"/>
+    <meta charset="utf-8"/>
     <meta name="viewport"
           content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
     <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
-	<link rel="stylesheet" href="../css/api.css"/>
-	<script src="../js/aui-toast.js"></script>
+    <link rel="stylesheet" href="../css/api.css"/>
+    <script src="../js/aui-toast.js"></script>
     <link rel="stylesheet" href="../css/aui.2.0.css"/>
-    <link rel="stylesheet" href="../css/style.css" />
-	<style type="text/css">
-		body, html {
-			width: 100%;
-			height: 100%;
-			margin:0;
-			font-family:"微软雅黑";
-		}
-	
-		#allmap{
-			width:100%;
-			height:300px;
-		}
-		#r-result{
-			width:100%;
-		}
-		p{
-			margin-left:5px; 
-			font-size:14px;
-		}
-	</style>
-	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=3jtDlxAzvvbkrPcsEFugwfIFcuNsxf3i"></script>
-	<title>根据关键字本地搜索</title>
+    <link rel="stylesheet" href="../css/style.css"/>
+    <style type="text/css">
+        body, html {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            font-family: "微软雅黑";
+        }
+
+        #allmap {
+            width: 100%;
+            height: 300px;
+        }
+
+        #r-result {
+            width: 100%;
+        }
+
+        p {
+            margin-left: 5px;
+            font-size: 14px;
+        }
+    </style>
+    <script type="text/javascript"
+            src="http://api.map.baidu.com/api?v=2.0&ak=3jtDlxAzvvbkrPcsEFugwfIFcuNsxf3i"></script>
+    <title>根据关键字本地搜索</title>
 </head>
 <body>
-	<script>
-		var toast = new auiToast({});	//提示窗体
-		toast.loading({
-			title : "页面加载中",
-			duration : 1000
-		});
-	</script>
-	<header class="aui-bar aui-bar-nav jrtt-header" id="aui-header">
-		<a class="aui-pull-left aui-btn" data-item="forword" data-url="" data-fn="pop">
-	        <span class="aui-iconfont aui-icon-left"></span>
-	    </a>
-	    <div class="aui-title jrtt-header-title">地图</div>
-	</header>
-	<div id="allmap"></div>
-	<div id="r-result"></div>
+<script>
+    var toast = new auiToast({});	//提示窗体
+    toast.loading({
+        title: "页面加载中",
+        duration: 1000
+    });
+</script>
+<header class="aui-bar aui-bar-nav jrtt-header" id="aui-header">
+    <a class="aui-pull-left aui-btn" data-item="forword" data-url="" data-fn="pop">
+        <span class="aui-iconfont aui-icon-left"></span>
+    </a>
+
+    <div class="aui-title jrtt-header-title">地图</div>
+</header>
+<div id="allmap"></div>
+<div id="r-result"></div>
 </body>
 </html>
 <script src="../js/jquery-1.10.2.js"></script>
 <script src="../js/api.js"></script>
-<script src="../js/touch.js" ></script>
+<script src="../js/touch.js"></script>
 <script src="../js/aui-skin.js"></script>
 <script>
-	<script>
-	var initApp = function(){
-		
-	}
-	var initHtml = function(){
-		
-	}
-	var webfun = function(that){
-		if($(that).attr("data-fn")=="pop"){
-			window.history.back(-1); 
-		}
-	}
-	var appfun = function(that,fn){
-		var url = $(that).attr("data-url");
-		switch(fn){
-			case "pop":
-    			api.closeWin();
-    			break;
-    		default:
-    			api.openWin({
-		            name: url.slice(0,url.length-5),
-		            url: url
-		        });
-		}
-	}
+    <
+    script >
+    var initApp = function () {
+
+    }
+    var initHtml = function () {
+
+    }
+    var webfun = function (that) {
+        if ($(that).attr("data-fn") == "pop") {
+            window.history.back(-1);
+        }
+    }
+    var appfun = function (that, fn) {
+        var url = $(that).attr("data-url");
+        switch (fn) {
+            case "pop":
+                api.closeWin();
+                break;
+            default:
+                api.openWin({
+                    name: url.slice(0, url.length - 5),
+                    url: url
+                });
+        }
+    }
 </script>
 </script>
-<script src="../js/common.js"></script>
+<
+script
+src = "../js/common.js" ></script>
 <script>
-	var t = $('#aui-header').height();
-	$('#allmap').css('margin-top',t+'px');
-	var map = new BMap.Map("allmap"); 
-	var top_left_navigation = new BMap.NavigationControl();  //左上角，添加默认缩放平移控件     
-	map.addControl(top_left_navigation);  
-	map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);
-	var local = new BMap.LocalSearch(map, {
-		renderOptions: {map: map, panel: "r-result"}
-	});
-	local.search("电信营业厅");	
-	toast.hide();
+    var t = $('#aui-header').height();
+    $('#allmap').css('margin-top', t + 'px');
+    var map = new BMap.Map("allmap");
+    var top_left_navigation = new BMap.NavigationControl();  //左上角，添加默认缩放平移控件
+    map.addControl(top_left_navigation);
+    map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);
+    var local = new BMap.LocalSearch(map, {
+        renderOptions: {map: map, panel: "r-result"}
+    });
+    local.search("电信营业厅");
+    toast.hide();
 </script>
 

@@ -2,98 +2,103 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="viewport"
+          content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
     <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
     <title>新疆电信</title>
     <link rel="icon" href="../icon/logo.png" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
     <script src="../js/aui-toast.js"></script>
     <link rel="stylesheet" href="../css/aui.2.0.css"/>
-	<link rel="stylesheet" href="../css/swiper.css" />
-    <link rel="stylesheet" href="../css/dropload.css" />
-	<link rel="stylesheet" href="../css/aui-pull-refresh.css" />
-	<link rel="stylesheet" href="../font/font-awesome-4.7.0/css/font-awesome.css" />
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/swiper.css"/>
+    <link rel="stylesheet" href="../css/dropload.css"/>
+    <link rel="stylesheet" href="../css/aui-pull-refresh.css"/>
+    <link rel="stylesheet" href="../font/font-awesome-4.7.0/css/font-awesome.css"/>
+    <link rel="stylesheet" href="../css/style.css"/>
     <style>
-    	.video-img{
-    		/*visibility: hidden;*/
-    		position: absolute;
-    	}
+        .video-img {
+            /*visibility: hidden;*/
+            position: absolute;
+        }
     </style>
 </head>
 <body>
 <script>
-	var toast = new auiToast({});	//提示窗体
-	toast.loading({
-		title : "页面加载中",
-		duration : 1000
-	});
+    var toast = new auiToast({});	//提示窗体
+    toast.loading({
+        title: "页面加载中",
+        duration: 1000
+    });
 </script>
 <header class="aui-bar aui-bar-nav jrtt-header" id="aui-header">
-	<a class="aui-pull-left aui-btn" data-item="forword" data-url="" data-fn="pop">
+    <a class="aui-pull-left aui-btn" data-item="forword" data-url="" data-fn="pop">
         <span class="aui-iconfont aui-icon-left"></span>
     </a>
+
     <div class="aui-title jrtt-header-title">视频详情</div>
 </header>
 <div class="aui-refresh-content jrtt-content">
-	<div class="aui-content">
-		<div class="aui-card-list-content-padded jrtt-details-tap" style="position: relative;">
-		    <div class="aui-card-list-title">实拍：74米的大货车 他们是怎么拐弯的,74米的大货车 他们是怎么拐弯的</div>
-		    <video width="100%" controls="controls" autoplay="autoplay" src="../img/fun.mp4" type="video/mp4" class="video1" onclick="aa(this);">
-		    	不支持视频播放
-		    </video>
-		    <div class="jrtt-photo">
-		        <ul>
-		            <li class="jrtt-border">阳光宽频</li>
-		            <li>同林文化</li>
-		            <li>50评论</li>
-		            <li>5小时前</li>
-		        </ul>
-		    </div>
-		</div>
-	</div>
+    <div class="aui-content">
+        <div class="aui-card-list-content-padded jrtt-details-tap" style="position: relative;">
+            <div class="aui-card-list-title">实拍：74米的大货车 他们是怎么拐弯的,74米的大货车 他们是怎么拐弯的</div>
+            <video width="100%" controls="controls" autoplay="autoplay" src="../img/fun.mp4" type="video/mp4"
+                   class="video1" onclick="aa(this);">
+                不支持视频播放
+            </video>
+            <div class="jrtt-photo">
+                <ul>
+                    <li class="jrtt-border">阳光宽频</li>
+                    <li>同林文化</li>
+                    <li>50评论</li>
+                    <li>5小时前</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 <script src="../js/api.js"></script>
 <script src="../js/jquery-1.10.2.js"></script>
-<script src="../js/touch.js" ></script>
+<script src="../js/touch.js"></script>
 <script src="../js/swiper.js"></script>
-<script src="../js/aui-scroll.js"></script> <!--滚动（上拉加载）-->
-<script src="../js/aui-pull-refresh.js"></script>  <!--下拉刷新-->
+<script src="../js/aui-scroll.js"></script>
+<!--滚动（上拉加载）-->
+<script src="../js/aui-pull-refresh.js"></script>
+<!--下拉刷新-->
 <script src="../js/handlebars-v1.3.0.js"></script>
 <script src="../js/aui-skin.js"></script>
 <script src="../js/aui-dialog.js"></script>
 <script>
-	var initApp = function(){
-		
-	}
-	var initHtml = function(){
-		
-	}
-	var webfun = function(that){
-		if($(that).attr("data-fn")=="pop"){
-			window.history.back(-1); 
-		}
-	}
-	var appfun = function(that,fn){
-		var url = $(that).attr("data-url");
-		switch(fn){
-			case "pop":
-    			api.closeWin();
-    			break;
-			default:
-				api.openWin({
-		            name: url.slice(0,url.length-5),
-		            url: url
-		        });
-		}
-	}
+    var initApp = function () {
+
+    }
+    var initHtml = function () {
+
+    }
+    var webfun = function (that) {
+        if ($(that).attr("data-fn") == "pop") {
+            window.history.back(-1);
+        }
+    }
+    var appfun = function (that, fn) {
+        var url = $(that).attr("data-url");
+        switch (fn) {
+            case "pop":
+                api.closeWin();
+                break;
+            default:
+                api.openWin({
+                    name: url.slice(0, url.length - 5),
+                    url: url
+                });
+        }
+    }
 </script>
 <script src="../js/common.js"></script>
 <script type="text/javascript">
-	var t = $('#aui-header').height();
-	var t2 = t+$('.jrtt-index-top').height();
-	$('.jrtt-content').css('margin-top',t2+'px');
-	toast.hide();
+    var t = $('#aui-header').height();
+    var t2 = t + $('.jrtt-index-top').height();
+    $('.jrtt-content').css('margin-top', t2 + 'px');
+    toast.hide();
 </script>
 </html>
