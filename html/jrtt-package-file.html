@@ -180,7 +180,11 @@
 </script>
 <script src="../js/common.js"></script>
 <script type="text/javascript">
-    var dialog = new auiDialog({})
+    var dialog = new auiDialog({});
+    var t = $('#aui-header').height();
+    var t2 = t + $('.jrtt-index-top').height();
+    $('.jrtt-index-top').css('top', t + 'px');
+    $('.jrtt-content').css('margin-top', t2 + 'px');
     //	点击返回键
     apiready = function () {
         var backSecond = 0;
@@ -206,11 +210,6 @@
         paginationClickable: true,
         spaceBetween: 10
     });
-    var t = $('#aui-header').height();
-    var t2 = t + $('.jrtt-index-top').height();
-    $('.jrtt-index-top').css('top', t + 'px');
-    $('.jrtt-content').css('margin-top', t2 + 'px');
-
     //	轮播图
     var swiper = new Swiper('.swiper-container', {
         slidesPerView: 'auto',
@@ -229,7 +228,6 @@
         index: 1,
         repeatClick: false
     }, function (ret) {
-        console.log();
         var len = $('.jrtt-list').length;
         for (var i = 0; i < len; i++) {
             $('.jrtt-list')[i].style.display = "none";

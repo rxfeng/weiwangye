@@ -80,7 +80,9 @@
 </script>
 <script src="../js/common.js"></script>
 <script>
-    var dialog = new auiDialog({})
+    var dialog = new auiDialog({});
+    var t = $('#aui-header').height();
+    $('.jrtt-email-box').css('margin-top', t + 'px');
     //	点击返回键
     apiready = function () {
         var backSecond = 0;
@@ -100,8 +102,6 @@
             }
         });
     }
-    var t = $('#aui-header').height();
-    $('.jrtt-email-box').css('margin-top', t + 'px');
     function tijiao() {
         var tel = $('.input').val();
         if (checkMobile(tel)) {

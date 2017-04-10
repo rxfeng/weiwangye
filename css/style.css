@@ -20,6 +20,19 @@ body{
 	width: 100%;
 	text-align: center;
 }
+/*动态高度*/
+.jrtt-content{
+	margin-top: 88px;
+}
+.jrtt-index-top {
+	position: fixed;
+	z-index: 10;
+	width: 100%;
+	top:48px;
+}
+.aui-refresh-content{
+	margin-top: 88px;
+}
 /* 首页 */
 .jrtt-header {
     background: #ff8e0c;
@@ -373,11 +386,6 @@ body{
 	border-radius: 15px;
 	color:#fff;
 }
-.jrtt-index-top {
-	position: fixed;
-	z-index: 10;
-	width: 100%;
-}
 .jrtt-index-top .jrtt-container .swiper-slide{
 	height:40px;
 	line-height: 40px;
@@ -477,6 +485,7 @@ body{
 .jrtt-international-bottom{
 	width: 100%;
 	position: fixed;
+	bottom:53px;
 }
 .jrtt-international-bottom-text{
 	text-align: center;
@@ -585,6 +594,7 @@ body{
 /*反馈页面*/
 .jrtt-email-box{
 	padding: 20px;
+	margin-top:48px;
 }
 .jrtt-email-box .textarea{
 	border:1px solid #ccc;
@@ -703,6 +713,9 @@ body{
 	height: 20px;
 }
 /*详情*/
+.jrtt-detail-title{
+	margin-top:48px;
+}
 .jrtt-detail-title h3{
 	text-align: center;
 }

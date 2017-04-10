@@ -194,7 +194,12 @@
 </script>
 <script src="../js/common.js"></script>
 <script type="text/javascript">
-    var dialog = new auiDialog({})
+    var dialog = new auiDialog({});
+    var t = $('#aui-header').height();
+    var t2 = t + $('.jrtt-index-top').height();
+    $('.jrtt-index-top').css('top', t + 'px');
+    $('.aui-refresh-content').css('margin-top', t2 + 'px');
+    $('.jrtt-international-bottom').css('bottom', $('#footer').height() + 'px');
     //	点击返回键
     apiready = function () {
 //		api.addEventListener({
@@ -233,12 +238,7 @@
         paginationClickable: true,
         spaceBetween: 10
     });
-    var t = $('#aui-header').height();
-    var t2 = t + $('.jrtt-index-top').height();
-    $('.jrtt-index-top').css('top', t + 'px');
-    $('.aui-refresh-content').css('margin-top', t2 + 'px');
     toast.hide();
-    $('.jrtt-international-bottom').css('bottom', $('#footer').height() + 'px');
 </script>
 <!--<script>
 //下拉加载
