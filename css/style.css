@@ -2,15 +2,11 @@
 @font-face {font-family:myFont; src: url("../font/pingfangSC.otf")}
 html,body {  font-size:22px; font-family: 'myFont'; background-color:#FFFFFF;}
 .hover{ opacity: .8; }
-
+p,h1,h2,h3,h4,h5,h6,i,s,font,span,li{font-family: 'myFont';}
 .flex-wrap{ display: -webkit-box;	display: -webkit-flex;	display: flex; }
 .flex-con{     -webkit-box-flex: 1;     -webkit-flex: 1;    flex: 1;}
 .flex-vertical{ -webkit-box-orient: vertical;-webkit-flex-flow: column;flex-flow: column;}
-
 #wrap{ height: 100%; }
-body{
-    background: #fff;
-}
 #aui-header .jrtt-title-sub{
 	color: #373737;
 	font-size:16px;
