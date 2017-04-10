@@ -1,3 +1,5 @@
+@font-face {font-family:myFont1; src: url("../font/zaozi.otf")}
+@font-face {font-family:myFont; src: url("../font/pingfangSC.otf")}
 html,body {  font-size:22px; font-family: 'myFont'; background-color:#FFFFFF;}
 .hover{ opacity: .8; }
 
@@ -13,8 +15,7 @@ body{
 	color: #373737;
 	font-size:16px;
 }
-@font-face {font-family:myFont1; src: url("../font/zaozi.otf")}
-@font-face {font-family:myFont; src: url("../font/pingfangSC.otf")}
+
 /*刷新*/
 .jrtt-spinner{
 	width: 100%;
@@ -507,6 +508,9 @@ body{
 .jrtt-content .jrtt-international-items-imgs{
 	width: 30%;
 }
+.jrtt-international-item{
+	margin-top:-20px;
+}
 .jrtt-international-item .jrtt-international-items{
  	margin:10px 15px 0px; 
 	display: flex;
@@ -714,7 +718,8 @@ body{
 }
 /*详情*/
 .jrtt-detail-title{
-	margin-top:48px;
+	margin-top:50px;
+	margin-bottom:5px;
 }
 .jrtt-detail-title h3{
 	text-align: center;
