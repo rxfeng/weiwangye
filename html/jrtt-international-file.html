@@ -19,7 +19,7 @@
 	var toast = new auiToast({});	//提示窗体
 	toast.loading({
 		title : "页面加载中",
-		duration : 100000
+		duration : 1000
 	});
 </script>
 <header class="aui-bar aui-bar-nav jrtt-header" id="aui-header">
@@ -156,20 +156,8 @@
 				api.openWin({
 		            name: url.slice(0,url.length-5),
 		            url: url,
-		        	delay:300,
-		        	progress:{
-		        		type:"default",
-		        		title:"努力加载中...",
-		        		text:"请稍等"
-		        	}
+		        	delay:300
 		        });
-		        api.showProgress({
-				    title: '努力加载中...',
-				    text: '先喝杯茶...'
-				});
-				setTimeout(function(){
-					api.hideProgress();
-				},2000)
 		}
 	}
 </script>

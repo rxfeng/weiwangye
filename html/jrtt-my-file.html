@@ -7,12 +7,20 @@
     <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
     <title></title>
     <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <script src="../js/aui-toast.js"></script>
     <link rel="stylesheet" href="../css/aui.2.0.css"/>
     <link rel="stylesheet" href="../css/swiper.css" />
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../font/font-awesome-4.7.0/css/font-awesome.css" />
 </head>
 <body>
+<script>
+	var toast = new auiToast({});	//提示窗体
+	toast.loading({
+		title : "页面加载中",
+		duration : 1000
+	});
+</script>
 <div class="jrtt-user-info">
 	<ul>
 		<li><img src="../img/logo@3x.png" alt="" /></li>
@@ -243,5 +251,6 @@
 		    }
 		});
 	}
+	toast.hide();
 </script>
 </html>

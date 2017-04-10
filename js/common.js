@@ -15,10 +15,14 @@ $(document).on("tap","[data-item = 'forword']",function(){
 	var _fn = $this.attr("data-fn");      //跳转那个页面的标识
 	if(_type == "app"){
 		appfun(this,_fn);
-		api.showProgress({
-		    title: '努力加载中...',
-		    text: '先喝杯茶...'
-		});
+		toast.loading({
+            title:"页面加载中",
+            duration:2000
+        },function(ret){
+            setTimeout(function(){
+                toast.hide();
+            }, 3000)
+        });
 		setTimeout(function(){
 			api.hideProgress();
 		},2000)
@@ -28,6 +32,14 @@ $(document).on("tap","[data-item = 'forword']",function(){
 			if($this.attr("data-url")==""){
 				return;
 			}else{
+				toast.loading({
+		            title:"页面加载中",
+		            duration:2000
+		        },function(ret){
+		            setTimeout(function(){
+		                toast.hide();
+		            }, 3000)
+		        });
 				window.location = $this.attr("data-url");
 			}
 		}

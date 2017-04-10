@@ -7,6 +7,7 @@
     <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
     <title></title>
     <link rel="stylesheet" href="../css/api.css"/>
+    <script src="../js/aui-toast.js"></script>
     <link rel="stylesheet" href="../css/aui.2.0.css"/>
     <link rel="stylesheet" href="../css/swiper.css" />
     <link rel="stylesheet" href="../css/style.css" />
@@ -100,6 +101,13 @@
     </style>
 </head>
 <body>
+	<script>
+		var toast = new auiToast({});	//提示窗体
+		toast.loading({
+			title : "页面加载中",
+			duration : 1000
+		});
+	</script>
 	<header class="aui-bar aui-bar-nav jrtt-header" id="aui-header">
 		<a class="aui-pull-left aui-btn" data-item="forword" data-url="" data-fn="pop">
 	        <span class="aui-iconfont aui-icon-left"></span>
@@ -431,5 +439,6 @@
 //	$(document).on('tap','.aui-switch',function(){
 //		console.log(this.checked);
 //	})
+	toast.hide();
 </script>
 </html>

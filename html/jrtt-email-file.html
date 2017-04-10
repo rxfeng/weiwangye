@@ -14,6 +14,13 @@
     <link rel="stylesheet" href="../css/style.css" />
 </head>
 <body>
+<script>
+	var toast = new auiToast({});	//提示窗体
+	toast.loading({
+		title : "页面加载中",
+		duration : 1000
+	});
+</script>
 <header class="aui-bar aui-bar-nav jrtt-header" id="aui-header">
     <div class="aui-pull-left jrtt-header-title">新疆电信</div>
     <a class="aui-pull-right aui-btn" data-item="forword" data-url="jrtt-login.html" data-fn="login">
@@ -101,5 +108,6 @@
 			alert("请输入正确的手机号");
 		}	
 	}
+	toast.hide();
 </script>
 </html>
