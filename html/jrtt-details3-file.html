@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>详情</title>
+    <link rel="stylesheet" href="../css/api.css"/>
+    <script src="../js/aui-toast.js"></script>
+    <link rel="stylesheet" href="../css/aui.2.0.css"/>
+    <link rel="stylesheet" href="../css/dropload.css"/>
+    <link rel="stylesheet" href="../css/swiper.css"/>
+    <link rel="stylesheet" href="../css/aui-pull-refresh.css"/>
+    <link rel="stylesheet" href="../css/aui-slide.css" />
+    <link rel="stylesheet" href="../css/style.css"/>
+    <link rel="stylesheet" href="../font/font-awesome-4.7.0/css/font-awesome.css"/>
+    <style type="text/css">
+	    body {
+	        background: #ffffff;
+	    }
+	    .bg-dark {
+	        background: #333333 !important;
+	    }
+	    .aui-slide-node img {
+	        width: auto;
+	        height: 100%;
+	    }
+    </style>
+    <style>
+    	html,body{
+    		height: 100%;
+    	}
+    	.aui-slide-wrap .aui-slide-node{
+    		overflow: auto;
+    	}
+    	.jrtt-slide-title{
+    		margin-top: 60px;
+    	}
+    	.jrtt-slide-title .jrtt-aui-grid-title{
+    		font-size: 17px;
+		    font-weight: 900;
+		    color: #333;
+    	}
+    	.jrtt-slide-title .jrtt-count-wp{
+    		display: block;
+		    padding:0 10px;
+		    float: left;
+		    font-size: 12px;
+    		font-style: normal;
+    		border-radius: 0 10px 10px 0;
+    		height: 20px;
+		    line-height: 20px;
+		    color: #fff;
+		    margin-right: 10px;
+    	}
+	    .jrtt-slide-item{
+	  		padding: 10px;
+	  		width: 100%;
+	    }
+	    .jrtt-slide-item .jrtt-slide-item-title{
+	    	font-size: 14px;
+	    }
+	    .jrtt-slide-item img{
+	    	width: 100%;	
+	    }
+	    .jrtt-enlarge-img-box{
+	    	width: 100%;
+	    	height: 100%;
+	    	background: rgba(0,0,0,.5);
+	    	position: fixed;
+	    	top: 0;
+	    	left: 0;
+	    	display: none;
+	    }
+	    .jrtt-enlarge-img-box .jrtt-enlarge-img{
+	    	width: 100%;
+	    	height: 100%;
+	    	display: flex;
+	    	align-items: center;
+	    }
+	    .jrtt-enlarge-img img{
+	    	width: 100%;
+	    }
+	    .jrtt-enlarge-img-box .jrtt-enlarge-gesture-img{
+	    	width: 100%;
+	    	height: 100%;
+	    	display: flex;
+	    	flex-direction: column;
+	    	align-items: center;
+	    	justify-content: center;
+	    }
+	    .jrtt-enlarge-img-box .jrtt-enlarge-gesture-img p{
+	    	text-align: center;
+	    	color: #fff;
+	    	font-weight: 900;
+	    	margin-top: 20px;
+	    	letter-spacing: 2px;
+	    }
+    </style>
+</head>
+<body>
+<script>
+    var toast = new auiToast({});	//提示窗体
+    toast.loading({
+        title: "页面加载中",
+        duration: 1000
+    });
+</script>
+<header class="aui-bar aui-bar-nav jrtt-header" id="aui-header">
+    <a class="aui-pull-left aui-btn" data-item="forword" data-url="" data-fn="pop">
+        <span class="aui-iconfont aui-icon-left"></span>
+    </a>
+
+    <div class="aui-title jrtt-header-title jrtt-header-subTitle">详情</div>
+</header>
+<div class="jrtt-slide-title">
+	<i class="jrtt-count-wp">1/4</i><p class="jrtt-aui-grid-title">温馨提示</p>
+</div>
+<div id="aui-slide" style="height: 100%;">
+    <div class="aui-slide-wrap" >
+        <div class="aui-slide-node">
+            <div class="aui-grid jrtt-slide-item">
+            	<p class="jrtt-slide-item-title">开通：新入网客户或全球通/神州行升级版标准卡标准资费客户，当月开通当月生效，当月套餐费及免费资源均按当月剩余天数进行计算，下月起按所办理的套餐执行。其他客户开通套餐，当月开通下月生效。</p>
+                <img src="../img/1.jpg"/>
+            </div>
+        </div>
+        <div class="aui-slide-node">
+            <div class="aui-grid jrtt-slide-item">
+            	<p class="jrtt-slide-item-title">变更/取消：当月变更/取消，下月生效。只有全球通、神州行升级版标准卡客户可以取消套餐，取消后执行相应品牌的标准资费；其他品牌客户无法取消套餐，只能变更为其它主套餐。</p>
+                <img src="../img/2.jpg"/>
+                <img src="../img/3.jpg"/><img src="../img/3.jpg"/><img src="../img/3.jpg"/><img src="../img/3.jpg"/><img src="../img/3.jpg"/><img src="../img/3.jpg"/><img src="../img/3.jpg"/>
+                <img src="../img/2.jpg"/>
+            </div>
+        </div>
+        <div class="aui-slide-node">
+            <div class="aui-grid jrtt-slide-item">
+            	<p class="jrtt-slide-item-title">与2G/3G/4G主套餐、自动加油包、全球通专属数据包、新本地15元数据流量套餐、移动数据流量产品商务套餐、以及神州行标准客户的15元CMWAP包月不限量套餐、全球通/动感地带的MO套餐20元档等包月不限量套餐互斥，详询10086。</p>
+                <img src="../img/3.jpg"/>
+            </div>
+        </div>
+    </div>
+    <!--分页容器-->
+    <div class="aui-slide-page-wrap" style="display: none;"></div>
+</div>
+<!--放大图片蒙版-->
+<div class="jrtt-enlarge-img-box Js-jrtt-enlarge-img-box">
+	<div class="jrtt-enlarge-img">
+		
+	</div>
+</div>
+<!--手势滑屏指示-->
+<div class="jrtt-enlarge-img-box Js-jrtt-enlarge-img-box-start" style="display: block;">
+	<div class="jrtt-enlarge-gesture-img">
+		<img src="../img/gesture.png" alt="" />
+		<p>步骤内容可以滑动</p>
+	</div>
+</div>
+</body>
+<script type="text/javascript" src="../js/api.js"></script>
+<script src="../js/jquery-1.10.2.js"></script>
+<script src="../js/touch.js"></script>
+<script src="../js/dropload.js"></script>
+<!--滑动-->
+<script src="../js/aui-slide.js"></script>
+<script src="../js/aui-skin.js"></script>
+<script>
+    var initApp = function () {
+        apiready = function () {
+            console.log(api.pageParam.haha)
+        }
+    }
+    var initHtml = function () {
+        console.log(getArg('haha'));
+    }
+    var webfun = function (that) {
+        if ($(that).attr("data-fn") == "pop") {
+            window.history.back(-1);
+        }
+    }
+    var appfun = function (that, fn) {
+        if (fn == "pop") {
+            api.closeWin();
+        }
+    }
+</script>
+<script src="../js/common.js"></script>
+<script>
+    var t = $('#aui-header').height();
+    $('.jrtt-detail-title').css('margin-top', t + 5 + 'px');
+    toast.hide();
+</script>
+<script type="text/javascript">
+    var slide = new auiSlide({
+        container:document.getElementById("aui-slide"),
+        // "width":300,
+        "speed":300,
+        "pageShow":true,
+        "pageStyle":'line',
+        "loop":false,
+        'dotPosition':'center',
+        currentPage:currentFun
+    })
+
+    function currentFun(index) {
+        console.log(index);  
+        $(".jrtt-count-wp").html(index+1+"/"+3);
+    }
+    console.log($("#aui-header").height());
+    console.log($(".jrtt-slide-title").height());
+    var h = $("#aui-slide").height()-$("#aui-header").height()-$(".jrtt-slide-title").height()-15;
+    $("body").css("height",h+"px");
+    $(document).on("click",".jrtt-slide-item img",function(){
+    	var that = $(this).clone().get(0);
+		$(".Js-jrtt-enlarge-img-box").show();
+		$(".jrtt-enlarge-img").html(that);
+    });
+    $(document).on("click",".Js-jrtt-enlarge-img-box",function(){
+		$(".Js-jrtt-enlarge-img-box").hide();
+    });
+    $(document).on("click",".jrtt-enlarge-img img",function(event){
+    	event.stopPropagation();
+    });
+    //点击关闭
+    $(".Js-jrtt-enlarge-img-box-start").on("click",function(){
+    	$(this).hide();
+    });
+    //滑动关闭
+    $(".Js-jrtt-enlarge-img-box-start").on("swipe",function(){
+    	$(this).hide();
+    });
+</script>
+</html>
